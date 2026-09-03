@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex, follow" />
+  <title>Rédaction et agents IA — cadence MMA | UFC.FR</title>
+  <meta name="description" content="Workflow COM : veille, brouillons IA, validation humaine obligatoire, template d’article et script de création. Aucune publication automatique." />
+  <link rel="canonical" href="https://www.ufc.fr/redaction.html" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400;1,6..72,600&family=Oswald:wght@500;600;700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <meta property="og:site_name" content="UFC.FR" />
+  <meta property="og:locale" content="fr_FR" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Rédaction et agents IA — cadence MMA | UFC.FR" />
+  <meta property="og:description" content="Workflow COM : veille, brouillons IA, validation humaine obligatoire, template d’article et script de création. Aucune publication automatique." />
+  <meta property="og:url" content="https://www.ufc.fr/redaction.html" />
+  <meta property="og:image" content="https://www.ufc.fr/media/brand/ufc-fr-og.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Rédaction et agents IA — cadence MMA | UFC.FR" />
+  <meta name="twitter:description" content="Workflow COM : veille, brouillons IA, validation humaine obligatoire, template d’article et script de création. Aucune publication automatique." />
+  <meta name="twitter:image" content="https://www.ufc.fr/media/brand/ufc-fr-og.jpg" />
+  <link rel="icon" href="/ufc/media/brand/favicon-32.png" sizes="32x32" />
+  <link rel="icon" href="/ufc/media/brand/favicon-192.png" sizes="192x192" />
+  <link rel="apple-touch-icon" href="/ufc/media/brand/favicon-192.png" />
+  <link rel="stylesheet" href="css/site.css" />
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <a class="brand" href="index.html"><img src="logo/ufc.fr.jpeg" alt="UFC.FR, média MMA indépendant" /></a>
+      <nav class="main">
+        <a href="index.html">Accueil</a>
+        <a href="actualites.html">Actualités</a>
+        <a href="ufc-paris-2026.html">UFC Paris 2026</a>
+        <a href="resultats.html">Résultats</a>
+        <a href="clubs.html">Clubs</a>
+        <a href="champions.html">Champions</a>
+      </nav>
+      <a class="cta cut" href="ufc-paris-2026.html">Paris 2026</a>
+      <button class="burger" type="button" aria-label="Menu" aria-expanded="false" data-menu><i></i><i></i><i></i></button>
+    </div>
+  </header>
+  <div class="drawer" data-drawer>
+    <a href="index.html">Accueil</a>
+    <a href="actualites.html">Actualités</a>
+    <a href="a-propos.html">À propos</a>
+    <a href="audit.html">Audit</a>
+    <a href="redaction.html">Rédaction / IA</a>
+    <a href="seo-suivi.html">Suivi SEO</a>
+    <a href="forum.html">Forum</a>
+  </div>
+
+  <div class="page-hero has-photo ph-keys">
+    <div class="wrap">
+      <span class="kicker">Livrable 15</span>
+      <h1>Rédaction assistée</h1>
+      <p>L’IA accélère la cadence. Rien ne sort sans relecture humaine : dates, noms, résultats, sources, ton neutre.</p>
+    </div>
+  </div>
+
+  <article class="article">
+    <div class="wrap-read prose">
+      <figure class="figure">
+        <img src="img/octagon.jpg" alt="Octogone UFC dans une arène comble" />
+        <figcaption class="caption">Photo : Wikimedia Commons · CC BY 2.0 · <a href="credits.html">Tous les crédits</a></figcaption>
+      </figure>
+      <p class="crumbs"><a href="index.html">Accueil</a> · Rédaction</p>
+      <h2>Workflow</h2>
+      <ol>
+        <li>Veille (UFC, ARES, Hexagone, PFL, ONE, KSW, clubs).</li>
+        <li>Proposition de titres (agent).</li>
+        <li>Sélection COM.</li>
+        <li>Brouillon + plan (agent).</li>
+        <li>SEO : title, meta, Hn, maillage.</li>
+        <li>Relecture humaine obligatoire.</li>
+        <li>Visuel (alt + nom de fichier propre).</li>
+        <li>Publication (HTML dans <code>articles/</code>).</li>
+        <li>Réseaux (3 phrases max, lien canonique).</li>
+        <li>Ligne dans <a href="seo-suivi.html">le suivi SEO</a>.</li>
+      </ol>
+
+      <h2>Créer un article</h2>
+      <p>À la racine du dépôt :</p>
+      <pre class="code">node tools/new-article.mjs slug-url "Titre de l’article" "Kicker"</pre>
+      <p>Le script copie <code>tools/template-article.html</code> vers <code>articles/slug-url.html</code>. Ensuite : rédiger, relier depuis Actualités, ajouter l’URL au <code>sitemap.xml</code>.</p>
+
+      <h2>Prompt type (agent)</h2>
+      <pre class="code">Tu rédiges pour UFC.FR, média MMA indépendant francophone.
+Ton : clair, neutre, informatif. Pas officiel UFC.
+N’invente aucun résultat, palmarès, citation ni date.
+Si une info n’est pas sourcée, écris « à confirmer ».
+Structure : chapô, H2, listes si utile, maillage interne.
+Title &lt; 60 car. Meta description &lt; 155 car.
+Mots-clés naturels : MMA France, résultats, clubs, organisations.
+Terminer par 3 liens internes.</pre>
+
+      <h2>Interdit</h2>
+      <ul>
+        <li>Publication automatique vers le site public.</li>
+        <li>Citations sans source.</li>
+        <li>Articles de moins de ~500 mots utiles.</li>
+        <li>Ton promo hors portrait de club identifié.</li>
+      </ul>
+    </div>
+  </article>
+
+  <footer class="site">
+    <div class="wrap foot">
+      <a class="brand" href="index.html"><img src="logo/ufc.fr.jpeg" alt="UFC.FR" /></a>
+      <div class="foot-cols">
+        <div><h3>COM</h3><a href="audit.html">Audit</a><a href="redaction.html">Rédaction</a><a href="seo-suivi.html">SEO</a></div>
+        <div><h3>Média</h3><a href="actualites.html">Actualités</a></div>
+        <div><h3>Dossiers</h3><a href="ufc-paris-2026.html">Paris 2026</a></div>
+        <div><h3>Site</h3><a href="a-propos.html">À propos</a></div>
+      </div>
+    </div>
+    <div class="legal"><div class="wrap"><span><strong>UFC.FR</strong> est un média indépendant.</span><span>© 2026 · <a href="credits.html">Photos</a></span></div></div>
+  </footer>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+  <script src="js/site.js"></script>
+  <script type="module" src="animations/index.js"></script>
+</body>
+</html>

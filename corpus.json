@@ -1,0 +1,1428 @@
+{
+ "media": "UFC.FR",
+ "identite": "UFC.FR est un media independant d'actualite MMA, en francais, couvrant la France et l'international. Il n'est pas affilie a l'Ultimate Fighting Championship et n'est pas le site officiel de l'UFC. Il traite toutes les organisations : UFC, PFL, ONE Championship, KSW, Cage Warriors, ARES, Hexagone MMA.",
+ "langue": "fr-FR",
+ "url": "https://www.ufc.fr/",
+ "genere_le": "2026-09-03",
+ "licence_citation": "Citation autorisee avec lien vers l'URL source.",
+ "documents": [
+  {
+   "type": "article",
+   "titre": "Ciryl Gane de retour à l’entraînement, unification Aspinall en attente",
+   "url": "https://www.ufc.fr/ciryl-gane-retour-entrainement-aspinall/",
+   "slug": "ciryl-gane-retour-entrainement-aspinall",
+   "publie": "2026-08-31",
+   "maj": "2026-08-31",
+   "rubriques": [
+    "actualite",
+    "combattants",
+    "ufc"
+   ],
+   "resume": "Cage octogonale de MMA. Photo U.S. Marine Corps, domaine public (Wikimedia Commons). Le 31 août 2026, Ciryl Gane a fait savoir (Instagram, reprise La Sueur) qu’il était de retour à l’entraînement. Il est champion intérimaire des poids lourds après le finish contre Alex Pereira (Freedom 250). Champio",
+   "mots": 140
+  },
+  {
+   "type": "article",
+   "titre": "Dan Hooker en citations : « je vais ruiner la fête »",
+   "url": "https://www.ufc.fr/dan-hooker-citations-ufc-paris-parnasse/",
+   "slug": "dan-hooker-citations-ufc-paris-parnasse",
+   "publie": "2026-08-31",
+   "maj": "2026-08-31",
+   "rubriques": [
+    "actualite",
+    "interviews",
+    "ufc",
+    "ufc-paris-2026"
+   ],
+   "resume": "Accor Arena, Paris. Photo Vilacor, Wikimedia Commons, licence CC BY 4.0. UFC.FR n’a pas interviewé Dan Hooker. Reprise du 31 août 2026 (MMA Fighting, La Sueur) avant le main event contre Salahdine Parnasse. Il ne le connaissait pas « Je n’avais jamais entendu parler de lui. Mais depuis, j’ai découve",
+   "mots": 224
+  },
+  {
+   "type": "article",
+   "titre": "Morgan Charrière en citations : Lima, Paris, le finish",
+   "url": "https://www.ufc.fr/morgan-charriere-citations-ufc-paris/",
+   "slug": "morgan-charriere-citations-ufc-paris",
+   "publie": "2026-08-31",
+   "maj": "2026-08-31",
+   "rubriques": [
+    "actualite",
+    "interviews",
+    "ufc",
+    "ufc-paris-2026"
+   ],
+   "resume": "Accor Arena, Paris. Photo Vilacor, Wikimedia Commons, licence CC BY 4.0. UFC.FR n’a pas interviewé Morgan Charrière. Recueil avant le combat contre Felipe Lima, le 5 septembre. Contexte : huit Français. Le plan (No Sens TV / La Sueur, 26 août) « Il ne prend pas un combat facile, tout comme moi où on",
+   "mots": 292
+  },
+  {
+   "type": "article",
+   "titre": "Monkey Gym Saint-Grégoire : MMA, muay-thaï, club de Rennes",
+   "url": "https://www.ufc.fr/monkey-gym-rennes-saint-gregoire/",
+   "slug": "monkey-gym-rennes-saint-gregoire",
+   "publie": "2026-08-31",
+   "maj": "2026-08-31",
+   "rubriques": [
+    "actualite",
+    "clubs-mma-francais"
+   ],
+   "resume": "Cage MMA en salle (PLMMA, Pologne). Photo Tyka17, Wikimedia Commons, licence CC BY-SA 4.0. Rennes métropole : Monkey Gym (MG Training Center), 6 rue des Petits Champs, 35760 Saint-Grégoire. Muay-thaï, boxe anglaise, MMA, grappling, lutte, cardio boxe. Source : monkeygym.fr. Créé en 2012 « par un cha",
+   "mots": 109
+  },
+  {
+   "type": "article",
+   "titre": "Apex MMA Strasbourg : grappling, striking, 13 rue Hannah Arendt",
+   "url": "https://www.ufc.fr/apex-mma-strasbourg/",
+   "slug": "apex-mma-strasbourg",
+   "publie": "2026-08-31",
+   "maj": "2026-08-31",
+   "rubriques": [
+    "actualite",
+    "clubs-mma-francais"
+   ],
+   "resume": "Cage MMA en salle (PLMMA, Pologne). Photo Tyka17, Wikimedia Commons, licence CC BY-SA 4.0. Strasbourg : Apex MMA, 13 rue Hannah Arendt, 67200. Salle de MMA et grappling, striking. Loisir ou compétition, essai gratuit annoncé. Tél. 03 68 41 55 95. Source : apex-mma.fr. Offres publiques (12 mois) : 2 ",
+   "mots": 119
+  },
+  {
+   "type": "article",
+   "titre": "Cage Training Lattes : 800 m², cage officielle, MMA Montpellier",
+   "url": "https://www.ufc.fr/cage-training-montpellier-lattes/",
+   "slug": "cage-training-montpellier-lattes",
+   "publie": "2026-08-31",
+   "maj": "2026-08-31",
+   "rubriques": [
+    "actualite",
+    "clubs-mma-francais"
+   ],
+   "resume": "Cage MMA en salle (PLMMA, Pologne). Photo Tyka17, Wikimedia Commons, licence CC BY-SA 4.0. Montpellier / Lattes : Cage Training, Domaine du Mas Neuf, 34970 Lattes. Le club se présente comme référence montpelliéraine depuis plus de 10 ans. 800 m², haltéro, cardio, sacs, ring, Hyrox, cage officielle. ",
+   "mots": 132
+  },
+  {
+   "type": "article",
+   "titre": "UFC Paris 2027 : ce qu’on peut dire (et ce qu’on n’invente pas)",
+   "url": "https://www.ufc.fr/ufc-paris-2027/",
+   "slug": "ufc-paris-2027",
+   "publie": "2026-08-31",
+   "maj": "2026-08-31",
+   "rubriques": [
+    "actualite",
+    "analyses",
+    "ufc"
+   ],
+   "resume": "Accor Arena, Paris. Photo Vilacor, Wikimedia Commons, licence CC BY 4.0. Il n’y a pas, au 31 août 2026, d’annonce officielle d’un UFC Paris 2027. Pas de date Accor Arena, pas de tête d’affiche. UFC.FR n’invente ni le samedi ni le main event. Cet article existe pour une raison SEO et éditoriale : la ",
+   "mots": 248
+  },
+  {
+   "type": "article",
+   "titre": "Ziam et Sola en citations : « la guerre », pas la décision",
+   "url": "https://www.ufc.fr/ziam-sola-citations-ufc-paris/",
+   "slug": "ziam-sola-citations-ufc-paris",
+   "publie": "2026-08-31",
+   "maj": "2026-08-31",
+   "rubriques": [
+    "actualite",
+    "interviews",
+    "ufc",
+    "ufc-paris-2026"
+   ],
+   "resume": "Accor Arena, Paris. Photo Vilacor, Wikimedia Commons, licence CC BY 4.0. UFC.FR n’a pas interviewé Farès Ziam ni Axel Sola. Recueil de citations déjà publiques avant le co-main du 5 septembre. Chaque phrase a une source. Contexte combat : Ziam vs Sola. Ziam, après Nolan (La Sueur, 30 août 2026) La S",
+   "mots": 263
+  },
+  {
+   "type": "article",
+   "titre": "Maccabi Nice : 1 000 m², cage MMA, quartier Libération",
+   "url": "https://www.ufc.fr/maccabi-nice-club-mma/",
+   "slug": "maccabi-nice-club-mma",
+   "publie": "2026-08-31",
+   "maj": "2026-08-31",
+   "rubriques": [
+    "actualite",
+    "clubs-mma-francais"
+   ],
+   "resume": "Cage MMA en salle (PLMMA, Pologne). Photo Tyka17, Wikimedia Commons, licence CC BY-SA 4.0. Nice : Maccabi Nice Boxing Gym, 5 rue Michel-Ange, quartier Libération. Plus de 1 000 m², deux tatamis, une cage MMA, un espace fitness. Plus de 40 heures de cours / semaine (hommes, femmes, ados, enfants). So",
+   "mots": 182
+  },
+  {
+   "type": "article",
+   "titre": "Fight’n’Fit Bordeaux : cage 6 m, Bastide, MMA associatif",
+   "url": "https://www.ufc.fr/fight-n-fit-bordeaux-club-mma/",
+   "slug": "fight-n-fit-bordeaux-club-mma",
+   "publie": "2026-08-31",
+   "maj": "2026-08-31",
+   "rubriques": [
+    "actualite",
+    "clubs-mma-francais"
+   ],
+   "resume": "Cage MMA en salle (PLMMA, Pologne). Photo Tyka17, Wikimedia Commons, licence CC BY-SA 4.0. Bordeaux : Fight’n’Fit, 92 cours Le Rouzic, 33100 Bordeaux Bastide (rive droite). Ancienne imprimerie, ouvert en octobre 2014 par Sébastien Vicentini. Ce n’est pas qu’un club MMA : c’est un centre où plusieurs",
+   "mots": 181
+  },
+  {
+   "type": "article",
+   "titre": "Parabellum Combat Club Nantes : MMA depuis 2008",
+   "url": "https://www.ufc.fr/parabellum-nantes-club-mma/",
+   "slug": "parabellum-nantes-club-mma",
+   "publie": "2026-08-31",
+   "maj": "2026-08-31",
+   "rubriques": [
+    "actualite",
+    "clubs-mma-francais"
+   ],
+   "resume": "Cage MMA en salle (PLMMA, Pologne). Photo Tyka17, Wikimedia Commons, licence CC BY-SA 4.0. Nantes : Parabellum Combat Club, fondé en 2008. MMA et boxe thaï. Adresse publiée : 2 chemin de Bonneville, 44300 Nantes. Source : parabellum.club. UFC.FR, média indépendant. Le site est sobre : cours MMA ados",
+   "mots": 128
+  },
+  {
+   "type": "article",
+   "titre": "Panthers Club Lille : MMA, muay-thaï, JJB, reprise le 9 septembre",
+   "url": "https://www.ufc.fr/panthers-club-lille-mma/",
+   "slug": "panthers-club-lille-mma",
+   "publie": "2026-08-31",
+   "maj": "2026-08-31",
+   "rubriques": [
+    "actualite",
+    "clubs-mma-francais"
+   ],
+   "resume": "Cage MMA en salle (PLMMA, Pologne). Photo Tyka17, Wikimedia Commons, licence CC BY-SA 4.0. Lille : Panthers Club (Complexe sportif Auriol, 62 rue d’Iéna, 59000). Club créé en 1987, muay-thaï / K-1, MMA, jiu-jitsu brésilien (ligne Cicero Costha). Plus de 300 licenciés, une trentaine de combattants am",
+   "mots": 203
+  },
+  {
+   "type": "article",
+   "titre": "Team Ezbiri Lyon : le club de Farès Ziam, cage à Villeurbanne",
+   "url": "https://www.ufc.fr/team-ezbiri-lyon-club-mma/",
+   "slug": "team-ezbiri-lyon-club-mma",
+   "publie": "2026-08-31",
+   "maj": "2026-08-31",
+   "rubriques": [
+    "actualite",
+    "clubs-mma-francais",
+    "combattants"
+   ],
+   "resume": "Cage MMA en salle (PLMMA, Pologne). Photo Tyka17, Wikimedia Commons, licence CC BY-SA 4.0. Lyon entre dans la rubrique clubs de MMA français par la porte la plus concrète : Team Ezbiri a formé Farès Ziam, co-main de l’UFC Paris le 5 septembre. Ce n’est pas un club « découvert pour l’article » : le l",
+   "mots": 245
+  },
+  {
+   "type": "article",
+   "titre": "Duclos et Aljarouj : deux débuts UFC à Paris, sans roman",
+   "url": "https://www.ufc.fr/duclos-aljarouj-debuts-ufc-paris-2026/",
+   "slug": "duclos-aljarouj-debuts-ufc-paris-2026",
+   "publie": "2026-08-31",
+   "maj": "2026-08-31",
+   "rubriques": [
+    "actualite",
+    "analyses",
+    "combattants",
+    "ufc",
+    "ufc-paris-2026"
+   ],
+   "resume": "Accor Arena, Paris. Photo Vilacor, Wikimedia Commons, licence CC BY 4.0. Huit Français à l’UFC Paris, dont deux premiers pas clairement identifiés sur la carte : Matthieu Letho Duclos (poids moyens) et Michael Aljarouj (poids mouches). Pas des main events. Des préliminaires. C’est souvent là qu’un c",
+   "mots": 288
+  },
+  {
+   "type": "article",
+   "titre": "Femmes dans le MMA français : Cornolle, Benouaich, et la carte Paris",
+   "url": "https://www.ufc.fr/femmes-mma-francais-cornelle-benouaich/",
+   "slug": "femmes-mma-francais-cornelle-benouaich",
+   "publie": "2026-08-31",
+   "maj": "2026-08-31",
+   "rubriques": [
+    "actualite",
+    "analyses",
+    "combattants",
+    "ufc-paris-2026"
+   ],
+   "resume": "Accor Arena, Paris. Photo Vilacor, Wikimedia Commons, licence CC BY 4.0. Le MMA français ne se raconte plus seulement au masculin. Sur la carte de l’UFC Paris 2026, deux Françaises boxent le 5 septembre : Nora Cornolle (poids coqs) et Delphine Benouaich (poids pailles). Ce n’est pas « la soirée des ",
+   "mots": 354
+  },
+  {
+   "type": "article",
+   "titre": "Comment fonctionne une carte UFC ?",
+   "url": "https://www.ufc.fr/comment-fonctionne-carte-ufc/",
+   "slug": "comment-fonctionne-carte-ufc",
+   "publie": "2026-08-31",
+   "maj": "2026-08-31",
+   "rubriques": [
+    "analyses",
+    "ufc"
+   ],
+   "resume": "Accor Arena, Paris. Photo Vilacor, Wikimedia Commons, licence CC BY 4.0. Une « carte » UFC n’est pas une affiche de cinéma. C’est une liste de combats, un ordre, des catégories de poids, et une mécanique de dernière minute (forfaits, pesée, remplaçants). Lecture appliquée à l’UFC Paris 2026. Fight N",
+   "mots": 344
+  },
+  {
+   "type": "article",
+   "titre": "UFC, PFL, ONE, KSW, Hexagone, ARES : quelles différences ?",
+   "url": "https://www.ufc.fr/differences-ufc-pfl-one-ksw-hexagone-ares/",
+   "slug": "differences-ufc-pfl-one-ksw-hexagone-ares",
+   "publie": "2026-08-31",
+   "maj": "2026-08-31",
+   "rubriques": [
+    "actualite",
+    "analyses"
+   ],
+   "resume": "Cage octogonale de MMA. Photo U.S. Marine Corps, domaine public (Wikimedia Commons). UFC.FR couvre plusieurs organisations, pas seulement l’UFC. Voici les différences utiles pour lire une carte, une ceinture ou un transfert — sans jargon de marketeur. Titres à jour : champions actuels. UFC La plus v",
+   "mots": 403
+  },
+  {
+   "type": "article",
+   "titre": "Hexagone MMA à Rouen : 12 septembre 2026, Baybatyrov vs Trivunović",
+   "url": "https://www.ufc.fr/hexagone-mma-rouen-12-septembre-2026/",
+   "slug": "hexagone-mma-rouen-12-septembre-2026",
+   "publie": "2026-08-31",
+   "maj": "2026-08-31",
+   "rubriques": [
+    "actualite",
+    "evenements",
+    "hexagone-mma"
+   ],
+   "resume": "Cage octogonale de MMA. Photo U.S. Marine Corps, domaine public (Wikimedia Commons). Sept jours après l’UFC Paris, Hexagone MMA pose sa cage en Normandie pour la première fois : samedi 12 septembre 2026 au Zénith de la Métropole Rouen Normandie (44 avenue des Canadiens, Le Grand-Quevilly). UFC.FR, m",
+   "mots": 271
+  },
+  {
+   "type": "article",
+   "titre": "FMMAF : ce que la fédération change pour les clubs de MMA",
+   "url": "https://www.ufc.fr/fmmaf-federation-mma-france-clubs/",
+   "slug": "fmmaf-federation-mma-france-clubs",
+   "publie": "2026-08-31",
+   "maj": "2026-08-31",
+   "rubriques": [
+    "actualite",
+    "analyses",
+    "clubs-mma-francais"
+   ],
+   "resume": "Cage MMA en salle (PLMMA, Pologne). Photo Tyka17, Wikimedia Commons, licence CC BY-SA 4.0. Le MMA français ne se résume pas aux cartes ARES, Hexagone ou UFC. Derrière les clubs, il y a une fédération délégataire : la FMMAF (Fédération de MMA Française), organe interne de la FFBoxe. C’est elle qui ti",
+   "mots": 418
+  },
+  {
+   "type": "article",
+   "titre": "Fondation MMA Marseille : 700 m², cage 5&#215;5, avenue de Toulon",
+   "url": "https://www.ufc.fr/fondation-mma-marseille-club/",
+   "slug": "fondation-mma-marseille-club",
+   "publie": "2026-08-31",
+   "maj": "2026-08-31",
+   "rubriques": [
+    "actualite",
+    "clubs-mma-francais"
+   ],
+   "resume": "Cage MMA en salle (PLMMA, Pologne). Photo Tyka17, Wikimedia Commons, licence CC BY-SA 4.0. Troisième ville de la rubrique clubs de MMA français, après Toulouse et Paris : Marseille. Fondation (128 avenue de Toulon, 13006) se présente comme une salle d’arts martiaux mixtes de plus de 700 m², avec cag",
+   "mots": 343
+  },
+  {
+   "type": "article",
+   "titre": "Hexagone MMA 47 à Toulouse : date, lieu, carte annoncée",
+   "url": "https://www.ufc.fr/hexagone-mma-47-toulouse-2026/",
+   "slug": "hexagone-mma-47-toulouse-2026",
+   "publie": "2026-08-31",
+   "maj": "2026-08-31",
+   "rubriques": [
+    "actualite",
+    "evenements",
+    "hexagone-mma"
+   ],
+   "resume": "Cage MMA en salle (PLMMA, Pologne). Photo Tyka17, Wikimedia Commons, licence CC BY-SA 4.0. Vingt jours après l’UFC Paris, le MMA français reprend à Toulouse : Hexagone MMA 47, vendredi 25 septembre 2026 au Zénith Toulouse Métropole (11 avenue Raymond Badiou). UFC.FR, média indépendant — pas le site ",
+   "mots": 294
+  },
+  {
+   "type": "article",
+   "titre": "UFC Paris : Mairon Santos forfait, Nathaniel Wood sans adversaire",
+   "url": "https://www.ufc.fr/ufc-paris-santos-forfait-wood/",
+   "slug": "ufc-paris-santos-forfait-wood",
+   "publie": "2026-08-31",
+   "maj": "2026-08-31",
+   "rubriques": [
+    "actualite",
+    "ufc",
+    "ufc-paris-2026"
+   ],
+   "resume": "Accor Arena, Paris. Photo Vilacor, Wikimedia Commons, licence CC BY 4.0. 31 août 2026. Le combat de poids plumes Nathaniel Wood vs Mairon Santos, inscrit sur la carte préliminaire de l’UFC Paris (5 septembre, Accor Arena), est en suspens. Santos s’est retiré pour un problème de santé non précisé. L’",
+   "mots": 235
+  },
+  {
+   "type": "article",
+   "titre": "Salahdine Parnasse en citations : signature UFC, Hooker, fans",
+   "url": "https://www.ufc.fr/salahdine-parnasse-citations-ufc-paris/",
+   "slug": "salahdine-parnasse-citations-ufc-paris",
+   "publie": "2026-08-31",
+   "maj": "2026-08-31",
+   "rubriques": [
+    "actualite",
+    "interviews",
+    "ufc",
+    "ufc-paris-2026"
+   ],
+   "resume": "Accor Arena, Paris. Photo Vilacor, Wikimedia Commons, licence CC BY 4.0. UFC.FR n’a pas interviewé Salahdine Parnasse. Voici un recueil de citations déjà publiques, avant le main event du 5 septembre contre Dan Hooker. Chaque phrase renvoie à une source. Ton du média : informatif, pas une chambre d’",
+   "mots": 371
+  },
+  {
+   "type": "article",
+   "titre": "NRFight Paris : club MMA Tolbiac, Charrière et Cage Warriors",
+   "url": "https://www.ufc.fr/nrfight-paris-club-mma/",
+   "slug": "nrfight-paris-club-mma",
+   "publie": "2026-08-31",
+   "maj": "2026-08-31",
+   "rubriques": [
+    "actualite",
+    "clubs-mma-francais"
+   ],
+   "resume": "Cage MMA en salle (PLMMA, Pologne). Photo Tyka17, Wikimedia Commons, licence CC BY-SA 4.0. Dans le 13e, NRFight Paris Tolbiac (185 rue de Tolbiac) est l’une des académies les plus visibles du MMA francilien : luta livre, muay-thaï, MMA, cours 7j/7, et une vitrine compétition (Cage Warriors, ARES, He",
+   "mots": 280
+  },
+  {
+   "type": "article",
+   "titre": "Unlock Paris 17 : club MMA, cage, coachs Mehdi et Yassine",
+   "url": "https://www.ufc.fr/unlock-paris-17-club-mma/",
+   "slug": "unlock-paris-17-club-mma",
+   "publie": "2026-08-31",
+   "maj": "2026-08-31",
+   "rubriques": [
+    "actualite",
+    "clubs-mma-francais"
+   ],
+   "resume": "Cage MMA en salle (PLMMA, Pologne). Photo Tyka17, Wikimedia Commons, licence CC BY-SA 4.0. Deuxième entrée de la rubrique clubs de MMA français, après Toulouse : Unlock, dans le 17e arrondissement de Paris. Salle privée, cage, tatami, ring de boxe, préparation physique. Ce n’est pas un dojo du mercr",
+   "mots": 345
+  },
+  {
+   "type": "article",
+   "titre": "Les coachs de Cage Fight Toulouse : Jérôme, Tancrède, Yannis",
+   "url": "https://www.ufc.fr/coachs-cage-fight-toulouse-jerome-tancrede-yannis/",
+   "slug": "coachs-cage-fight-toulouse-jerome-tancrede-yannis",
+   "publie": "2026-08-31",
+   "maj": "2026-08-31",
+   "rubriques": [
+    "clubs-mma-francais",
+    "combattants"
+   ],
+   "resume": "Cage MMA en salle (PLMMA, Pologne). Photo Tyka17, Wikimedia Commons, licence CC BY-SA 4.0. Un club se juge aussi à ses coachs. Chez Cage Fight Toulouse, le staff public est un trio : Jérôme, Tancrède et Yannis. Les éléments ci-dessous reprennent les présentations du club (site club-mma-toulouse.com)",
+   "mots": 346
+  },
+  {
+   "type": "article",
+   "titre": "Ziam vs Sola : le co-main 100 % français de l’UFC Paris 2026",
+   "url": "https://www.ufc.fr/ziam-vs-sola-ufc-paris-2026-enjeux/",
+   "slug": "ziam-vs-sola-ufc-paris-2026-enjeux",
+   "publie": "2026-08-31",
+   "maj": "2026-08-31",
+   "rubriques": [
+    "actualite",
+    "analyses",
+    "ufc",
+    "ufc-paris-2026"
+   ],
+   "resume": "Le co-main de l’UFC Paris 2026 n’est pas un combat de ceinture. C’est plus gênant, pour le MMA français : Farès Ziam contre Axel Sola, deux poids légers hexagonaux, même cage, même public. Le vainqueur sort avec un argument. Le perdant, avec une soirée à expliquer. Deux écoles Ziam est un produit UF",
+   "mots": 283
+  },
+  {
+   "type": "article",
+   "titre": "Salahdine Parnasse à l’UFC : ce que changent ses débuts à Paris",
+   "url": "https://www.ufc.fr/salahdine-parnasse-debuts-ufc-paris-2026/",
+   "slug": "salahdine-parnasse-debuts-ufc-paris-2026",
+   "publie": "2026-08-31",
+   "maj": "2026-08-31",
+   "rubriques": [
+    "actualite",
+    "combattants",
+    "ufc",
+    "ufc-paris-2026"
+   ],
+   "resume": "Salahdine Parnasse ne découvre pas le combat. Il découvre l’UFC, en tête d’affiche, à l’Accor Arena, le 5 septembre 2026, contre Dan Hooker. C’est un contrat rare : la plupart des Français ont dîné de cartes préliminaires avant d’approcher un main event parisien. Notre fiche KSW le présentait encore",
+   "mots": 333
+  },
+  {
+   "type": "article",
+   "titre": "Calendrier MMA France automne 2026 : Paris, Rouen, Toulouse",
+   "url": "https://www.ufc.fr/calendrier-mma-france-automne-2026/",
+   "slug": "calendrier-mma-france-automne-2026",
+   "publie": "2026-08-31",
+   "maj": "2026-08-31",
+   "rubriques": [
+    "actualite",
+    "ares",
+    "evenements",
+    "hexagone-mma"
+   ],
+   "resume": "Le MMA français n’attend pas uniquement l’UFC. Voici les dates publiques de l’automne 2026, pour s’y retrouver entre Bercy, l’Adidas Arena et les Zénith. UFC.FR, média indépendant. Septembre 2026 Date Organisation Lieu À retenir Samedi 5 sept. UFC Fight Night Accor Arena, Paris Hooker vs Parnasse, 8",
+   "mots": 229
+  },
+  {
+   "type": "article",
+   "titre": "ARES 43 : O’Connor vs Diatta pour le titre, le 25 septembre à Paris",
+   "url": "https://www.ufc.fr/ares-43-oconnor-diatta-adidas-arena/",
+   "slug": "ares-43-oconnor-diatta-adidas-arena",
+   "publie": "2026-08-31",
+   "maj": "2026-08-31",
+   "rubriques": [
+    "actualite",
+    "ares",
+    "evenements"
+   ],
+   "resume": "Trois semaines après l’UFC Paris, le MMA français enchaîne dans une autre salle parisienne. ARES 43 est annoncé le vendredi 25 septembre 2026 à l’Adidas Arena (18e arrondissement). Tête d’affiche : le titre des poids plumes entre le champion Josh O’Connor (10-0) et le Français Fabacary Diatta (10-1)",
+   "mots": 278
+  },
+  {
+   "type": "article",
+   "titre": "Catégories de poids en MMA : le guide simple (UFC et France)",
+   "url": "https://www.ufc.fr/categories-poids-mma-guide/",
+   "slug": "categories-poids-mma-guide",
+   "publie": "2026-08-31",
+   "maj": "2026-08-31",
+   "rubriques": [
+    "actualite",
+    "analyses"
+   ],
+   "resume": "Lire une carte MMA, c’est d’abord lire des catégories de poids. Un combat « en légers » n’a pas le même contrat qu’un combat en lourds : allonge, rythme, cinq rounds de titre ou trois rounds de carte. Voici le guide utile, sans jargon inutile, pour suivre l’UFC Paris 2026 et les galas français. Les ",
+   "mots": 397
+  },
+  {
+   "type": "article",
+   "titre": "UFC à Paris : de Gane–Tuivasa à Parnasse, quatre soirs à l’Accor Arena",
+   "url": "https://www.ufc.fr/ufc-paris-historique-accor-arena/",
+   "slug": "ufc-paris-historique-accor-arena",
+   "publie": "2026-08-31",
+   "maj": "2026-08-31",
+   "rubriques": [
+    "actualite",
+    "ufc",
+    "ufc-paris-2026"
+   ],
+   "resume": "Avant Hooker vs Parnasse le 5 septembre 2026, l’UFC a déjà posé quatre fois l’octogone à l’Accor Arena. Quatre soirs complets, une montée en puissance des Français, et un public qui a transformé Bercy en rendez-vous annuel. Voici le fil, sans nostalgie de trop, pour comprendre ce que joue la cinquiè",
+   "mots": 710
+  },
+  {
+   "type": "article",
+   "titre": "Cage Fight Toulouse : le club 100 % MMA de référence en Occitanie",
+   "url": "https://www.ufc.fr/cage-fight-toulouse-club-mma/",
+   "slug": "cage-fight-toulouse-club-mma",
+   "publie": "2026-08-31",
+   "maj": "2026-08-31",
+   "rubriques": [
+    "actualite",
+    "clubs-mma-francais"
+   ],
+   "resume": "Le MMA français ne se joue pas seulement à l’Accor Arena. Il se construit aussi le soir, sur tatami, dans des salles où débutants et compétiteurs partagent le même vestiaire. À Toulouse, Cage Fight s’est imposé comme un club centré exclusivement sur les arts martiaux mixtes — un positionnement encor",
+   "mots": 792
+  },
+  {
+   "type": "article",
+   "titre": "UFC Paris 2026 : les 8 combattants français à suivre",
+   "url": "https://www.ufc.fr/ufc-paris-2026-combattants-francais/",
+   "slug": "ufc-paris-2026-combattants-francais",
+   "publie": "2026-08-31",
+   "maj": "2026-08-31",
+   "rubriques": [
+    "actualite",
+    "combattants",
+    "ufc",
+    "ufc-paris-2026"
+   ],
+   "resume": "Huit Français sont annoncés sur la carte de l’UFC Paris 2026 le 5 septembre à l’Accor Arena. C’est l’un des plus gros contingents tricolores jamais alignés par l’organisation à Paris. Voici, combat par combat, ce qu’ils jouent samedi. Les records cités correspondent aux sources publiques de fin août",
+   "mots": 691
+  },
+  {
+   "type": "article",
+   "titre": "UFC Paris 2026 : la carte complète Hooker vs Parnasse",
+   "url": "https://www.ufc.fr/ufc-paris-2026-carte-complete-hooker-parnasse/",
+   "slug": "ufc-paris-2026-carte-complete-hooker-parnasse",
+   "publie": "2026-08-31",
+   "maj": "2026-08-31",
+   "rubriques": [
+    "actualite",
+    "ufc",
+    "ufc-paris-2026"
+   ],
+   "resume": "Voici la carte de l’UFC Paris 2026 telle qu’annoncée fin août, pour le UFC Fight Night du 5 septembre 2026 à l’Accor Arena. L’ordre ci-dessous reprend la structure officielle : carte principale puis préliminaires. Mise à jour 31 août : Mairon Santos s’est retiré de son combat contre Nathaniel Wood (",
+   "mots": 509
+  },
+  {
+   "type": "article",
+   "titre": "UFC Paris 2026 : date, lieu, carte et enjeux à l’Accor Arena",
+   "url": "https://www.ufc.fr/ufc-paris-2026-date-lieu-carte-enjeux/",
+   "slug": "ufc-paris-2026-date-lieu-carte-enjeux",
+   "publie": "2026-08-31",
+   "maj": "2026-08-31",
+   "rubriques": [
+    "actualite",
+    "ufc",
+    "ufc-paris-2026"
+   ],
+   "resume": "UFC.FR est un média indépendant d’actualité MMA. Cet article n’est pas une communication officielle de l’Ultimate Fighting Championship. L’UFC revient à Paris le samedi 5 septembre 2026 pour une cinquième soirée à l’Accor Arena (Bercy). Officiellement intitulé UFC Fight Night: Hooker vs Parnasse, l’",
+   "mots": 747
+  },
+  {
+   "type": "article",
+   "titre": "UFC Shanghai : Song Yadong KO Umar Nurmagomedov",
+   "url": "https://www.ufc.fr/ufc-shanghai-song-yadong-ko-umar-nurmagomedov/",
+   "slug": "ufc-shanghai-song-yadong-ko-umar-nurmagomedov",
+   "publie": "2026-08-30",
+   "maj": "2026-08-31",
+   "rubriques": [
+    "actualite",
+    "resultats",
+    "ufc"
+   ],
+   "resume": "UFC.FR, média MMA indépendant. L’UFC Shanghai s’est tenu le samedi 29 août 2026 au SPD Bank Oriental Sports Center. Le main event a basculé net : Song Yadong a mis KO Umar Nurmagomedov au deuxième round (1:48), chez les poids coqs. Le main event Nurmagomedov, n°3 de la division, arrivait après une v",
+   "mots": 311
+  },
+  {
+   "type": "article",
+   "titre": "UFC Sacramento : Gregory Rodrigues bat Anthony Hernandez",
+   "url": "https://www.ufc.fr/ufc-sacramento-rodrigues-hernandez-resultats/",
+   "slug": "ufc-sacramento-rodrigues-hernandez-resultats",
+   "publie": "2026-08-23",
+   "maj": "2026-08-31",
+   "rubriques": [
+    "actualite",
+    "resultats",
+    "ufc"
+   ],
+   "resume": "Le 22 août 2026 au Golden 1 Center, Gregory Rodrigues a battu Anthony Hernandez par décision unanime (48-47, 49-46, 48-47) en cinq rounds, dans un main event de poids moyens disputé devant le public californien de Hernandez. Main event Hernandez visait une soirée de confirmation à domicile. Rodrigue",
+   "mots": 218
+  },
+  {
+   "type": "article",
+   "titre": "UFC 315 : Jack Della Maddalena détrône Belal Muhammad et devient champion des poids welters",
+   "url": "https://www.ufc.fr/ufc-315-jack-della-maddalena-detrone-belal-muhammad-et-devient-champion-des-poids-welters/",
+   "slug": "ufc-315-jack-della-maddalena-detrone-belal-muhammad-et-devient-champion-des-poids-welters",
+   "publie": "2025-06-05",
+   "maj": "2025-06-05",
+   "rubriques": [
+    "actualite"
+   ],
+   "resume": "l’Australien Jack Della Maddalena a mis fin au règne de Belal Muhammad en remportant le titre des poids welters par décision unanime.",
+   "mots": 876
+  },
+  {
+   "type": "article",
+   "titre": "Hexagone MMA : Toulouse devient capitale du MMA en septembre",
+   "url": "https://www.ufc.fr/actualite-combat-ufc-mma-toulouse-capital-mma-315-welterweight/",
+   "slug": "actualite-combat-ufc-mma-toulouse-capital-mma-315-welterweight",
+   "publie": "2025-05-13",
+   "maj": "2025-06-05",
+   "rubriques": [
+    "actualite"
+   ],
+   "resume": "Jack Della Maddalena détrône Belal Muhammad et devient champion des poids welters",
+   "mots": 552
+  },
+  {
+   "type": "article",
+   "titre": "PFL Africa : Johnny Eblen défend sa ceinture à Cape Town",
+   "url": "https://www.ufc.fr/actualite-combat-pfl-africa-johnny-eblen/",
+   "slug": "actualite-combat-pfl-africa-johnny-eblen",
+   "publie": "2025-05-13",
+   "maj": "2025-05-17",
+   "rubriques": [
+    "actualite"
+   ],
+   "resume": "Manon Fiorot affronte Shevchenko à l’UFC 315 dans un choc historique pour la ceinture des poids mouches féminins.",
+   "mots": 727
+  },
+  {
+   "type": "article",
+   "titre": "UFC 315 : Manon Fiorot vise l’exploit face à Shevchenko",
+   "url": "https://www.ufc.fr/actualite-combat-ufc-315-manon-fiorot/",
+   "slug": "actualite-combat-ufc-315-manon-fiorot",
+   "publie": "2025-05-13",
+   "maj": "2025-05-17",
+   "rubriques": [
+    "actualite"
+   ],
+   "resume": "Manon Fiorot affronte Shevchenko à l’UFC 315 dans un choc historique pour la ceinture des poids mouches féminins.",
+   "mots": 780
+  },
+  {
+   "type": "article",
+   "titre": "Yuya Wakamatsu",
+   "url": "https://www.ufc.fr/portrait-one-championship-yuya-wakamatsu/",
+   "slug": "portrait-one-championship-yuya-wakamatsu",
+   "publie": "2025-05-13",
+   "maj": "2026-08-31",
+   "rubriques": [
+    "one-championship"
+   ],
+   "resume": "Yuya Wakamatsu, champion poids mouches au style explosif, incarne la nouvelle vague du MMA japonais chez ONE Championship.",
+   "mots": 463
+  },
+  {
+   "type": "article",
+   "titre": "Xiong Jing Nan",
+   "url": "https://www.ufc.fr/portrait-one-championship-xiong-jing-nan/",
+   "slug": "portrait-one-championship-xiong-jing-nan",
+   "publie": "2025-05-13",
+   "maj": "2026-08-31",
+   "rubriques": [
+    "one-championship"
+   ],
+   "resume": "Xiong Jing Nan, pionnière du MMA en Chine et championne durable chez ONE avec un striking précis et puissant.",
+   "mots": 477
+  },
+  {
+   "type": "article",
+   "titre": "Tang Kai",
+   "url": "https://www.ufc.fr/portrait-one-championship-tang-kai/",
+   "slug": "portrait-one-championship-tang-kai",
+   "publie": "2025-05-13",
+   "maj": "2026-08-31",
+   "rubriques": [
+    "one-championship"
+   ],
+   "resume": "Tang Kai, premier champion chinois de MMA chez ONE, expert en striking rapide et technique.",
+   "mots": 500
+  },
+  {
+   "type": "article",
+   "titre": "Oumar Kane",
+   "url": "https://www.ufc.fr/portrait-one-championship-oumar-kane/",
+   "slug": "portrait-one-championship-oumar-kane",
+   "publie": "2025-05-13",
+   "maj": "2026-08-31",
+   "rubriques": [
+    "one-championship"
+   ],
+   "resume": "Reug Reug, lutteur sénégalais devenu champion ONE des poids lourds grâce à sa puissance et son style unique.",
+   "mots": 485
+  },
+  {
+   "type": "article",
+   "titre": "Joshua Pacio",
+   "url": "https://www.ufc.fr/portrait-one-championship-joshua-pacio/",
+   "slug": "portrait-one-championship-joshua-pacio",
+   "publie": "2025-05-13",
+   "maj": "2026-08-31",
+   "rubriques": [
+    "one-championship"
+   ],
+   "resume": "Joshua Pacio, champion ONE des poids pailles, reconnu pour son striking acrobatique et sa carrière exceptionnelle.",
+   "mots": 495
+  },
+  {
+   "type": "article",
+   "titre": "Fabricio Andrade",
+   "url": "https://www.ufc.fr/portrait-one-championship-fabricio-andrade/",
+   "slug": "portrait-one-championship-fabricio-andrade",
+   "publie": "2025-05-13",
+   "maj": "2026-08-31",
+   "rubriques": [
+    "one-championship"
+   ],
+   "resume": "Portrait de Fabricio Andrade, champion ONE poids coqs, reconnu pour son striking redoutable et son avenir prometteur.",
+   "mots": 482
+  },
+  {
+   "type": "article",
+   "titre": "Denice Zamboanga",
+   "url": "https://www.ufc.fr/portrait-one-championship-denice-zamboanga/",
+   "slug": "portrait-one-championship-denice-zamboanga",
+   "publie": "2025-05-13",
+   "maj": "2026-08-31",
+   "rubriques": [
+    "one-championship"
+   ],
+   "resume": "Découvrez le parcours de Denice Zamboanga, nouvelle championne ONE, figure montante du MMA féminin philippin.",
+   "mots": 505
+  },
+  {
+   "type": "article",
+   "titre": "Christian Lee",
+   "url": "https://www.ufc.fr/portrait-one-championship-christian-lee/",
+   "slug": "portrait-one-championship-christian-lee",
+   "publie": "2025-05-12",
+   "maj": "2026-08-31",
+   "rubriques": [
+    "one-championship"
+   ],
+   "resume": "Double champion poids légers et welters, Christian Lee impressionne par sa précocité, sa précision et son sang-froid.",
+   "mots": 388
+  },
+  {
+   "type": "article",
+   "titre": "Anatoly Malykhin",
+   "url": "https://www.ufc.fr/portrait-one-championship-anatoly-malykhin/",
+   "slug": "portrait-one-championship-anatoly-malykhin",
+   "publie": "2025-05-12",
+   "maj": "2026-08-31",
+   "rubriques": [
+    "one-championship"
+   ],
+   "resume": "Anatoly Malykhin, lutteur russe surpuissant, devenu triple champion du ONE Championship en poids lourds, mi-lourds et moyens.",
+   "mots": 512
+  },
+  {
+   "type": "article",
+   "titre": "Felix Klinkhammer",
+   "url": "https://www.ufc.fr/portrait-ares-felix-klinkhammer/",
+   "slug": "portrait-ares-felix-klinkhammer",
+   "publie": "2025-05-12",
+   "maj": "2026-08-31",
+   "rubriques": [
+    "ares"
+   ],
+   "resume": "Découvrez Felix Klinkhammer, le prodige allemand du MMA, invaincu et champion welter d’ARES FC. Style complet, performances clés et avenir international.",
+   "mots": 421
+  },
+  {
+   "type": "article",
+   "titre": "Axel Sola",
+   "url": "https://www.ufc.fr/portrait-ares-axel-sola/",
+   "slug": "portrait-ares-axel-sola",
+   "publie": "2025-05-12",
+   "maj": "2026-08-31",
+   "rubriques": [
+    "ares"
+   ],
+   "resume": "Axel Sola domine chez ARES en poids légers grâce à sa lutte de haut niveau et un style tactique redoutable.",
+   "mots": 431
+  },
+  {
+   "type": "article",
+   "titre": "Jady Menezes",
+   "url": "https://www.ufc.fr/portrait-ares-jady-menezes/",
+   "slug": "portrait-ares-jady-menezes",
+   "publie": "2025-05-12",
+   "maj": "2026-08-31",
+   "rubriques": [
+    "ares"
+   ],
+   "resume": "Ex-championne de kickboxing, Menezes brille chez ARES en poids mouches avec sa puissance et son style complet.",
+   "mots": 400
+  },
+  {
+   "type": "article",
+   "titre": "Aboubakar Younousov",
+   "url": "https://www.ufc.fr/portrait-ares-aboubakar-younousov/",
+   "slug": "portrait-ares-aboubakar-younousov",
+   "publie": "2025-05-12",
+   "maj": "2026-08-31",
+   "rubriques": [
+    "ares"
+   ],
+   "resume": "Invaincu chez ARES, Younousov domine les poids coqs avec un style précis et une maîtrise impressionnante.",
+   "mots": 421
+  },
+  {
+   "type": "article",
+   "titre": "Aboubacar Bathily",
+   "url": "https://www.ufc.fr/portrait-ares-aboubacar-bathily/",
+   "slug": "portrait-ares-aboubacar-bathily",
+   "publie": "2025-05-12",
+   "maj": "2026-08-31",
+   "rubriques": [
+    "ares"
+   ],
+   "resume": "Champion des lourds ARES, Bathily incarne puissance, pression et mental de fer dans le MMA français.",
+   "mots": 435
+  },
+  {
+   "type": "article",
+   "titre": "Abdulrakhman Yakhyaev",
+   "url": "https://www.ufc.fr/portrait-ares-abdulrakhman-yakhyaev/",
+   "slug": "portrait-ares-abdulrakhman-yakhyaev",
+   "publie": "2025-05-12",
+   "maj": "2026-08-31",
+   "rubriques": [
+    "ares"
+   ],
+   "resume": "Champion ARES des mi-lourds, Ramazan Yakhyaev impressionne avec son invincibilité et sa lutte d’élite.",
+   "mots": 407
+  },
+  {
+   "type": "article",
+   "titre": "Virgil Augen",
+   "url": "https://www.ufc.fr/portrait-ares-virgil-augen/",
+   "slug": "portrait-ares-virgil-augen",
+   "publie": "2025-05-11",
+   "maj": "2026-08-31",
+   "rubriques": [
+    "ares"
+   ],
+   "resume": "Champion poids moyens ARES FC, Virgil Augen brille par sa technique et reste invaincu sur le circuit français.",
+   "mots": 398
+  },
+  {
+   "type": "article",
+   "titre": "Matthieu Duclos",
+   "url": "https://www.ufc.fr/portrait-hexagone-mma-matthieu-duclos/",
+   "slug": "portrait-hexagone-mma-matthieu-duclos",
+   "publie": "2025-05-11",
+   "maj": "2026-08-31",
+   "rubriques": [
+    "hexagone-mma"
+   ],
+   "resume": "Champion poids moyens, Matthieu Duclos brille par son striking et sa ténacité sur la scène Hexagone MMA.",
+   "mots": 415
+  },
+  {
+   "type": "article",
+   "titre": "Prince Aounallah",
+   "url": "https://www.ufc.fr/portrait-hexagone-mma-prince-aounallah/",
+   "slug": "portrait-hexagone-mma-prince-aounallah",
+   "publie": "2025-05-11",
+   "maj": "2026-08-31",
+   "rubriques": [
+    "hexagone-mma"
+   ],
+   "resume": "Prince Aounallah, vétéran français du MMA, décroche le titre des lourds à Hexagone MMA après plus de dix ans de carrière.",
+   "mots": 441
+  },
+  {
+   "type": "article",
+   "titre": "Harry Hardwick",
+   "url": "https://www.ufc.fr/portrait-cage-wrarriors-harry-hardwick/",
+   "slug": "portrait-cage-wrarriors-harry-hardwick",
+   "publie": "2025-05-11",
+   "maj": "2026-08-31",
+   "rubriques": [
+    "cage-warriors"
+   ],
+   "resume": "Harry Hardwick, champion poids plume de Cage Warriors, brille par sa régularité et sa stratégie dans la cage.",
+   "mots": 376
+  },
+  {
+   "type": "article",
+   "titre": "Samuel Silva",
+   "url": "https://www.ufc.fr/portrait-cage-wrarriors-samuel-silva/",
+   "slug": "portrait-cage-wrarriors-samuel-silva",
+   "publie": "2025-05-09",
+   "maj": "2026-08-31",
+   "rubriques": [
+    "cage-warriors"
+   ],
+   "resume": "Champion chez Cage Warriors, Samuel Silva fait rayonner le MMA portugais grâce à un style vif et une ascension fulgurante.",
+   "mots": 527
+  },
+  {
+   "type": "article",
+   "titre": "Justin Burlinson",
+   "url": "https://www.ufc.fr/portrait-cage-wrarriors-justin-burlinson/",
+   "slug": "portrait-cage-wrarriors-justin-burlinson",
+   "publie": "2025-05-09",
+   "maj": "2026-08-31",
+   "rubriques": [
+    "cage-warriors"
+   ],
+   "resume": "Champion welterweight de Cage Warriors, Justin Burlinson impressionne par sa puissance et son grappling.",
+   "mots": 476
+  },
+  {
+   "type": "article",
+   "titre": "Dario Bellandi",
+   "url": "https://www.ufc.fr/portrait-cage-warriors-dario-bellandi/",
+   "slug": "portrait-cage-warriors-dario-bellandi",
+   "publie": "2025-05-09",
+   "maj": "2026-08-31",
+   "rubriques": [
+    "cage-warriors"
+   ],
+   "resume": "Découvrez l’ascension de Dario Bellandi, champion Cage Warriors et espoir du MMA italien chez les poids moyens.",
+   "mots": 389
+  },
+  {
+   "type": "article",
+   "titre": "James Webb",
+   "url": "https://www.ufc.fr/portrait-cage-warriors-james-webb/",
+   "slug": "portrait-cage-warriors-james-webb",
+   "publie": "2025-05-09",
+   "maj": "2026-08-31",
+   "rubriques": [
+    "cage-warriors"
+   ],
+   "resume": "James Webb, ancien champion Cage Warriors, domine aujourd’hui chez les mi-lourds grâce à son grappling redoutable.",
+   "mots": 522
+  },
+  {
+   "type": "article",
+   "titre": "Cage Warriors 191 : Gittins VS Giordano",
+   "url": "https://www.ufc.fr/actualite-combat-cage-warriors-gittins-vs-giordano/",
+   "slug": "actualite-combat-cage-warriors-gittins-vs-giordano",
+   "publie": "2025-05-09",
+   "maj": "2025-05-17",
+   "rubriques": [
+    "actualite"
+   ],
+   "resume": "Cage Warriors 191 : Gittins défend son titre face à Giordano à Manchester. Un choc explosif à suivre sur UFC Fight Pass.",
+   "mots": 358
+  },
+  {
+   "type": "article",
+   "titre": "ONE Fight Night 32 : Nakrob VS Jaosuayai",
+   "url": "https://www.ufc.fr/actualite-combat-one-nakrob-vs-jaosuayai/",
+   "slug": "actualite-combat-one-nakrob-vs-jaosuayai",
+   "publie": "2025-05-09",
+   "maj": "2025-05-17",
+   "rubriques": [
+    "actualite"
+   ],
+   "resume": "ONE Fight Night 32 à Bangkok : Nakrob affronte Jaosuayai dans une nuit explosive de Muay Thai, diffusée sur Prime Video.",
+   "mots": 343
+  },
+  {
+   "type": "article",
+   "titre": "PFL 2025 : Demi-finales mondial à Nashville",
+   "url": "https://www.ufc.fr/actualite-combat-pfl-tournoi-mondial/",
+   "slug": "actualite-combat-pfl-tournoi-mondial",
+   "publie": "2025-05-09",
+   "maj": "2025-05-17",
+   "rubriques": [
+    "actualite"
+   ],
+   "resume": "La PFL 2025 débarque à Nashville pour ses demi-finales. Jackson, Jean, Pinedo et Braga prêts à tout pour décrocher la finale.",
+   "mots": 419
+  },
+  {
+   "type": "article",
+   "titre": "UFC 316 : Dvalishvili vs O’Malley 2",
+   "url": "https://www.ufc.fr/actualite-combat-ufc-dvalishvili-vs-o-malley/",
+   "slug": "actualite-combat-ufc-dvalishvili-vs-o-malley",
+   "publie": "2025-05-09",
+   "maj": "2025-05-17",
+   "rubriques": [
+    "actualite"
+   ],
+   "resume": "UFC 316 : Dvalishvili défend son titre contre O’Malley, avec Peña vs Harrison et plus. Ne manquez pas cet événement !",
+   "mots": 439
+  },
+  {
+   "type": "article",
+   "titre": "Sebastian Przybysz",
+   "url": "https://www.ufc.fr/portrait-ksw-sebastian-przybysz/",
+   "slug": "portrait-ksw-sebastian-przybysz",
+   "publie": "2025-05-02",
+   "maj": "2026-08-31",
+   "rubriques": [
+    "ksw"
+   ],
+   "resume": "Spectaculaire et technique, Sebastian Przybysz règne sur la catégorie des poids coqs au KSW et incarne le renouveau du MMA polonais.",
+   "mots": 384
+  },
+  {
+   "type": "article",
+   "titre": "Salahdine Parnasse",
+   "url": "https://www.ufc.fr/portrait-ksw-slahdine-parnasse/",
+   "slug": "portrait-ksw-slahdine-parnasse",
+   "publie": "2025-05-02",
+   "maj": "2026-08-31",
+   "rubriques": [
+    "ksw"
+   ],
+   "resume": "Double champion KSW, Salahdine Parnasse s’impose comme la référence du MMA français avec un style aussi fluide qu’efficace.",
+   "mots": 429
+  },
+  {
+   "type": "article",
+   "titre": "Rafał Haratyk",
+   "url": "https://www.ufc.fr/portrait-ksw-rafal-haratyk/",
+   "slug": "portrait-ksw-rafal-haratyk",
+   "publie": "2025-05-02",
+   "maj": "2026-08-31",
+   "rubriques": [
+    "ksw"
+   ],
+   "resume": "Rafał Haratyk règne sur les mi-lourds du KSW avec son style puissant, agressif et une ceinture conquise en 2023.",
+   "mots": 420
+  },
+  {
+   "type": "article",
+   "titre": "Phil De Fries",
+   "url": "https://www.ufc.fr/portrait-ksw-phil-de-fries/",
+   "slug": "portrait-ksw-phil-de-fries",
+   "publie": "2025-05-02",
+   "maj": "2026-08-31",
+   "rubriques": [
+    "ksw"
+   ],
+   "resume": "Phil De Fries domine le KSW depuis 2018 grâce à son grappling, son cardio et son incroyable série de victoires en poids lourds.",
+   "mots": 425
+  },
+  {
+   "type": "article",
+   "titre": "Pawel Pawlak",
+   "url": "https://www.ufc.fr/portrait-ksw-pawel-pawlak/",
+   "slug": "portrait-ksw-pawel-pawlak",
+   "publie": "2025-05-02",
+   "maj": "2026-08-31",
+   "rubriques": [
+    "ksw"
+   ],
+   "resume": "Pawel Pawlak, champion KSW middleweight, impressionne par son expérience, sa précision et son calme dans la cage.",
+   "mots": 428
+  },
+  {
+   "type": "article",
+   "titre": "Timur Khizriev",
+   "url": "https://www.ufc.fr/portrait-pfl-timur-khizriev/",
+   "slug": "portrait-pfl-timur-khizriev",
+   "publie": "2025-05-01",
+   "maj": "2026-08-31",
+   "rubriques": [
+    "pfl"
+   ],
+   "resume": "Khizriev, 18-0, champion PFL featherweight, impressionne par son contrôle tactique et sa maîtrise totale de la cage.",
+   "mots": 480
+  },
+  {
+   "type": "article",
+   "titre": "Shamil Musaev",
+   "url": "https://www.ufc.fr/portrait-pfl-shamil-musaev/",
+   "slug": "portrait-pfl-shamil-musaev",
+   "publie": "2025-05-01",
+   "maj": "2026-08-31",
+   "rubriques": [
+    "pfl"
+   ],
+   "resume": "Musaev impressionne à la PFL avec un style explosif, quatre victoires en 2024 et une invincibilité intacte chez les welters.",
+   "mots": 453
+  },
+  {
+   "type": "article",
+   "titre": "Gadzhi Rabadanov",
+   "url": "https://www.ufc.fr/portrait-pfl-gadzhi-rabadanov/",
+   "slug": "portrait-pfl-gadzhi-rabadanov",
+   "publie": "2025-05-01",
+   "maj": "2026-08-31",
+   "rubriques": [
+    "pfl"
+   ],
+   "resume": "Vétéran du sambo, Denis Goltsov règne sur les poids lourds du PFL avec deux titres consécutifs et un style brutal.",
+   "mots": 498
+  },
+  {
+   "type": "article",
+   "titre": "Denis Goltsov",
+   "url": "https://www.ufc.fr/portrait-pfl-denis-goltsov/",
+   "slug": "portrait-pfl-denis-goltsov",
+   "publie": "2025-05-01",
+   "maj": "2026-08-31",
+   "rubriques": [
+    "pfl"
+   ],
+   "resume": "Vétéran du sambo, Denis Goltsov règne sur les poids lourds du PFL avec deux titres consécutifs et un style brutal.",
+   "mots": 514
+  },
+  {
+   "type": "article",
+   "titre": "Dakota Ditcheva",
+   "url": "https://www.ufc.fr/portrait-pfl-dakota-ditcheva/",
+   "slug": "portrait-pfl-dakota-ditcheva",
+   "publie": "2025-04-30",
+   "maj": "2026-08-31",
+   "rubriques": [
+    "pfl"
+   ],
+   "resume": "La Britannique Dakota Ditcheva domine la PFL grâce à son striking précis et son invincibilité impressionnante dans la cage.",
+   "mots": 444
+  },
+  {
+   "type": "article",
+   "titre": "Dovletdzhan Yagshimuradov",
+   "url": "https://www.ufc.fr/portrait-pfl-dovletdzhan-yagshimuradov/",
+   "slug": "portrait-pfl-dovletdzhan-yagshimuradov",
+   "publie": "2025-04-30",
+   "maj": "2026-08-31",
+   "rubriques": [
+    "pfl"
+   ],
+   "resume": "Le Turkmène Dovletdzhan Yagshimuradov a conquis la ceinture PFL chez les poids mi-lourds grâce à sa puissance et son expérience.",
+   "mots": 396
+  },
+  {
+   "type": "article",
+   "titre": "Alexandre Pantoja",
+   "url": "https://www.ufc.fr/portrait-ufc-alexandre-pantoja/",
+   "slug": "portrait-ufc-alexandre-pantoja",
+   "publie": "2025-04-30",
+   "maj": "2026-08-31",
+   "rubriques": [
+    "ufc"
+   ],
+   "resume": "Alexandre Pantoja n’est plus champion des mouches. Champion actuel : Joshua Van.",
+   "mots": 417
+  },
+  {
+   "type": "article",
+   "titre": "Merab Dvalishvili",
+   "url": "https://www.ufc.fr/portrait-ufc-merab-dvalishvili/",
+   "slug": "portrait-ufc-merab-dvalishvili",
+   "publie": "2025-04-30",
+   "maj": "2026-08-31",
+   "rubriques": [
+    "ufc"
+   ],
+   "resume": "Merab Dvalishvili n’est plus champion des coqs. Champion actuel : Petr Yan. Merab n°1 Meta.",
+   "mots": 402
+  },
+  {
+   "type": "article",
+   "titre": "Ventina Shevchenko",
+   "url": "https://www.ufc.fr/portrait-ufc-valentina-shevchenko/",
+   "slug": "portrait-ufc-valentina-shevchenko",
+   "publie": "2025-04-30",
+   "maj": "2026-08-31",
+   "rubriques": [
+    "ufc"
+   ],
+   "resume": "Valentina Shevchenko domine la catégorie UFC flyweight depuis 2018 avec un style technique, froid et redoutablement efficace.",
+   "mots": 402
+  },
+  {
+   "type": "article",
+   "titre": "Julianna Peña",
+   "url": "https://www.ufc.fr/portrait-ufc-julianna-pena/",
+   "slug": "portrait-ufc-julianna-pena",
+   "publie": "2025-04-30",
+   "maj": "2026-08-31",
+   "rubriques": [
+    "ufc"
+   ],
+   "resume": "Julianna Peña n’est plus championne des coqs. Championne actuelle : Kayla Harrison.",
+   "mots": 440
+  },
+  {
+   "type": "article",
+   "titre": "Belal Muhammad",
+   "url": "https://www.ufc.fr/portrait-ufc-belal-muhammad/",
+   "slug": "portrait-ufc-belal-muhammad",
+   "publie": "2025-04-29",
+   "maj": "2026-08-31",
+   "rubriques": [
+    "ufc"
+   ],
+   "resume": "Belal Muhammad n’est plus champion UFC des welters. Champion actuel : Islam Makhachev. Portrait de parcours.",
+   "mots": 454
+  },
+  {
+   "type": "article",
+   "titre": "Llia Topuria",
+   "url": "https://www.ufc.fr/portrait-ufc-llia-topuria/",
+   "slug": "portrait-ufc-llia-topuria",
+   "publie": "2025-04-29",
+   "maj": "2026-08-31",
+   "rubriques": [
+    "ufc"
+   ],
+   "resume": "Ilia Topuria n’est plus champion des plumes ni invaincu (défaite vs Gaethje). N°1 Meta des légers, août 2026.",
+   "mots": 536
+  },
+  {
+   "type": "article",
+   "titre": "Zhang Weili",
+   "url": "https://www.ufc.fr/portrait-ufc-zhang-weili/",
+   "slug": "portrait-ufc-zhang-weili",
+   "publie": "2025-04-29",
+   "maj": "2026-08-31",
+   "rubriques": [
+    "ufc"
+   ],
+   "resume": "Zhang Weili n’est plus championne des pailles. Championne actuelle : Mackenzie Dern.",
+   "mots": 517
+  },
+  {
+   "type": "article",
+   "titre": "Magomed Ankalaev",
+   "url": "https://www.ufc.fr/portrait-ufc-magomed-ankalaev/",
+   "slug": "portrait-ufc-magomed-ankalaev",
+   "publie": "2025-04-29",
+   "maj": "2026-08-31",
+   "rubriques": [
+    "ufc"
+   ],
+   "resume": "Magomed Ankalaev n’est plus champion des mi-lourds. Champion actuel : Carlos Ulberg.",
+   "mots": 489
+  },
+  {
+   "type": "article",
+   "titre": "John Jones",
+   "url": "https://www.ufc.fr/portrait-ufc-john-jones/",
+   "slug": "portrait-ufc-john-jones",
+   "publie": "2025-04-24",
+   "maj": "2026-08-31",
+   "rubriques": [
+    "ufc"
+   ],
+   "resume": "Fiche historique : Jon Jones n’est plus champion UFC des lourds (Aspinall / intérim Gane). Parcours mi-lourds puis lourds.",
+   "mots": 540
+  },
+  {
+   "type": "article",
+   "titre": "Dricus Du Plessis",
+   "url": "https://www.ufc.fr/portrait-ufc-dricus-du-plessis/",
+   "slug": "portrait-ufc-dricus-du-plessis",
+   "publie": "2025-04-24",
+   "maj": "2026-08-31",
+   "rubriques": [
+    "ufc"
+   ],
+   "resume": "Dricus du Plessis n’est plus champion des moyens. Champion actuel : Sean Strickland. Du Plessis n°2 Meta.",
+   "mots": 636
+  },
+  {
+   "type": "page",
+   "titre": "Suivi SEO UFC.FR — méthode",
+   "url": "https://www.ufc.fr/suivi-seo/",
+   "slug": "suivi-seo",
+   "publie": "2026-08-31",
+   "maj": "2026-08-31",
+   "rubriques": [],
+   "resume": "Le cahier des charges demande un suivi des performances SEO. Site Kit (Google) est déjà installé sur UFC.FR. Cette page fixe la méthode. Les chiffres se lisent dans Search Console / Analytics, pas ici — on ne publie pas de vanité metrics inventées. Où regarder (wp-admin) Site Kit → Search Console : ",
+   "mots": 207
+  },
+  {
+   "type": "page",
+   "titre": "Classements UFC (août 2026) : légers, moyens, lourds et Paris",
+   "url": "https://www.ufc.fr/classements-ufc-aout-2026/",
+   "slug": "classements-ufc-aout-2026",
+   "publie": "2026-08-31",
+   "maj": "2026-08-31",
+   "rubriques": [],
+   "resume": "Cage octogonale de MMA. Photo U.S. Marine Corps, domaine public (Wikimedia Commons). Dernière mise à jour : 31 août 2026. Tableaux Meta UFC Rankings (modèle Elo, en place depuis juin 2026), publiés le 22 août 2026 après l’UFC Fight Night Hernandez vs Rodrigues (Sacramento). Source : compilation Wiki",
+   "mots": 494
+  },
+  {
+   "type": "page",
+   "titre": "Forum et communauté MMA",
+   "url": "https://www.ufc.fr/forum-communaute-mma/",
+   "slug": "forum-communaute-mma",
+   "publie": "2026-08-31",
+   "maj": "2026-08-31",
+   "rubriques": [],
+   "resume": "UFC.FR veut un espace où les lecteurs parlent des cartes, des résultats et des clubs — pas une zone sans règles. Le forum technique (bbPress) n’est pas lancé avant l’UFC Paris : il faudrait inscriptions, anti-spam et modération humaine, surtout autour du 5 septembre. D’ici là, les commentaires sous ",
+   "mots": 243
+  },
+  {
+   "type": "page",
+   "titre": "À propos d’UFC.FR — média MMA indépendant",
+   "url": "https://www.ufc.fr/a-propos/",
+   "slug": "a-propos",
+   "publie": "2026-08-31",
+   "maj": "2026-08-31",
+   "rubriques": [],
+   "resume": "UFC.FR est un média indépendant d’actualité MMA. Il n’est pas affilié à l’Ultimate Fighting Championship, à Zuffa, à TKO Group Holdings, ni à aucune fédération. Le nom de domaine prête à confusion : la ligne, elle, est généraliste — UFC, PFL, ONE, KSW, Hexagone, ARES, clubs français. Ligne éditorial",
+   "mots": 166
+  },
+  {
+   "type": "page",
+   "titre": "Les clubs de MMA français",
+   "url": "https://www.ufc.fr/clubs-mma-francais/",
+   "slug": "clubs-mma-francais",
+   "publie": "2026-08-31",
+   "maj": "2026-08-31",
+   "rubriques": [],
+   "resume": "Cage MMA en salle (PLMMA, Pologne). Photo Tyka17, Wikimedia Commons, licence CC BY-SA 4.0. Le MMA français ne se résume pas aux cartes UFC, Hexagone ou ARES. Il se tient d’abord dans les clubs : cages homologuées ou simples tatamis, coachs issus du combat, amateurs qui passent un premier gala le sam",
+   "mots": 513
+  },
+  {
+   "type": "page",
+   "titre": "Champions MMA actuels : UFC, PFL, ONE, KSW, Hexagone, ARES",
+   "url": "https://www.ufc.fr/champions-mma-actuels/",
+   "slug": "champions-mma-actuels",
+   "publie": "2026-08-31",
+   "maj": "2026-08-31",
+   "rubriques": [],
+   "resume": "Dernière mise à jour : 31 août 2026. Cette page recense les ceintures des principales organisations suivies par UFC.FR, média MMA indépendant. Les titres bougent à chaque gala : une date de MAJ figure sous chaque tableau. Sources croisées : ESPN, Wikipedia (listes de champions), sites d’organisation",
+   "mots": 701
+  },
+  {
+   "type": "page",
+   "titre": "Mentions légales & confidentialités",
+   "url": "https://www.ufc.fr/mentions-legales-confidentialites/",
+   "slug": "mentions-legales-confidentialites",
+   "publie": "2025-04-25",
+   "maj": "2026-08-31",
+   "rubriques": [],
+   "resume": "UFC.FR media independant – mentions et hebergeur OVH.",
+   "mots": 1443
+  },
+  {
+   "type": "page",
+   "titre": "Konfrontacja Sztuk Walki – KSW",
+   "url": "https://www.ufc.fr/organisation-mma-ksw/",
+   "slug": "organisation-mma-ksw",
+   "publie": "2025-04-23",
+   "maj": "2026-08-31",
+   "rubriques": [],
+   "resume": "Konfrontacja Sztuk Walki KSW enflamme les stades avec un show à l’européenne, mêlant stars locales, ambiance explosive et production digne des plus grandes ligues. Tous les champions L'actualité du MMA 🔹 Présentation générale Fondée en 2004 en Pologne, KSW est l’une des plus grandes organisations d",
+   "mots": 561
+  },
+  {
+   "type": "page",
+   "titre": "Hexagone MMA",
+   "url": "https://www.ufc.fr/organisation-hexagone-mma/",
+   "slug": "organisation-hexagone-mma",
+   "publie": "2025-04-23",
+   "maj": "2026-08-31",
+   "rubriques": [],
+   "resume": "Hexagone MMA Hexagone MMA mêle art du combat et lieux iconiques, offrant une expérience spectaculaire qui popularise le MMA à la française. Tous les champions L'actualité du MMA 🔹 Présentation générale Lancée en 2021, Hexagone MMA est une organisation française dynamique qui propose des événements ",
+   "mots": 593
+  },
+  {
+   "type": "page",
+   "titre": "ARES Fighting Championship",
+   "url": "https://www.ufc.fr/organisation-mma-ares-fighting-championship/",
+   "slug": "organisation-mma-ares-fighting-championship",
+   "publie": "2025-04-23",
+   "maj": "2026-08-31",
+   "rubriques": [],
+   "resume": "ARES Fighting Championship ARES propulse les talents africains et francophones vers le sommet, en alliant professionnalisation, visibilité mondiale et esprit de formation engagé. Tous les champions L'actualité du MMA 🔹 Présentation générale ARES est une organisation française fondée en 2020 par le ",
+   "mots": 653
+  },
+  {
+   "type": "page",
+   "titre": "Cage Warriors",
+   "url": "https://www.ufc.fr/organisation-mma-cage-warriors/",
+   "slug": "organisation-mma-cage-warriors",
+   "publie": "2025-04-23",
+   "maj": "2026-08-31",
+   "rubriques": [],
+   "resume": "Cage Warriors Cage Warriors, pépinière du MMA européen, révèle les futurs champions UFC grâce à son exigence, ses talents bruts et son héritage formateur. Tous les champions L'actualité du MMA 🔹 Présentation générale Cage Warriors, créé en 2002 au Royaume-Uni, est une ligue européenne incontournabl",
+   "mots": 557
+  },
+  {
+   "type": "page",
+   "titre": "ONE Championship",
+   "url": "https://www.ufc.fr/organisation-mma-one-championship/",
+   "slug": "organisation-mma-one-championship",
+   "publie": "2025-04-23",
+   "maj": "2026-08-31",
+   "rubriques": [],
+   "resume": "ONE Championship ONE Championship fusionne MMA et traditions asiatiques, offrant des combats spectaculaires portés par l’éthique, la diversité et le respect martial. Tous les champions L'actualité du MMA 🔹 Présentation générale Basée à Singapour, ONE Championship est la principale organisation asia",
+   "mots": 662
+  },
+  {
+   "type": "page",
+   "titre": "Professional Fighters League",
+   "url": "https://www.ufc.fr/organisation-mma-professional-fighters-league/",
+   "slug": "organisation-mma-professional-fighters-league",
+   "publie": "2025-04-23",
+   "maj": "2026-08-31",
+   "rubriques": [],
+   "resume": "Professional Fighters League La PFL révolutionne le MMA avec un format saisonnier unique, misant sur mérite, données et transparence pour couronner ses champions. Tous les champions L'actualité du MMA 🔹 Présentation générale La PFL est une organisation américaine créée en 2018 à partir de la World ",
+   "mots": 628
+  },
+  {
+   "type": "page",
+   "titre": "Ultimate Fighting Championship",
+   "url": "https://www.ufc.fr/organisation-mma-ultimate-fighting-championship/",
+   "slug": "organisation-mma-ultimate-fighting-championship",
+   "publie": "2025-04-23",
+   "maj": "2026-08-31",
+   "rubriques": [],
+   "resume": "Ultimate Fighting Championship L’UFC, ligue reine du MMA mondial, allie combats légendaires, stars planétaires et spectacles dignes d’Hollywood depuis 1993. Tous les champions L'actualité du MMA 🔹 Présentation générale L’UFC, fondée en 1993 par Art Davie et Rorion Gracie, est l’organisation de MMA ",
+   "mots": 875
+  },
+  {
+   "type": "page",
+   "titre": "Portraits de champions",
+   "url": "https://www.ufc.fr/mma-portraits-de-champions/",
+   "slug": "mma-portraits-de-champions",
+   "publie": "2025-04-23",
+   "maj": "2026-08-31",
+   "rubriques": [],
+   "resume": "Portraits des Champions MMA – UFC, PFL, One &#038; Plus Plongez dans l’univers des légendes MMA : UFC, PFL, KSW… découvrez leurs parcours, combats et victoires. Les organisations ▼ UFC PFL One Championship Cage Warriors ARES Hexagone MMA KSW L’actualité MMA Champions par organisation : UFC, PFL, KSW",
+   "mots": 1554
+  },
+  {
+   "type": "page",
+   "titre": "L’actualité du MMA",
+   "url": "https://www.ufc.fr/actualite-du-mma/",
+   "slug": "actualite-du-mma",
+   "publie": "2025-04-23",
+   "maj": "2026-08-31",
+   "rubriques": [],
+   "resume": "MMA News Sans Garde : UFC, Chocs &#038; Galas Les dernières frappes de l’actu MMA : UFC, France, combats titanesques – tout est là, sans détour. Les organisations ▼ UFC PFL One Championship Cage Warriors ARES Hexagone MMA KSW Portraits de champions Filtrez les news pour suivre ce qui compte vraiment",
+   "mots": 1149
+  }
+ ]
+}

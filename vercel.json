@@ -1,0 +1,56 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": null,
+  "installCommand": "echo 'aucune dependance a installer'",
+  "buildCommand": "echo 'site pre-genere, aucune construction necessaire'",
+  "outputDirectory": ".",
+  "_note_trailingSlash": "Vrai, et ce n'est pas un detail : toutes les URL deja indexees du WordPress se terminent par un slash. Passer a false ferait repondre 308 a chacune d'elles, ce qui annulerait la raison meme d'avoir garde les slugs d'origine.",
+  "trailingSlash": true,
+  "headers": [
+    {
+      "source": "/media/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/(css|js)/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=3600, must-revalidate"
+        }
+      ]
+    },
+    {
+      "source": "/corpus.json",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "application/json; charset=utf-8"
+        },
+        {
+          "key": "Access-Control-Allow-Origin",
+          "value": "*"
+        }
+      ]
+    },
+    {
+      "source": "/llms.txt",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "text/plain; charset=utf-8"
+        },
+        {
+          "key": "Access-Control-Allow-Origin",
+          "value": "*"
+        }
+      ]
+    }
+  ],
+  "_note_build": "Le site est genere et commite. Vercel ne construit rien : le faire builder ajoutait un point de rupture entre le push et la mise en ligne, deux jours avant l'evenement. `npm run build` reste la commande de generation, elle tourne avant le commit."
+}

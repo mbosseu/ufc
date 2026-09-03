@@ -1,0 +1,12 @@
+User-agent: *
+Allow: /
+Disallow: /audit.html
+Disallow: /redaction.html
+Disallow: /seo-suivi.html
+Disallow: /calendrier-editorial.html
+
+Sitemap: https://www.ufc.fr/sitemap.xml
+
+# Corpus lisible par machine, pour les moteurs de reponse.
+# UFC.FR est un media independant, non affilie a l'Ultimate Fighting Championship.
+# Plan : https://www.ufc.fr/llms.txt

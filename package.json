@@ -1,0 +1,22 @@
+{
+  "name": "ufc-fr",
+  "version": "1.0.0",
+  "private": true,
+  "description": "UFC.FR — media MMA independant. Site statique genere depuis data/.",
+  "type": "module",
+  "scripts": {
+    "build": "node tools/emit.mjs && node tools/listings.mjs && node tools/carte.mjs && node tools/home.mjs && node tools/recherche.mjs && node tools/geo.mjs && node tools/doublons.mjs && node tools/sitemap.mjs",
+    "dev": "npm run build && node tools/serve.mjs",
+    "extract": "python3 tools/wp-extract.py",
+    "check": "node tools/check.mjs",
+    "mcp": "node mcp/server.mjs",
+    "shots": "node tools/shots.mjs",
+    "pages": "bash tools/deploy-pages.sh"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "devDependencies": {
+    "playwright-core": "^1.49.0"
+  }
+}

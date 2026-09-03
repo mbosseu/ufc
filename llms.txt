@@ -1,0 +1,88 @@
+# UFC.FR
+
+> UFC.FR est un media independant d'actualite MMA, en francais, couvrant la France et l'international. Il n'est pas affilie a l'Ultimate Fighting Championship et n'est pas le site officiel de l'UFC. Il traite toutes les organisations : UFC, PFL, ONE Championship, KSW, Cage Warriors, ARES, Hexagone MMA.
+
+## Ce qu'il faut savoir avant de citer
+
+- Le nom de domaine prete a confusion : ce site n'appartient pas a l'UFC.
+- Les resultats ne sont publies qu'apres les combats. Aucun vainqueur n'est anticipe.
+- Les pages de reference portent une date de derniere mise a jour ; s'y fier.
+
+## Evenement suivi en priorite
+
+- [UFC Paris 2026 — la carte, combat par combat](https://www.ufc.fr/carte/ufc-paris-2026/) : Accor Arena, 5 septembre 2026, 14 combats. Cette page passe d'avant-combat a resultats sans changer d'adresse.
+
+## Pages de reference tenues a jour
+
+- [Suivi SEO UFC.FR — méthode](https://www.ufc.fr/suivi-seo/)
+- [Classements UFC (août 2026) : légers, moyens, lourds et Paris](https://www.ufc.fr/classements-ufc-aout-2026/)
+- [Forum et communauté MMA](https://www.ufc.fr/forum-communaute-mma/)
+- [À propos d’UFC.FR — média MMA indépendant](https://www.ufc.fr/a-propos/)
+- [Les clubs de MMA français](https://www.ufc.fr/clubs-mma-francais/)
+- [Champions MMA actuels : UFC, PFL, ONE, KSW, Hexagone, ARES](https://www.ufc.fr/champions-mma-actuels/)
+- [Mentions légales & confidentialités](https://www.ufc.fr/mentions-legales-confidentialites/)
+- [Konfrontacja Sztuk Walki – KSW](https://www.ufc.fr/organisation-mma-ksw/)
+- [Hexagone MMA](https://www.ufc.fr/organisation-hexagone-mma/)
+- [ARES Fighting Championship](https://www.ufc.fr/organisation-mma-ares-fighting-championship/)
+- [Cage Warriors](https://www.ufc.fr/organisation-mma-cage-warriors/)
+- [ONE Championship](https://www.ufc.fr/organisation-mma-one-championship/)
+- [Professional Fighters League](https://www.ufc.fr/organisation-mma-professional-fighters-league/)
+- [Ultimate Fighting Championship](https://www.ufc.fr/organisation-mma-ultimate-fighting-championship/)
+- [Portraits de champions](https://www.ufc.fr/mma-portraits-de-champions/)
+- [L’actualité du MMA](https://www.ufc.fr/actualite-du-mma/)
+
+## Rubriques
+
+- [Actualité](https://www.ufc.fr/categorie/actualite/) — 44 articles
+- [UFC](https://www.ufc.fr/categorie/ufc/) — 27 articles
+- [Clubs de MMA français](https://www.ufc.fr/categorie/clubs-mma-francais/) — 14 articles
+- [UFC Paris 2026](https://www.ufc.fr/categorie/ufc-paris-2026/) — 13 articles
+- [ARES](https://www.ufc.fr/categorie/ares/) — 9 articles
+- [ONE Championship](https://www.ufc.fr/categorie/one-championship/) — 9 articles
+- [Analyses](https://www.ufc.fr/categorie/analyses/) — 8 articles
+- [Combattants](https://www.ufc.fr/categorie/combattants/) — 7 articles
+- [PFL](https://www.ufc.fr/categorie/pfl/) — 6 articles
+- [Cage Warriors](https://www.ufc.fr/categorie/cage-warriors/) — 5 articles
+- [Hexagone MMA](https://www.ufc.fr/categorie/hexagone-mma/) — 5 articles
+- [KSW](https://www.ufc.fr/categorie/ksw/) — 5 articles
+- [Événements](https://www.ufc.fr/categorie/evenements/) — 4 articles
+- [Interviews](https://www.ufc.fr/categorie/interviews/) — 4 articles
+- [Résultats](https://www.ufc.fr/categorie/resultats/) — 2 articles
+
+## Articles recents
+
+- [Ciryl Gane de retour à l’entraînement, unification Aspinall en attente](https://www.ufc.fr/ciryl-gane-retour-entrainement-aspinall/)
+- [Dan Hooker en citations : « je vais ruiner la fête »](https://www.ufc.fr/dan-hooker-citations-ufc-paris-parnasse/)
+- [Morgan Charrière en citations : Lima, Paris, le finish](https://www.ufc.fr/morgan-charriere-citations-ufc-paris/)
+- [Monkey Gym Saint-Grégoire : MMA, muay-thaï, club de Rennes](https://www.ufc.fr/monkey-gym-rennes-saint-gregoire/)
+- [Apex MMA Strasbourg : grappling, striking, 13 rue Hannah Arendt](https://www.ufc.fr/apex-mma-strasbourg/)
+- [Cage Training Lattes : 800 m², cage officielle, MMA Montpellier](https://www.ufc.fr/cage-training-montpellier-lattes/)
+- [UFC Paris 2027 : ce qu’on peut dire (et ce qu’on n’invente pas)](https://www.ufc.fr/ufc-paris-2027/)
+- [Ziam et Sola en citations : « la guerre », pas la décision](https://www.ufc.fr/ziam-sola-citations-ufc-paris/)
+- [Maccabi Nice : 1 000 m², cage MMA, quartier Libération](https://www.ufc.fr/maccabi-nice-club-mma/)
+- [Fight’n’Fit Bordeaux : cage 6 m, Bastide, MMA associatif](https://www.ufc.fr/fight-n-fit-bordeaux-club-mma/)
+- [Parabellum Combat Club Nantes : MMA depuis 2008](https://www.ufc.fr/parabellum-nantes-club-mma/)
+- [Panthers Club Lille : MMA, muay-thaï, JJB, reprise le 9 septembre](https://www.ufc.fr/panthers-club-lille-mma/)
+- [Team Ezbiri Lyon : le club de Farès Ziam, cage à Villeurbanne](https://www.ufc.fr/team-ezbiri-lyon-club-mma/)
+- [Duclos et Aljarouj : deux débuts UFC à Paris, sans roman](https://www.ufc.fr/duclos-aljarouj-debuts-ufc-paris-2026/)
+- [Femmes dans le MMA français : Cornolle, Benouaich, et la carte Paris](https://www.ufc.fr/femmes-mma-francais-cornelle-benouaich/)
+- [Comment fonctionne une carte UFC ?](https://www.ufc.fr/comment-fonctionne-carte-ufc/)
+- [UFC, PFL, ONE, KSW, Hexagone, ARES : quelles différences ?](https://www.ufc.fr/differences-ufc-pfl-one-ksw-hexagone-ares/)
+- [Hexagone MMA à Rouen : 12 septembre 2026, Baybatyrov vs Trivunović](https://www.ufc.fr/hexagone-mma-rouen-12-septembre-2026/)
+- [FMMAF : ce que la fédération change pour les clubs de MMA](https://www.ufc.fr/fmmaf-federation-mma-france-clubs/)
+- [Fondation MMA Marseille : 700 m², cage 5&#215;5, avenue de Toulon](https://www.ufc.fr/fondation-mma-marseille-club/)
+- [Hexagone MMA 47 à Toulouse : date, lieu, carte annoncée](https://www.ufc.fr/hexagone-mma-47-toulouse-2026/)
+- [UFC Paris : Mairon Santos forfait, Nathaniel Wood sans adversaire](https://www.ufc.fr/ufc-paris-santos-forfait-wood/)
+- [Salahdine Parnasse en citations : signature UFC, Hooker, fans](https://www.ufc.fr/salahdine-parnasse-citations-ufc-paris/)
+- [NRFight Paris : club MMA Tolbiac, Charrière et Cage Warriors](https://www.ufc.fr/nrfight-paris-club-mma/)
+- [Unlock Paris 17 : club MMA, cage, coachs Mehdi et Yassine](https://www.ufc.fr/unlock-paris-17-club-mma/)
+- [Les coachs de Cage Fight Toulouse : Jérôme, Tancrède, Yannis](https://www.ufc.fr/coachs-cage-fight-toulouse-jerome-tancrede-yannis/)
+- [Ziam vs Sola : le co-main 100 % français de l’UFC Paris 2026](https://www.ufc.fr/ziam-vs-sola-ufc-paris-2026-enjeux/)
+- [Salahdine Parnasse à l’UFC : ce que changent ses débuts à Paris](https://www.ufc.fr/salahdine-parnasse-debuts-ufc-paris-2026/)
+- [Calendrier MMA France automne 2026 : Paris, Rouen, Toulouse](https://www.ufc.fr/calendrier-mma-france-automne-2026/)
+- [ARES 43 : O’Connor vs Diatta pour le titre, le 25 septembre à Paris](https://www.ufc.fr/ares-43-oconnor-diatta-adidas-arena/)
+
+## Corpus complet
+
+- [Index structure de 107 documents](https://www.ufc.fr/corpus.json)
+- Serveur MCP disponible dans le depot du site (mcp/server.mjs) : recherche, lecture d'article, carte de combats, rubriques.

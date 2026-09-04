@@ -194,6 +194,19 @@ try {
 for (const p of pages) {
   const h = readFileSync(p, "utf8");
   const rel = p.slice(ROOT.length + 1);
+  /* Une vignette de roster sans image : le lien est un rectangle noir avec
+   * un nom dessus. La tete d'affiche de l'accueil est sortie ainsi, sur deux
+   * rangees, parce que `pic()` rend une chaine vide quand la photo a deja
+   * servi. Ce controle-ci regarde un <a> de roster qui ne contient aucune
+   * image, pas un cadre vide : le balisage n'a pas de conteneur intermediaire. */
+  for (const m of h.matchAll(/<a[^>]*class="[^"]*\broster-item\b[^"]*"[\s\S]*?<\/a>/g)) {
+    if (!/<img\b/.test(m[0])) fail(`vignette de roster sans image dans ${rel}`);
+  }
+  for (const bloc of h.matchAll(/<div class="roster">([\s\S]*?)<\/div>\s*<\/div>/g)) {
+    const liens = bloc[1].match(/<a\b[^>]*>[\s\S]*?<\/a>/g) || [];
+    const vides = liens.filter((a) => !/<img\b/.test(a)).length;
+    if (vides) fail(`${vides} vignette(s) de roster sans image dans ${rel}`);
+  }
   for (const classe of ["ed-lead-media", "media", "salle-media", "ed-keys-photo", "ed-portrait-media"]) {
     const re = new RegExp(`<(?:div|a|figure)[^>]*class="[^"]*\\b${classe}\\b[^"]*"[^>]*>\\s*</(?:div|a|figure)>`, "g");
     const n = (h.match(re) || []).length;

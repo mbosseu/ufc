@@ -419,17 +419,48 @@ ${reste
     </div>
     <div class="wrap">
       <div class="roster">
-${portraits
-  .slice(0, 12)
-  .map(
-    // Le systeme de design attend `.roster a > .meta > h3`. Un <span> nu passe
-    // sous l'image, qui est en position absolue : le nom etait rendu, et
-    // invisible. On emet le balisage que la feuille de style connait.
-    (p) => `        <a href="/${p.slug}/" data-reveal>${pic(p)}<div class="meta"><h3>${esc(
-      decode(p.title.rendered).replace(/^Portrait\s*[:–-]\s*/i, "").split(/[,–]/)[0]
-    )}</h3></div></a>`
-  )
-  .join("\n")}
+${(() => {
+  /* Douze vignettes de taille egale ne disent rien de plus que douze liens.
+   * La premiere prend deux rangees et porte son organisation : la grille
+   * cesse d'etre un damier et redevient une page.
+   *
+   * Et elle ne prend pas le premier portrait venu : a trois jours de Bercy,
+   * ce sont les combattants de la carte qui ouvrent. Ceux qui n'ont pas de
+   * fiche chez nous sont simplement absents de la liste — on ne fabrique pas
+   * une vedette pour remplir une case. */
+  const VEDETTES = ["portrait-ksw-slahdine-parnasse", "portrait-ares-axel-sola"];
+  const rang = (p) => {
+    const i = VEDETTES.indexOf(p.slug);
+    return i < 0 ? VEDETTES.length : i;
+  };
+  const liste = [...portraits].sort((a, b) => rang(a) - rang(b)).slice(0, 12);
+  const orgDe = (p) =>
+    categories
+      .filter((c) => (p.categories || []).includes(c.id))
+      .find((c) => ["ufc", "pfl", "one-championship", "ksw", "ares", "cage-warriors", "hexagone-mma"].includes(c.slug))?.name || "";
+  return liste
+    .map((p, i) => {
+      // Le systeme de design attend `.roster a > .meta > h3`. Un <span> nu
+      // passe sous l'image, qui est en position absolue : le nom etait rendu,
+      // et invisible. On emet le balisage que la feuille de style connait.
+      const nom = esc(
+        decode(p.title.rendered).replace(/^Portrait\s*[:–-]\s*/i, "").split(/[,–]/)[0]
+      );
+      const org = orgDe(p);
+      return `        <a class="${i === 0 ? "lead" : ""}" href="/${p.slug}/"${
+        i === 0 ? "" : " data-reveal"
+      }>${
+        /* La tete d'affiche ne peut pas sortir sans photo : elle occupe deux
+         * rangees. `pic()` rend une chaine vide quand l'image a deja servi —
+         * et celle de Parnasse est reservee par le heros. `picSure()` prend
+         * alors la suivante disponible, ici son illustration du CMS. */
+        i === 0 ? picSure(p, "", true) : pic(p)
+      }<div class="meta">${
+        org ? `<span class="kicker">${esc(org)}</span>` : ""
+      }<h3>${nom}</h3></div></a>`;
+    })
+    .join("\n");
+})()}
       </div>
     </div>
   </section>

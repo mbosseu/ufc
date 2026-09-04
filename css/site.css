@@ -4999,3 +4999,35 @@ body:has(.drawer.open) > header .brand img { content: url("/logo/ufc-fr.webp"); 
   .prose table th { font-size: 9px; letter-spacing: 0.12em; padding-right: 12px; }
   .prose table td { padding: 9px 12px 9px 0; }
 }
+
+/* A l'impression, rien n'est masque. `data-reveal` pose `opacity: 0` en
+   attendant que le bloc entre a l'ecran — notion qui n'existe pas sur une
+   feuille de papier ni dans un PDF. Sans cette regle, imprimer un article
+   rendait des pages blanches. */
+@media print {
+  html.motion [data-reveal],
+  html.motion [data-reveal-media] img {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  body > header, .drawer, .rail, footer.site .foot-cols { display: none; }
+  .article > .wrap-read:has(> header.ah) { display: block; }
+  .prose a { text-decoration: underline; }
+}
+
+/* La tete d'affiche du roster porte son organisation, et son nom se lit a la
+   taille du bloc. Douze vignettes egales ne disaient rien de plus que douze
+   liens ; une premiere qui tient deux rangees fait de la grille une page. */
+.roster .meta .kicker {
+  display: block;
+  color: var(--mist);
+  margin-bottom: 6px;
+  text-shadow: 0 1px 10px rgba(7, 7, 7, 0.6);
+}
+.roster .lead .meta .kicker { color: var(--red); }
+.roster .lead .meta h3 { font-weight: 400; }
+@media (max-width: 700px) {
+  /* Sur telephone la grille passe a deux colonnes : la tete d'affiche prend
+     la largeur plutot que deux rangees d'une seule colonne. */
+  .roster a.lead { grid-column: 1 / -1; grid-row: auto; min-height: 46vh; }
+}

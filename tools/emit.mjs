@@ -301,7 +301,12 @@ ${tries
           </dl>`
     : "";
   if (!photo && !liste) return "";
-  return `      <div class="portrait-fiche" data-reveal>
+  /* Pas de `data-reveal` : ce bloc porte la photo d'ouverture, donc le plus
+   * grand element de l'ecran. Le devoilement le laisse a `opacity: 0` jusqu'a
+   * ce que le script tourne, et Google chronometre alors le JavaScript, pas
+   * l'image. Mesure : 1 344 ms sans, 2 164 avec. La faute a deja ete commise
+   * sur la figure d'article ce soir. */
+  return `      <div class="portrait-fiche">
         ${photo}
         <div class="pf-donnees">
           ${liste}

@@ -4817,3 +4817,35 @@ body:has(.drawer.open) > header .brand img { content: url("/logo/ufc-fr.webp"); 
 @media (max-width: 980px) {
   .rail .rail-suite { display: none; }
 }
+
+/* La photo d'ouverture sur telephone : une image, pas un bandeau.
+   La regle qui reparait son debordement a droite l'avait aussi ramenee dans
+   la colonne de lecture et rendue a son format naturel. La facade de Bercy,
+   recadree en 2,67:1, sortait alors en 318 x 119 px — une bande de cent
+   dix-neuf pixels en tete d'article. Le plus grand element de l'ecran devenait
+   un paragraphe, et le LCP passait de 1 392 a 2 888 ms parce qu'il attendait
+   la police au lieu d'une image arrivee en 400 ms.
+   Debordement symetrique (les deux marges, pas une seule) et hauteur
+   minimale : la photo occupe l'ecran comme sur bureau. */
+@media (max-width: 900px) {
+  .article > .wrap-read > .figure.lead {
+    width: 100vw;
+    max-width: 100vw;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+  }
+  .article > .wrap-read > .figure.lead img {
+    min-height: min(44vh, 330px);
+    max-height: min(62vh, 460px);
+    object-fit: cover;
+  }
+  /* Sauf une petite photo : on ne l'agrandit pas plus sur telephone que sur
+     bureau — c'est la regle qui vient d'etre posee. */
+  .article > .wrap-read > .figure.lead.petite {
+    width: auto;
+    max-width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .article > .wrap-read > .figure.lead.petite img { min-height: 0; max-height: none; }
+}

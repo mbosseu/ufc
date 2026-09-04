@@ -119,3 +119,16 @@ ce fichier est le plancher.
     choix des cartes : elles croyaient libre une image qu'elles allaient
     perdre, et l'une sortait avec la photo du héros. Réserver d'abord,
     choisir ensuite.
+39. **Le plus grand élément de l'écran ne porte jamais d'animation
+    d'entrée.** `data-reveal` pose `opacity: 0` jusqu'à ce que le script
+    tourne : l'image que Google chronomètre devient invisible pendant une
+    seconde et demie, pour un effet qui joue avant le premier défilement et
+    que personne ne voit. Mesuré trois fois dans la même soirée — figure
+    d'article, fiche de combattant, bloc de une. Photo d'ouverture : jamais
+    de `data-reveal`, jamais de `loading="lazy"`.
+40. **Une grille à deux colonnes plus un élément placé en colonne 3 fait
+    trois pistes, dont une implicite.** Et `grid-column: 2 / -1` compte les
+    lignes de la grille *explicite* : l'élément ne couvre alors qu'une seule
+    colonne. La photo d'un portrait est sortie en vignette de vingt-neuf
+    pixels pour cette raison. Quand une règle change `grid-template-columns`
+    sous condition, vérifier tout ce qui se place dans cette grille.

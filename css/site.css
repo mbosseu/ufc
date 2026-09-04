@@ -4516,10 +4516,16 @@ body:has(.drawer.open) > header .brand img { content: url("/logo/ufc-fr.webp"); 
    exemple — le titre restait comprime dans 375 px et les deux tiers droits
    ne portaient rien. */
 @media (min-width: 981px) {
-  .article > .wrap-read:has(> header.ah):not(:has(> .figure)):not(:has(> .org-ouverture)) {
+  /* Il faut aussi exclure la fiche de combattant : c'est une ouverture, au
+     meme titre qu'une photo ou qu'un sigle. Sans elle dans la liste, la
+     grille repassait a deux colonnes explicites, le rail en creait une
+     troisieme implicite, et `grid-column: 2 / -1` — qui compte les lignes de
+     la grille explicite — ne couvrait plus qu'une seule colonne : la photo du
+     portrait sortait en vignette de vingt-neuf pixels. */
+  .article > .wrap-read:has(> header.ah):not(:has(> .figure)):not(:has(> .org-ouverture)):not(:has(> .portrait-fiche)) {
     grid-template-columns: minmax(0, 1fr) clamp(230px, 21vw, 310px);
   }
-  .article > .wrap-read:has(> header.ah):not(:has(> .figure)):not(:has(> .org-ouverture)) > header.ah {
+  .article > .wrap-read:has(> header.ah):not(:has(> .figure)):not(:has(> .org-ouverture)):not(:has(> .portrait-fiche)) > header.ah {
     grid-column: 1 / -1;
   }
 }
@@ -4686,3 +4692,128 @@ body:has(.drawer.open) > header .brand img { content: url("/logo/ufc-fr.webp"); 
 /* Le cadrage d'un portrait garde la tete, quand la photo est assez grande
    pour remplir le cadre et doit donc etre recadree. */
 .article.face-portrait .figure.lead:not(.petite) img { object-position: center 18%; }
+
+/* =========================================================================
+   LA FICHE DU COMBATTANT
+
+   Les quarante-quatre portraits — le corpus le plus dense du site — ouvraient
+   comme n'importe quel article : un titre a gauche, une photo a droite. Sauf
+   que leurs photos font 600 px et que le cadre en fait 1 184 : etirees, elles
+   etaient floues ; laissees a leur taille, elles laissaient six cents pixels
+   de papier a cote d'elles.
+
+   Et chacune de ces pages portait, tout en bas de son corps, les cinq memes
+   champs — palmares, categorie, nationalite, age, nom complet — ranges comme
+   du texte courant, le libelle colorie a la main dans un rouge qui n'est meme
+   pas celui du site. De la donnee structuree cachee dans des paragraphes.
+
+   Elle remonte a cote de la photo. Le portrait cesse d'etre un article avec
+   une image : c'est une fiche, et elle en a la forme. Le palmares vient en
+   premier — c'est la seule ligne qu'on vient chercher.
+   ========================================================================= */
+
+.portrait-fiche {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 22px;
+  align-items: end;
+}
+.pf-photo {
+  position: relative;
+  background: var(--carbon);
+  overflow: hidden;
+  line-height: 0;
+}
+.pf-photo img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.pf-credit {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  padding: 5px 10px;
+  background: rgba(7, 7, 7, 0.72);
+  color: var(--mist);
+  font-family: var(--ui);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  line-height: 1.4;
+}
+.pf-fiche { margin: 0; }
+.pf-fiche > div {
+  display: grid;
+  grid-template-columns: minmax(88px, 0.42fr) minmax(0, 1fr);
+  gap: 4px 18px;
+  align-items: baseline;
+  padding: 11px 0;
+  border-bottom: 1px solid rgba(7, 7, 7, 0.1);
+}
+.pf-fiche > div:first-child {
+  border-top: 2px solid var(--red);
+  padding-top: 14px;
+}
+.pf-fiche dt {
+  font-family: var(--ui);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ash);
+}
+.pf-fiche dd {
+  margin: 0;
+  font-family: var(--ui);
+  font-size: 15px;
+  line-height: 1.35;
+  color: var(--ink);
+  font-variant-numeric: tabular-nums;
+}
+/* Le palmares est la ligne qu'on vient chercher : elle se lit de loin. */
+.pf-fiche > div:first-child dd {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: clamp(19px, 1.8vw, 24px);
+  line-height: 1.15;
+  letter-spacing: -0.015em;
+}
+
+@media (min-width: 981px) {
+  /* La photo a sa taille, la fiche a cote : la colonne de droite du gabarit
+     d'article est enfin remplie par les deux. */
+  .article .portrait-fiche {
+    grid-column: 2 / -1;
+    grid-row: 2;
+    /* `minmax(0, 600px)` laissait la colonne s'effondrer a la largeur
+       minimale : une image en `width: 100 %` ne reclame rien, et la photo
+       sortait en vignette de vingt pixels. Une fraction reclame sa part. */
+    grid-template-columns: minmax(0, 1.4fr) minmax(230px, 1fr);
+    gap: clamp(26px, 3vw, 44px);
+    margin-bottom: 8px;
+  }
+  .pf-donnees { padding-bottom: 6px; }
+}
+
+@media (max-width: 980px) {
+  /* En colonne unique, la photo prend la largeur et la fiche se pose dessous,
+     avant le texte : c'est l'ordre dans lequel on lit une fiche. */
+  .portrait-fiche { margin: 0 0 30px; }
+  .pf-photo { width: 100vw; margin-left: calc(50% - 50vw); }
+  .pf-fiche > div { grid-template-columns: minmax(76px, 0.4fr) minmax(0, 1fr); }
+}
+
+/* « A lire ensuite » ne s'affiche qu'une fois.
+   Le rail le porte, et le bas d'article le portait deja : les trois memes
+   liens, deux fois par page. On garde celui qui tombe au bon moment selon la
+   largeur — dans le rail sur grand ecran, ou il accompagne la lecture ; en
+   fin d'article sur telephone, ou le rail se pose avant le premier paragraphe
+   et ou trois renvois avant la premiere phrase repoussent l'article hors de
+   l'ecran. */
+@media (min-width: 981px) {
+  .article .related { display: none; }
+}
+@media (max-width: 980px) {
+  .rail .rail-suite { display: none; }
+}

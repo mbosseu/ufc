@@ -207,6 +207,108 @@ ${blocs[i]}
   return out.join("\n");
 }
 
+/* ------------------------------------------------ la fiche combattant --
+ * Les quarante-quatre portraits portent tous les cinq memes champs — nom
+ * complet, age, nationalite, categorie, palmares — et tous les portent de la
+ * meme facon : en bas du corps, sous un « Fiche descriptive » en h4, en
+ * paragraphes libres dont le libelle est colorie a la main en `#ff3131`.
+ *
+ * Ce rouge-la n'est meme pas celui du site (#E10613). C'est du style d'auteur
+ * echappe du CMS, et c'est surtout de la donnee structuree rangee comme du
+ * texte courant : le lecteur doit descendre tout l'article pour apprendre le
+ * palmares, et les moteurs ne voient que des paragraphes.
+ *
+ * On la sort du corps et on la remonte en tete, a cote de la photo. Le
+ * portrait cesse d'etre un article avec une image et devient une fiche : ce
+ * qu'il est.
+ */
+const CHAMPS_FICHE = ["Nom complet", "Âge", "Nationalité", "Catégorie", "Palmarès"];
+
+/* Les quarante-quatre portraits portent aussi, seule sur sa ligne, la
+ * division du combattant en anglais : « Light Heavyweight », « Heavyweight ».
+ * Sur un site francais, dans un corps d'article, sans phrase autour. Et six
+ * d'entre elles sont mal orthographiees a la source — « Middletweight »,
+ * « Feathertweight », « Heavytweight », « Weltertweight ».
+ *
+ * L'information n'est pas perdue : la fiche porte la meme chose en francais,
+ * avec le poids limite (« 120,2 kg (poids lourds) »). On retire donc le
+ * doublon anglais plutot que de le traduire — traduire reviendrait a ecrire
+ * deux fois la meme ligne.
+ *
+ * La liste est fermee : on ne supprime pas un paragraphe d'un mot au hasard,
+ * seulement ceux qui sont exactement une division connue, coquilles comprises.
+ */
+const DIVISIONS_CMS = new Set(
+  [
+    "strawweight", "atomweight", "flyweight", "bantamweight", "featherweight",
+    "lightweight", "welterweight", "middleweight", "light heavyweight", "heavyweight",
+    // Les coquilles du CMS, telles quelles.
+    "middletweight", "feathertweight", "heavytweight", "weltertweight",
+    "light heavytweight", "bantamtweight", "lighttweight", "flytweight",
+  ]
+);
+
+function ficheCombattant(body) {
+  const champs = [];
+  let out = body.replace(
+    /<p>\s*<span style="color:\s*#ff3131;?">\s*([^<]+?)\s*<\/span>\s*:?\s*([^<]*?)\s*<\/p>\s*/gi,
+    (bloc, cle, valeur) => {
+      const k = cle.replace(/\s+/g, " ").trim();
+      const v = valeur.replace(/^[:\s]+/, "").trim();
+      if (!CHAMPS_FICHE.includes(k) || !v) return bloc;
+      champs.push([k, v]);
+      return "";
+    }
+  );
+  // La division anglaise en paragraphe libre : deja dans la fiche, en
+  // francais et avec le poids limite.
+  out = out.replace(/<p>\s*([A-Za-z][A-Za-z \-]{2,28})\s*<\/p>\s*/g, (bloc, mot) =>
+    DIVISIONS_CMS.has(mot.trim().toLowerCase()) ? "" : bloc
+  );
+  if (!champs.length) return { html: out, champs };
+  // Le titre qui les annoncait n'annonce plus rien.
+  out = out.replace(/<h4[^>]*>\s*Fiche descriptive\s*<\/h4>\s*/i, "");
+  return { html: out, champs };
+}
+
+/**
+ * L'ouverture d'un portrait : la photo, et ce qu'on sait de la personne.
+ *
+ * Les quarante-quatre photos de portrait font 600 px de large. Etirees sur
+ * les 1 184 px du cadre d'article, elles etaient floues ; laissees a leur
+ * taille, elles laissaient six cents pixels de papier a cote d'elles. La
+ * fiche occupe cette place — et c'est la bonne information au bon endroit.
+ */
+function ouverturePortrait(img, champs) {
+  const photo = img
+    ? `<div class="pf-photo"><img src="${img.url}" alt="${esc(img.alt)}"${
+        img.width && img.height ? ` width="${img.width}" height="${img.height}"` : ""
+      } fetchpriority="high" decoding="async" />${
+        img.credit ? `<span class="pf-credit">${esc(img.credit)}</span>` : ""
+      }</div>`
+    : "";
+  // Le palmares en premier : c'est la seule ligne qu'on vient chercher.
+  const ordre = ["Palmarès", "Catégorie", "Nationalité", "Âge", "Nom complet"];
+  const tries = [...champs].sort((a, b) => ordre.indexOf(a[0]) - ordre.indexOf(b[0]));
+  const liste = tries.length
+    ? `<dl class="pf-fiche">
+${tries
+  .map(
+    ([k, v]) =>
+      `            <div><dt>${esc(k)}</dt><dd>${esc(v)}</dd></div>`
+  )
+  .join("\n")}
+          </dl>`
+    : "";
+  if (!photo && !liste) return "";
+  return `      <div class="portrait-fiche" data-reveal>
+        ${photo}
+        <div class="pf-donnees">
+          ${liste}
+        </div>
+      </div>`;
+}
+
 /** Les attributs `srcset`/`sizes` d'une grande image, ou rien si elle n'a
  *  pas de jeu de largeurs (elle est deja assez petite). */
 function srcsetOuvrant(url, sizes) {
@@ -484,6 +586,10 @@ function renderDocument(doc, { isPage }) {
     : motLong >= 11 ? " t-mot-long"
     : "";
 
+  // La fiche du combattant sort du corps pour remonter en tete.
+  let champsFiche = [];
+  if (face === "portrait") ({ html: body, champs: champsFiche } = ficheCombattant(body));
+
   /* Les identifiants d'intertitre sont poses en dernier, apres tous les
    * traitements qui reconnaissent un intertitre a son texte exact.
    * Pose en premier, cet ajout d'attribut avait fait echouer
@@ -523,6 +629,8 @@ ${header()}
       ${
         ORG_FICHE[doc.slug]
           ? ouvertureOrg(doc)
+          : face === "portrait" && (img || champsFiche.length)
+          ? ouverturePortrait(img, champsFiche)
           : img
           /* Pas de `data-reveal` sur la photo d'ouverture.
            *

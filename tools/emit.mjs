@@ -224,6 +224,79 @@ ${blocs[i]}
  */
 const CHAMPS_FICHE = ["Nom complet", "Âge", "Nationalité", "Catégorie", "Palmarès"];
 
+/* ------------------------------------------- la signature d'un article --
+ * Sept articles portent, en bas de leur corps, « Article rédigé » suivi d'un
+ * nom : Eliott Shanks. Une personne a ecrit ces textes, et le gabarit les
+ * signait « Rédaction UFC.FR » — la signature reelle etant reléguee en pied
+ * d'article comme une note de bas de page.
+ *
+ * On ne retire pas une signature humaine, on la remet ou elle va : en tete,
+ * a cote de la date, la ou une signature se lit.
+ */
+function signature(body) {
+  let auteur = "";
+  const html = body.replace(
+    // « Article rédigé » sur six pages, « Article rédigé par » sur la
+    // septieme : la meme intention ecrite deux fois.
+    /<h4[^>]*>\s*Article r[ée]dig[ée](?:\s+par)?\s*<\/h4>\s*<p>\s*([^<]{2,60}?)\s*<\/p>\s*/i,
+    (bloc, nom) => {
+      auteur = nom.trim();
+      return "";
+    }
+  );
+  return { html, auteur };
+}
+
+/* --------------------------------------------- les reperes d'evenement --
+ * Meme faute que la fiche de combattant, sur les pages d'evenement : « Date »
+ * et « Lieu » ranges en paragraphes, le libelle colorie a la main dans un
+ * rouge qui n'est pas celui du site. Ce sont les deux informations qu'on vient
+ * chercher sur une page d'evenement, et il fallait descendre pour les
+ * trouver.
+ */
+const CHAMPS_EVT = ["Date", "Lieu"];
+
+function reperesEvenement(body) {
+  const champs = [];
+  let out = body.replace(
+    /<p>\s*<span style="color:\s*#ff3131;?">\s*([^<]+?)\s*<\/span>\s*:?\s*([^<]*?)\s*<\/p>\s*/gi,
+    (bloc, cle, valeur) => {
+      const k = cle.replace(/\s+/g, " ").trim();
+      const v = valeur.replace(/^[:\s]+/, "").trim();
+      if (!CHAMPS_EVT.includes(k) || !v) return bloc;
+      champs.push([k, v]);
+      return "";
+    }
+  );
+  if (!champs.length) return { html: body, champs };
+  out = out.replace(/<h4[^>]*>\s*Informations pratiques\s*<\/h4>\s*/i, "");
+  return { html: out, champs };
+}
+
+/* ------------------------------------------------- l'affiche d'un combat --
+ * Huit articles portent un ou deux blocs « Combat » suivis de quatre
+ * paragraphes nus : le nom du premier, ce qu'il est, le nom du second, ce
+ * qu'il est. C'est une affiche — deux noms face a face — rendue en soupe de
+ * paragraphes, sans qu'on voie qui affronte qui.
+ *
+ * Le site sait deja composer un duel : c'est le heros de l'accueil et la
+ * carte de combats. On lui donne la meme forme.
+ */
+function affiches(body) {
+  /* `decode` avant `esc` : le corps vient du CMS et porte deja ses entites
+     (« O&rsquo;Malley »). Les echapper une seconde fois affichait
+     « O&RSQUO;MALLEY » en toutes lettres dans l'affiche. */
+  return body.replace(
+    /<h4[^>]*>\s*Combat\s*<\/h4>\s*<p>\s*([^<]+?)\s*<\/p>\s*<p>\s*([^<]*?)\s*<\/p>\s*<p>\s*([^<]+?)\s*<\/p>\s*<p>\s*([^<]*?)\s*<\/p>\s*/gi,
+    (bloc, a, ra, b, rb) =>
+      `<div class="affiche">
+  <div class="af-coin"><strong>${esc(decode(a))}</strong>${ra ? `<span>${esc(decode(ra))}</span>` : ""}</div>
+  <em class="af-vs">contre</em>
+  <div class="af-coin"><strong>${esc(decode(b))}</strong>${rb ? `<span>${esc(decode(rb))}</span>` : ""}</div>
+</div>\n`
+  );
+}
+
 /* Les quarante-quatre portraits portent aussi, seule sur sa ligne, la
  * division du combattant en anglais : « Light Heavyweight », « Heavyweight ».
  * Sur un site francais, dans un corps d'article, sans phrase autour. Et six
@@ -595,6 +668,13 @@ function renderDocument(doc, { isPage }) {
   let champsFiche = [];
   if (face === "portrait") ({ html: body, champs: champsFiche } = ficheCombattant(body));
 
+  // Les reperes d'evenement, la signature humaine, et les affiches de combat.
+  let champsEvt = [];
+  ({ html: body, champs: champsEvt } = reperesEvenement(body));
+  let auteur = "";
+  ({ html: body, auteur } = signature(body));
+  body = affiches(body);
+
   /* Les identifiants d'intertitre sont poses en dernier, apres tous les
    * traitements qui reconnaissent un intertitre a son texte exact.
    * Pose en premier, cet ajout d'attribut avait fait echouer
@@ -625,7 +705,13 @@ ${header()}
       <header class="ah" data-reveal>
         <span class="kicker">${esc(kicker)}</span>
         <h1>${esc(title)}</h1>
-        <p class="byline">Rédaction UFC.FR · Publié le <time datetime="${doc.date.slice(0, 10)}">${dateFr(doc.date)}</time>${
+        <p class="byline">${
+          /* La signature reelle quand il y en a une. Sept articles sont
+           * signes d'un nom, range en bas de leur corps sous « Article
+           * rédigé » : une personne les a ecrits et le gabarit les attribuait
+           * a la redaction. */
+          auteur ? `Par ${esc(auteur)}` : "Rédaction UFC.FR"
+        } · Publié le <time datetime="${doc.date.slice(0, 10)}">${dateFr(doc.date)}</time>${
           doc.modified.slice(0, 10) !== doc.date.slice(0, 10)
             ? ` · Mis à jour le <time datetime="${doc.modified.slice(0, 10)}">${dateFr(doc.modified)}</time>`
             : ""
@@ -677,6 +763,15 @@ ${header()}
             }</figure>`
           : ""
       }
+${
+  champsEvt.length
+    ? `      <dl class="evt-reperes" data-reveal>
+${champsEvt
+  .map(([k, v]) => `        <div><dt>${esc(k)}</dt><dd>${esc(v)}</dd></div>`)
+  .join("\n")}
+      </dl>`
+    : ""
+}
 ${rail(ancres, sibs)}
 ${tisser(body, blocs)}
 ${rosterBloc ? `    </div>

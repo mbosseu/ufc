@@ -4849,3 +4849,88 @@ body:has(.drawer.open) > header .brand img { content: url("/logo/ufc-fr.webp"); 
   }
   .article > .wrap-read > .figure.lead.petite img { min-height: 0; max-height: none; }
 }
+
+/* =========================================================================
+   LES PAGES D'EVENEMENT : REPERES ET AFFICHES
+
+   Meme faute que sur les portraits, sur sept pages de plus. « Date » et
+   « Lieu » — les deux seules informations qu'on vient chercher sur une page
+   d'evenement — etaient rangees en paragraphes au milieu du corps, le libelle
+   colorie a la main en #ff3131, un rouge qui n'est pas celui du site.
+
+   Et huit articles portaient une affiche de combat rendue en soupe : le titre
+   « Combat » suivi de quatre paragraphes nus — un nom, ce qu'il est, un autre
+   nom, ce qu'il est — sans qu'on voie jamais qui affronte qui.
+
+   Le site sait composer un duel : c'est le heros de l'accueil et la carte de
+   combats. On lui donne la meme forme, en plus petit.
+   ========================================================================= */
+
+.evt-reperes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px clamp(28px, 4vw, 56px);
+  margin: 0 0 clamp(24px, 3.5vh, 38px);
+  padding-top: 16px;
+  border-top: 2px solid var(--red);
+}
+.evt-reperes dt {
+  font-family: var(--ui);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ash);
+  margin: 0 0 5px;
+}
+.evt-reperes dd {
+  margin: 0;
+  font-family: var(--ui);
+  font-size: clamp(15px, 1.4vw, 17px);
+  font-weight: 500;
+  color: var(--ink);
+}
+
+.prose .affiche {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  align-items: center;
+  gap: clamp(14px, 2vw, 30px);
+  margin: clamp(24px, 3.5vh, 38px) 0;
+  padding: clamp(20px, 2.6vw, 30px) clamp(18px, 2.4vw, 28px);
+  background: var(--void);
+  color: var(--paper);
+}
+.prose .af-coin { min-width: 0; }
+.prose .af-coin:last-child { text-align: right; }
+.prose .af-coin strong {
+  display: block;
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: clamp(19px, 2.2vw, 27px);
+  line-height: 1.05;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+  color: var(--paper);
+}
+.prose .af-coin span {
+  display: block;
+  margin-top: 7px;
+  font-family: var(--ui);
+  font-size: 12px;
+  line-height: 1.35;
+  color: var(--ash);
+}
+.prose .af-vs {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 14px;
+  color: var(--red);
+  white-space: nowrap;
+}
+
+@media (max-width: 560px) {
+  .prose .affiche { grid-template-columns: 1fr; text-align: left; gap: 10px; }
+  .prose .af-coin:last-child { text-align: left; }
+  .prose .af-vs { justify-self: start; }
+}

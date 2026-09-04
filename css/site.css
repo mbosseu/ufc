@@ -4934,3 +4934,68 @@ body:has(.drawer.open) > header .brand img { content: url("/logo/ufc-fr.webp"); 
   .prose .af-coin:last-child { text-align: left; }
   .prose .af-vs { justify-self: start; }
 }
+
+/* =========================================================================
+   LES TABLEAUX
+
+   Neuf pages en portent — champions par organisation, classements Meta,
+   calendrier, categories de poids, cartes de galas. Ce sont les pages les
+   plus denses en information du site, et elles sortaient en tableaux HTML
+   nus : pas de filet, pas d'alternance, un en-tete qu'on ne distingue du
+   corps que parce qu'il est en gras, et des colonnes qui se touchent —
+   « Poids mouches féminins » collait a « Valentina Shevchenko ».
+
+   Un tableau de donnees se lit en balayant une colonne, pas en dechiffrant
+   une ligne. Il lui faut donc trois choses : un en-tete qui tient sa ligne,
+   des filets horizontaux qui guident l'oeil, et des chiffres alignes sur
+   leur virgule.
+   ========================================================================= */
+
+.prose table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: clamp(20px, 3vh, 32px) 0 clamp(24px, 3.5vh, 40px);
+  font-family: var(--ui);
+  font-size: 15px;
+  line-height: 1.4;
+  font-variant-numeric: tabular-nums;
+}
+.prose table th {
+  text-align: left;
+  padding: 0 18px 10px 0;
+  border-bottom: 2px solid var(--ink);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ash);
+  white-space: nowrap;
+  vertical-align: bottom;
+}
+.prose table td {
+  padding: 11px 18px 11px 0;
+  border-bottom: 1px solid rgba(7, 7, 7, 0.09);
+  vertical-align: baseline;
+}
+.prose table tr:last-child td { border-bottom: 0; }
+/* La premiere colonne nomme la ligne : c'est l'entree de lecture. */
+.prose table td:first-child { font-weight: 500; color: var(--ink); }
+.prose table th:last-child,
+.prose table td:last-child { padding-right: 0; }
+.prose table tbody tr:hover td { background: rgba(7, 7, 7, 0.028); }
+/* Une cellule vide se dit, elle ne se devine pas. */
+.prose table td:empty::after { content: "—"; color: var(--mist); }
+
+/* Un tableau plus large que la colonne defile dans son propre cadre : c'est
+   la page qui ne doit jamais partir de travers, pas le tableau. */
+.prose table { display: block; overflow-x: auto; }
+@supports (width: max(1px, 1%)) {
+  .prose table { display: table; }
+}
+.prose .table-cadre { overflow-x: auto; }
+
+@media (max-width: 700px) {
+  .prose table { font-size: 13.5px; }
+  .prose table th { font-size: 9px; letter-spacing: 0.12em; padding-right: 12px; }
+  .prose table td { padding: 9px 12px 9px 0; }
+}

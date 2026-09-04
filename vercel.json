@@ -50,5 +50,197 @@
         }
       ]
     }
+  ],
+  "redirects": [
+    {
+      "source": "/actualites.html",
+      "destination": "/actualite-du-mma/",
+      "permanent": true
+    },
+    {
+      "source": "/clubs.html",
+      "destination": "/clubs-mma-francais/",
+      "permanent": true
+    },
+    {
+      "source": "/champions.html",
+      "destination": "/champions-mma-actuels/",
+      "permanent": true
+    },
+    {
+      "source": "/a-propos.html",
+      "destination": "/a-propos/",
+      "permanent": true
+    },
+    {
+      "source": "/forum.html",
+      "destination": "/forum-communaute-mma/",
+      "permanent": true
+    },
+    {
+      "source": "/analyses.html",
+      "destination": "/categorie/analyses/",
+      "permanent": true
+    },
+    {
+      "source": "/evenements.html",
+      "destination": "/categorie/evenements/",
+      "permanent": true
+    },
+    {
+      "source": "/resultats.html",
+      "destination": "/categorie/resultats/",
+      "permanent": true
+    },
+    {
+      "source": "/combattants.html",
+      "destination": "/categorie/combattants/",
+      "permanent": true
+    },
+    {
+      "source": "/interviews.html",
+      "destination": "/categorie/interviews/",
+      "permanent": true
+    },
+    {
+      "source": "/organisations.html",
+      "destination": "/organisations/",
+      "permanent": true
+    },
+    {
+      "source": "/ufc-paris-2026.html",
+      "destination": "/ufc-paris-2026-date-lieu-carte-enjeux/",
+      "permanent": true
+    },
+    {
+      "source": "/ufc-paris-2026-live.html",
+      "destination": "/carte/ufc-paris-2026/",
+      "permanent": true
+    },
+    {
+      "source": "/seo-suivi.html",
+      "destination": "/suivi-seo/",
+      "permanent": true
+    },
+    {
+      "source": "/articles/ufc-paris-2026-presentation.html",
+      "destination": "/ufc-paris-2026-date-lieu-carte-enjeux/",
+      "permanent": true
+    },
+    {
+      "source": "/articles/ufc-paris-2026-carte.html",
+      "destination": "/ufc-paris-2026-carte-complete-hooker-parnasse/",
+      "permanent": true
+    },
+    {
+      "source": "/articles/ufc-paris-2026-combattants-francais.html",
+      "destination": "/ufc-paris-2026-combattants-francais/",
+      "permanent": true
+    },
+    {
+      "source": "/articles/ufc-paris-historique.html",
+      "destination": "/ufc-paris-historique-accor-arena/",
+      "permanent": true
+    },
+    {
+      "source": "/articles/salahdine-parnasse-debuts-ufc.html",
+      "destination": "/salahdine-parnasse-debuts-ufc-paris-2026/",
+      "permanent": true
+    },
+    {
+      "source": "/articles/hooker-citations.html",
+      "destination": "/dan-hooker-citations-ufc-paris-parnasse/",
+      "permanent": true
+    },
+    {
+      "source": "/articles/wood-santos-forfait.html",
+      "destination": "/ufc-paris-santos-forfait-wood/",
+      "permanent": true
+    },
+    {
+      "source": "/articles/gane-retour-entrainement.html",
+      "destination": "/ciryl-gane-retour-entrainement-aspinall/",
+      "permanent": true
+    },
+    {
+      "source": "/articles/mma-france-guide.html",
+      "destination": "/calendrier-mma-france-automne-2026/",
+      "permanent": true
+    },
+    {
+      "source": "/articles/ufc-paris-2026-resultats.html",
+      "destination": "/carte/ufc-paris-2026/",
+      "permanent": true
+    },
+    {
+      "source": "/articles/ufc-paris-2026-pesee.html",
+      "destination": "/ufc-paris-2026-date-lieu-carte-enjeux/",
+      "permanent": true
+    },
+    {
+      "source": "/articles/ufc-paris-2026-bilan-francais.html",
+      "destination": "/ufc-paris-2026-combattants-francais/",
+      "permanent": true
+    },
+    {
+      "source": "/articles/mma-cest-quoi.html",
+      "destination": "/categories-poids-mma-guide/",
+      "permanent": true
+    },
+    {
+      "source": "/articles/analyse-hooker-parnasse.html",
+      "destination": "/ufc-paris-2026-carte-complete-hooker-parnasse/",
+      "permanent": true
+    },
+    {
+      "source": "/clubs/cage-fight-toulouse.html",
+      "destination": "/cage-fight-toulouse-club-mma/",
+      "permanent": true
+    },
+    {
+      "source": "/resultats/",
+      "destination": "/categorie/resultats/",
+      "permanent": true
+    },
+    {
+      "source": "/evenements/",
+      "destination": "/categorie/evenements/",
+      "permanent": true
+    },
+    {
+      "source": "/combattants/",
+      "destination": "/categorie/combattants/",
+      "permanent": true
+    },
+    {
+      "source": "/analyses/",
+      "destination": "/categorie/analyses/",
+      "permanent": true
+    },
+    {
+      "source": "/interviews/",
+      "destination": "/categorie/interviews/",
+      "permanent": true
+    },
+    {
+      "source": "/ufc-paris-2026/",
+      "destination": "/categorie/ufc-paris-2026/",
+      "permanent": true
+    },
+    {
+      "source": "/forum/",
+      "destination": "/forum-communaute-mma/",
+      "permanent": true
+    },
+    {
+      "source": "/champions/",
+      "destination": "/champions-mma-actuels/",
+      "permanent": true
+    },
+    {
+      "source": "/clubs/",
+      "destination": "/clubs-mma-francais/",
+      "permanent": true
+    }
   ]
 }

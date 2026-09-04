@@ -328,10 +328,7 @@ ${portraits
         <div>
           <span class="kicker">Les salles</span>
           <h2>Où ça se boxe, en France</h2>
-          <p class="lede">${/* Le compte de l'annuaire, pas celui de la rubrique : la rubrique
-               contient aussi une federation et des portraits de coachs, et
-               l'accueil annoncait seize salles la ou la page en montre
-               quatorze. */ annuaire().length} salles couvertes. On y va une par une, et on dit ce qu’on a vérifié.</p>
+          <p class="lede">Découvre ces salles.</p>
         </div>
         <a class="more" href="/clubs-mma-francais/">Toute la rubrique</a>
       </header>

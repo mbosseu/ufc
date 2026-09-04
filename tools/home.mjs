@@ -59,6 +59,7 @@ function pic(p, cls = "", unique = true) {
 vues.add("/img/parnasse.webp");
 vues.add("/img/hooker.webp");
 vues.add("/img/gym.webp");
+vues.add("/img/ufc-paris-hooker-parnasse.webp");
 vues.add("/media/clubs/boxing-center-etats-unis.webp");
 vues.add("/media/clubs/boxing-center-ramonville.webp");
 
@@ -231,7 +232,7 @@ ${[
       <a class="more" href="/actualite-du-mma/">Tout le fil (${posts.length})</a>
     </div>
     <a class="ed-lead" href="/${carte ? carte.slug : une.slug}/" data-reveal data-reveal-media>
-      <div class="ed-lead-media" data-profondeur>${pic(carte || une)}</div>
+      <div class="ed-lead-media" data-profondeur><img src="/img/ufc-paris-hooker-parnasse.webp" alt="UFC Paris 2026 : Parnasse vs Hooker, Accor Arena" width="1108" height="1108" loading="lazy" decoding="async" /></div>
       <div class="ed-lead-copy">
         <span class="kicker">Dossier</span>
         <h2>${T(carte || une)}</h2>

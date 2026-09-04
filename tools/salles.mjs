@@ -38,7 +38,6 @@ const VILLES = {
   "panthers-club-lille-mma": "Lille",
   "parabellum-nantes-club-mma": "Nantes",
   "fight-n-fit-bordeaux-club-mma": "Bordeaux",
-  "maccabi-nice-club-mma": "Nice",
   "cage-training-montpellier-lattes": "Montpellier · Lattes",
   "apex-mma-strasbourg": "Strasbourg",
   "monkey-gym-rennes-saint-gregoire": "Rennes · Saint-Grégoire",
@@ -58,7 +57,6 @@ const ORDRE = [
   "panthers-club-lille-mma",
   "parabellum-nantes-club-mma",
   "fight-n-fit-bordeaux-club-mma",
-  "maccabi-nice-club-mma",
   "cage-training-montpellier-lattes",
   "apex-mma-strasbourg",
   "monkey-gym-rennes-saint-gregoire",
@@ -69,6 +67,8 @@ const ORDRE = [
 const PAS_UNE_SALLE = new Set([
   "fmmaf-federation-mma-france-clubs",
   "coachs-cage-fight-toulouse-jerome-tancrede-yannis",
+  // Carte sans photo : retiree de l'annuaire (placeholder « Pas encore de photo »).
+  "maccabi-nice-club-mma",
 ]);
 
 /* ------------------------------------------------- la liste ecrite a la main
@@ -126,12 +126,9 @@ function domaine(url) {
   try { return new URL(url).hostname.replace(/^www\./, ""); } catch { return url; }
 }
 
-/* Le Maccabi Nice ne publie aucune photo de sa salle — ni sur son site, ni
- * ailleurs sous une forme qu'on puisse crediter. Sa fiche n'en portera donc
- * pas. Lui coller la photo d'un autre club serait exactement le defaut qu'on
- * vient de corriger sur douze fiches ; la page annonce qu'elle ne dit que ce
- * qu'elle a verifie, un cadre vide le tient. */
-const SANS_PHOTO = new Set(["maccabi-nice-club-mma"]);
+/* Aucune salle de l'annuaire n'est forcee sans photo pour l'instant.
+ * (Maccabi Nice a ete retire de l'annuaire plutot que de garder un cadre vide.) */
+const SANS_PHOTO = new Set();
 
 function photo(doc) {
   if (SANS_PHOTO.has(doc.slug)) return null;
@@ -183,12 +180,25 @@ export function annuaire() {
   });
 }
 
+/** Liens sortants autorises : uniquement les salles toulousaines
+ *  (Cage Fight + Boxing Center). Les autres fiches gardent seulement
+ *  « Le reportage » vers UFC.FR. */
+const LIENS_SORTANTS = new Set([
+  "cage-fight-toulouse-club-mma",
+  "boxing-center-toulouse-etats-unis",
+  "boxing-center-ramonville-saint-agne",
+]);
+
 /** Une fiche de l'annuaire. Deux liens, jamais un seul : le reportage chez
  *  nous, et le site du club. Le lecteur doit savoir lequel le fait sortir. */
 export function fiche(s, { lazy = true, anime = false } = {}) {
   // Le devoilement ne sert que les trois fiches de l'accueil. Sur les quatorze
   // de l'annuaire il decore, et chaque carte qui entre coute une couche de
   // composition en plein defilement.
+  const lienSortant =
+    s.site && LIENS_SORTANTS.has(s.slug)
+      ? `<a class="salle-site" href="${s.site}" rel="noopener">${esc(s.siteNom)} <i aria-hidden="true">↗</i></a>`
+      : "";
   return `        <article class="salle"${anime ? " data-reveal" : ""}>
           <a class="salle-media${s.photo ? "" : " salle-media-vide"}" href="${s.interne}"${anime ? " data-reveal-media" : ""}>${
             s.photo
@@ -201,11 +211,7 @@ export function fiche(s, { lazy = true, anime = false } = {}) {
             <p>${esc(s.ligne)}</p>
             <p class="salle-liens">
               <a class="salle-lire" href="${s.interne}">Le reportage</a>
-              ${
-                s.site
-                  ? `<a class="salle-site" href="${s.site}" rel="noopener">${esc(s.siteNom)} <i aria-hidden="true">↗</i></a>`
-                  : ""
-              }
+              ${lienSortant}
             </p>
           </div>
         </article>`;

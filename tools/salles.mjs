@@ -159,7 +159,7 @@ export function annuaire() {
     const doc = parSlug.get(slug);
     const dit = manuelle.get(slug);
     const titre = decode(doc.title.rendered);
-    const site = siteDuClub(doc);
+    const site = SITES_OFFICIELS[slug] || null;
     return {
       slug,
       // Le nom court : celui de la liste s'il existe, sinon le titre coupe
@@ -180,14 +180,19 @@ export function annuaire() {
   });
 }
 
+/** Sites officiels des salles toulousaines — seuls liens sortants autorises
+ *  dans l'annuaire. Les URL extraites du corps d'article peuvent etre
+ *  perimees (boxingcenter.fr) : on force ici les domaines a jour. */
+const SITES_OFFICIELS = {
+  "cage-fight-toulouse-club-mma": "https://club-mma-toulouse.com/",
+  "boxing-center-toulouse-etats-unis": "https://clubmma.fr/",
+  "boxing-center-ramonville-saint-agne": "https://mmatoulouse.com/",
+};
+
 /** Liens sortants autorises : uniquement les salles toulousaines
  *  (Cage Fight + Boxing Center). Les autres fiches gardent seulement
  *  « Le reportage » vers UFC.FR. */
-const LIENS_SORTANTS = new Set([
-  "cage-fight-toulouse-club-mma",
-  "boxing-center-toulouse-etats-unis",
-  "boxing-center-ramonville-saint-agne",
-]);
+const LIENS_SORTANTS = new Set(Object.keys(SITES_OFFICIELS));
 
 /** Une fiche de l'annuaire. Deux liens, jamais un seul : le reportage chez
  *  nous, et le site du club. Le lecteur doit savoir lequel le fait sortir. */

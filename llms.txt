@@ -33,9 +33,9 @@
 
 ## Rubriques
 
-- [Actualité](https://www.ufc.fr/categorie/actualite/) — 46 articles
+- [Actualité](https://www.ufc.fr/categorie/actualite/) — 47 articles
 - [UFC](https://www.ufc.fr/categorie/ufc/) — 27 articles
-- [Clubs de MMA français](https://www.ufc.fr/categorie/clubs-mma-francais/) — 16 articles
+- [Clubs de MMA français](https://www.ufc.fr/categorie/clubs-mma-francais/) — 17 articles
 - [UFC Paris 2026](https://www.ufc.fr/categorie/ufc-paris-2026/) — 13 articles
 - [ARES](https://www.ufc.fr/categorie/ares/) — 9 articles
 - [ONE Championship](https://www.ufc.fr/categorie/one-championship/) — 9 articles
@@ -51,6 +51,7 @@
 
 ## Articles recents
 
+- [Zouhir Boumenir : le coach sol de Boxing Center Toulouse](https://www.ufc.fr/coach-zouhir-boumenir-boxing-center-toulouse/)
 - [Boxing Center Ramonville : la salle du réseau qui met le MMA en tête](https://www.ufc.fr/boxing-center-ramonville-saint-agne/)
 - [Boxing Center États-Unis : 1 200 m² de sports de combat au nord de Toulouse](https://www.ufc.fr/boxing-center-toulouse-etats-unis/)
 - [Ciryl Gane de retour à l’entraînement, unification Aspinall en attente](https://www.ufc.fr/ciryl-gane-retour-entrainement-aspinall/)
@@ -80,9 +81,8 @@
 - [Unlock Paris 17 : club MMA, cage, coachs Mehdi et Yassine](https://www.ufc.fr/unlock-paris-17-club-mma/)
 - [Les coachs de Cage Fight Toulouse : Jérôme, Tancrède, Yannis](https://www.ufc.fr/coachs-cage-fight-toulouse-jerome-tancrede-yannis/)
 - [Ziam vs Sola : le co-main 100 % français de l’UFC Paris 2026](https://www.ufc.fr/ziam-vs-sola-ufc-paris-2026-enjeux/)
-- [Salahdine Parnasse à l’UFC : ce que changent ses débuts à Paris](https://www.ufc.fr/salahdine-parnasse-debuts-ufc-paris-2026/)
 
 ## Corpus complet
 
-- [Index structure de 109 documents](https://www.ufc.fr/corpus.json)
+- [Index structure de 110 documents](https://www.ufc.fr/corpus.json)
 - Serveur MCP disponible dans le depot du site (mcp/server.mjs) : recherche, lecture d'article, carte de combats, rubriques.

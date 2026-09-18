@@ -292,6 +292,7 @@ ${salles.map((s) => fiche(s)).join("\n")}
    * peut pas porter : la federation, les organisations, les coachs. C'est ce
    * qui entoure un club, et c'est ce qui manquait. */
   const autour = ["fmmaf-federation-mma-france-clubs", "coachs-cage-fight-toulouse-jerome-tancrede-yannis",
+    "coach-zouhir-boumenir-boxing-center-toulouse",
     "organisation-hexagone-mma", "organisation-mma-ares-fighting-championship"]
     .map((sl) => posts.find((p) => p.slug === sl) || pages.find((p) => p.slug === sl))
     .filter(Boolean);

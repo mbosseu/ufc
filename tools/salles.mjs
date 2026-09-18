@@ -67,6 +67,7 @@ const ORDRE = [
 const PAS_UNE_SALLE = new Set([
   "fmmaf-federation-mma-france-clubs",
   "coachs-cage-fight-toulouse-jerome-tancrede-yannis",
+  "coach-zouhir-boumenir-boxing-center-toulouse",
   // Carte sans photo : retiree de l'annuaire (placeholder « Pas encore de photo »).
   "maccabi-nice-club-mma",
 ]);

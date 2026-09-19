@@ -54,7 +54,8 @@ const CANONIQUES = {
   "articles/wood-santos-forfait.html": "/ufc-paris-santos-forfait-wood/",
   "articles/gane-retour-entrainement.html": "/ciryl-gane-retour-entrainement-aspinall/",
   "articles/mma-france-guide.html": "/calendrier-mma-france-automne-2026/",
-  "articles/ufc-paris-2026-resultats.html": "/carte/ufc-paris-2026/",
+  "articles/ufc-paris-2026-resultats.html": "/ufc-paris-2026-resultats-complets/",
+  "articles/ufc-paris-2026-bilan-francais.html": "/ufc-paris-2026-bilan-francais-resultats/",
   "clubs/cage-fight-toulouse.html": "/cage-fight-toulouse-club-mma/",
 };
 

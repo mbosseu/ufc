@@ -43,12 +43,14 @@ const llms = `# UFC.FR
 ## Ce qu'il faut savoir avant de citer
 
 - Le nom de domaine prete a confusion : ce site n'appartient pas a l'UFC.
-- Les resultats ne sont publies qu'apres les combats. Aucun vainqueur n'est anticipe.
+- Les resultats ne sont publies qu'apres les combats. Aucun vainqueur n'est anticipe avant la fin d'un combat.
 - Les pages de reference portent une date de derniere mise a jour ; s'y fier.
 
 ## Evenement suivi en priorite
 
-- [UFC Paris 2026 — la carte, combat par combat](${SITE}/carte/ufc-paris-2026/) : Accor Arena, 5 septembre 2026, 14 combats. Cette page passe d'avant-combat a resultats sans changer d'adresse.
+- [UFC Paris 2026 — resultats](${SITE}/ufc-paris-2026-resultats-complets/) : Accor Arena, 5 septembre 2026. Parnasse bat Hooker par K.-O. R1.
+- [UFC Paris 2026 — la carte, combat par combat](${SITE}/carte/ufc-paris-2026/) : 14 combats, etat « termine », meme URL qu'avant la soiree.
+- [Bilan des Francais](${SITE}/ufc-paris-2026-bilan-francais-resultats/) : 5 victoires sur 9.
 
 ## Pages de reference tenues a jour
 

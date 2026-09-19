@@ -30,7 +30,7 @@ const carte = JSON.parse(readFileSync(join(ROOT, "data", "carte-ufc-paris-2026.j
 const ETATS = {
   avant: { kicker: "Avant le gong", verbe: "Ce qui se joue", statut: "https://schema.org/EventScheduled" },
   live: { kicker: "En direct", verbe: "En cours", statut: "https://schema.org/EventScheduled" },
-  termine: { kicker: "Résultats", verbe: "Ce qui s’est passé", statut: "https://schema.org/EventScheduled" },
+  termine: { kicker: "Résultats", verbe: "Ce qui s’est passé", statut: "https://schema.org/EventCompleted" },
 };
 const etat = ETATS[carte.etat] || ETATS.avant;
 
@@ -130,7 +130,11 @@ ${header("", "home")}
         <p class="crumbs"><a href="/">Accueil</a> · <a href="/ufc-paris-2026-date-lieu-carte-enjeux/">UFC Paris 2026</a> · La carte</p>
         <span class="kicker">${etat.kicker}</span>
         <h1>UFC Paris 2026,<br />combat par combat</h1>
-        <p class="lede">Accor Arena · samedi 5 septembre · préliminaires 18h, carte principale 21h. Cette page se met à jour pendant la soirée — l’adresse ne change pas.</p>
+        <p class="lede">${
+          carte.etat === "termine"
+            ? "Accor Arena · samedi 5 septembre 2026 · soirée terminée. Résultats saisis combat par combat — l’adresse n’a pas changé."
+            : "Accor Arena · samedi 5 septembre · préliminaires 18h, carte principale 21h. Cette page se met à jour pendant la soirée — l’adresse ne change pas."
+        }</p>
         <p class="card-count"><b>${carte.combats.length}</b> combats · <b>${
           carte.combats.filter((c) => c.a.pays === "France" || c.b.pays === "France").length
         }</b> avec un Français</p>
@@ -166,9 +170,15 @@ ${prelims.map((c, i) => station(c, i + principale.length, carte.combats.length))
           <li><a href="/ufc-paris-2026-combattants-francais/">Les Français sur la carte</a></li>
           <li><a href="/salahdine-parnasse-citations-ufc-paris/">Parnasse en citations</a></li>
           <li><a href="/dan-hooker-citations-ufc-paris-parnasse/">Hooker en citations</a></li>
+          <li><a href="/ufc-paris-2026-resultats-complets/">Tous les résultats, en un article</a></li>
+          <li><a href="/ufc-paris-2026-bilan-francais-resultats/">Bilan des Français (5/9)</a></li>
           <li><a href="/classements-ufc-aout-2026/">Ce que la soirée change aux classements</a></li>
         </ul>
-        <p class="card-honest">Aucun vainqueur, score ni méthode n’est anticipé sur cette page. Les résultats sont saisis par la rédaction après chaque combat.</p>
+        <p class="card-honest">${
+          carte.etat === "termine"
+            ? "Résultats consolidés d’après ActuMMA (8 septembre 2026). UFC.FR n’était pas dans la salle ; aucun score n’est inventé."
+            : "Aucun vainqueur, score ni méthode n’est anticipé sur cette page. Les résultats sont saisis par la rédaction après chaque combat."
+        }</p>
       </div>
     </section>
 

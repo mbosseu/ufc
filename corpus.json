@@ -3,7 +3,7 @@
  "identite": "UFC.FR est un media independant d'actualite MMA, en francais, couvrant la France et l'international. Il n'est pas affilie a l'Ultimate Fighting Championship et n'est pas le site officiel de l'UFC. Il traite toutes les organisations : UFC, PFL, ONE Championship, KSW, Cage Warriors, ARES, Hexagone MMA.",
  "langue": "fr-FR",
  "url": "https://www.ufc.fr/",
- "genere_le": "2026-09-18",
+ "genere_le": "2026-09-19",
  "licence_citation": "Citation autorisee avec lien vers l'URL source.",
  "documents": [
   {
@@ -19,6 +19,36 @@
    ],
    "resume": "BPJEPS Lutte et Grappling, ceinture noire de jiu-jitsu brésilien, près de vingt ans d'enseignement : chez Boxing Center Toulouse, Zouhir Boumenir incarne le travail au sol — JJB, grappling et MMA — pour débutants comme pour confirmés.",
    "mots": 514
+  },
+  {
+   "type": "article",
+   "titre": "UFC Paris 2026 : bilan des Français — 5 victoires sur 9",
+   "url": "https://www.ufc.fr/ufc-paris-2026-bilan-francais-resultats/",
+   "slug": "ufc-paris-2026-bilan-francais-resultats",
+   "publie": "2026-09-06",
+   "maj": "2026-09-06",
+   "rubriques": [
+    "resultats",
+    "ufc-paris-2026",
+    "actualite"
+   ],
+   "resume": "Neuf Français sur la carte de Bercy le 5 septembre 2026 : cinq ont gagné, quatre ont perdu. Parnasse et Sola finissent au premier round ; Ziam, Charrière, Sy et Aljarouj s’inclinent.",
+   "mots": 251
+  },
+  {
+   "type": "article",
+   "titre": "UFC Paris 2026 : tous les résultats — Parnasse finit Hooker",
+   "url": "https://www.ufc.fr/ufc-paris-2026-resultats-complets/",
+   "slug": "ufc-paris-2026-resultats-complets",
+   "publie": "2026-09-06",
+   "maj": "2026-09-06",
+   "rubriques": [
+    "resultats",
+    "ufc-paris-2026",
+    "actualite"
+   ],
+   "resume": "Samedi 5 septembre à l’Accor Arena, Salahdine Parnasse a battu Dan Hooker par K.-O. au premier round pour ses débuts UFC. Voici la carte complète, combat par combat, avec le bilan des neuf Français.",
+   "mots": 414
   },
   {
    "type": "article",

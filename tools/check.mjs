@@ -145,12 +145,13 @@ try {
   const vercel = JSON.parse(readFileSync(join(ROOT, "vercel.json"), "utf8"));
   for (const k of Object.keys(vercel))
     if (!CLES_VERCEL.has(k)) fail(`vercel.json : propriete « ${k} » inconnue de Vercel — l'import sera refuse`);
-  const posees = new Map((vercel.redirects || []).map((r) => [r.source, r.destination]));
+  const pathRedirects = (vercel.redirects || []).filter((r) => !r.has);
+  const posees = new Map(pathRedirects.map((r) => [r.source, r.destination]));
   for (const r of REDIRECTS) {
     if (posees.get(r.source) !== r.destination) fail(`vercel.json : ${r.source} devrait aller vers ${r.destination}`);
   }
-  if ((vercel.redirects || []).length !== REDIRECTS.length) {
-    fail(`vercel.json : ${(vercel.redirects || []).length} redirections, ${REDIRECTS.length} attendues`);
+  if (pathRedirects.length !== REDIRECTS.length) {
+    fail(`vercel.json : ${pathRedirects.length} redirections de chemin, ${REDIRECTS.length} attendues`);
   }
 } catch (e) {
   if (e.code !== "ENOENT") fail(`vercel.json illisible : ${e.message}`);

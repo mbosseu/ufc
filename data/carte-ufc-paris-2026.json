@@ -5,53 +5,110 @@
   "debut": "2026-09-05T21:00:00+02:00",
   "prelims": "2026-09-05T18:00:00+02:00",
   "lieu": { "nom": "Accor Arena", "ville": "Paris", "pays": "FR" },
-  "etat": "avant",
+  "etat": "termine",
   "note_etat": "avant | live | termine — un seul champ. Le changer et regenerer suffit a faire passer la page d'avant-combat a resultats, sur la meme URL.",
+  "source_resultats": "ActuMMA, « UFC Paris – Salahdine Parnasse vs Dan Hooker : Tous les résultats », 8 septembre 2026.",
   "combats": [
-    { "carte": "principale", "division": "Poids légers", "titre": true,
+    {
+      "carte": "principale",
+      "division": "Poids légers",
+      "titre": true,
       "a": { "nom": "Dan Hooker", "pays": "Nouvelle-Zélande" },
-      "b": { "nom": "Salahdine Parnasse", "pays": "France", "note": "Débuts UFC, double champion KSW" },
-      "resultat": null },
-    { "carte": "principale", "division": "Poids légers",
+      "b": { "nom": "Salahdine Parnasse", "pays": "France", "note": "Débuts UFC" },
+      "resultat": "Parnasse bat Hooker par K.-O. · R1 · 2:35"
+    },
+    {
+      "carte": "principale",
+      "division": "Poids légers",
       "a": { "nom": "Farès Ziam", "pays": "France" },
-      "b": { "nom": "Axel Sola", "pays": "France" }, "resultat": null },
-    { "carte": "principale", "division": "Poids moyens",
+      "b": { "nom": "Axel Sola", "pays": "France" },
+      "resultat": "Sola bat Ziam par K.-O. · R1 · 1:40"
+    },
+    {
+      "carte": "principale",
+      "division": "Poids moyens",
       "a": { "nom": "Michael Page", "pays": "Royaume-Uni" },
-      "b": { "nom": "Nursulton Ruziboev", "pays": "Ouzbékistan" }, "resultat": null },
-    { "carte": "principale", "division": "Poids welters",
+      "b": { "nom": "Nursulton Ruziboev", "pays": "Ouzbékistan" },
+      "resultat": "Page bat Ruziboev par décision unanime · 29-28, 29-28, 29-28"
+    },
+    {
+      "carte": "principale",
+      "division": "Poids welters",
       "a": { "nom": "Punahele Soriano", "pays": "États-Unis" },
-      "b": { "nom": "Daniil Donchenko", "pays": "Ukraine" }, "resultat": null },
-    { "carte": "principale", "division": "Poids plumes",
-      "a": { "nom": "Morgan Charrière", "pays": "France" },
-      "b": { "nom": "Felipe Lima", "pays": "Brésil" }, "resultat": null },
-    { "carte": "preliminaire", "division": "Poids plumes",
-      "a": { "nom": "Losene Keita", "pays": "Belgique" },
-      "b": { "nom": "Muhammad Naimov", "pays": "Tadjikistan" }, "resultat": null },
-    { "carte": "preliminaire", "division": "Poids mi-lourds",
-      "a": { "nom": "Mario Pinto", "pays": "Portugal" },
-      "b": { "nom": "Ryan Spann", "pays": "États-Unis" }, "resultat": null },
-    { "carte": "preliminaire", "division": "Poids plumes",
+      "b": { "nom": "Daniil Donchenko", "pays": "Ukraine" },
+      "resultat": "Donchenko bat Soriano par décision unanime · 30-27, 30-27, 29-28"
+    },
+    {
+      "carte": "principale",
+      "division": "Poids plumes",
       "a": { "nom": "Kurtis Campbell", "pays": "Irlande" },
-      "b": { "nom": "Trevor Peek", "pays": "États-Unis" }, "resultat": null },
-    { "carte": "preliminaire", "division": "Poids mi-lourds",
+      "b": { "nom": "Trevor Peek", "pays": "États-Unis" },
+      "resultat": "Campbell bat Peek par soumission · R3 · 3:07"
+    },
+    {
+      "carte": "principale",
+      "division": "Poids plumes",
+      "a": { "nom": "Losene Keita", "pays": "Belgique" },
+      "b": { "nom": "Muhammad Naimov", "pays": "Tadjikistan" },
+      "resultat": "Keita bat Naimov par K.-O. · R1 · 2:54"
+    },
+    {
+      "carte": "preliminaire",
+      "division": "Poids plumes",
+      "a": { "nom": "Morgan Charrière", "pays": "France" },
+      "b": { "nom": "Felipe Lima", "pays": "Brésil" },
+      "resultat": "Lima bat Charrière par décision unanime · 30-27, 30-27, 29-28"
+    },
+    {
+      "carte": "preliminaire",
+      "division": "Poids lourds",
+      "a": { "nom": "Mario Pinto", "pays": "Portugal" },
+      "b": { "nom": "Ryan Spann", "pays": "États-Unis" },
+      "resultat": "Pinto bat Spann par TKO · R2 · 0:55"
+    },
+    {
+      "carte": "preliminaire",
+      "division": "Poids mi-lourds",
       "a": { "nom": "Oumar Sy", "pays": "France" },
-      "b": { "nom": "Modestas Bukauskas", "pays": "Lituanie" }, "resultat": null },
-    { "carte": "preliminaire", "division": "Poids plumes", "incertain": true,
+      "b": { "nom": "Modestas Bukauskas", "pays": "Lituanie" },
+      "resultat": "Bukauskas bat Sy par TKO · R2 · 3:57"
+    },
+    {
+      "carte": "preliminaire",
+      "division": "Poids plumes",
       "a": { "nom": "Nathaniel Wood", "pays": "Royaume-Uni" },
-      "b": { "nom": "Mairon Santos", "pays": "Brésil", "note": "Forfait annoncé" },
-      "reserve": "Forfait de Mairon Santos rapporté avant l’événement. Bout à confirmer.",
-      "reserve_source": "/ufc-paris-santos-forfait-wood/", "resultat": null },
-    { "carte": "preliminaire", "division": "Poids mouches",
+      "b": { "nom": "Pavel Andrusca", "pays": "Moldavie", "note": "Remplaçant de Mairon Santos" },
+      "reserve": "Mairon Santos forfait avant l’événement ; Pavel Andrusca a combattu Wood.",
+      "reserve_source": "/ufc-paris-santos-forfait-wood/",
+      "resultat": "Andrusca bat Wood par décision unanime · 30-27, 30-27, 29-28"
+    },
+    {
+      "carte": "preliminaire",
+      "division": "Poids mouches",
       "a": { "nom": "Michael Aljarouj", "pays": "France" },
-      "b": { "nom": "Fabià Sintes", "pays": "Espagne" }, "resultat": null },
-    { "carte": "preliminaire", "division": "Poids coqs femmes",
+      "b": { "nom": "Fabià Sintes", "pays": "Espagne" },
+      "resultat": "Sintes bat Aljarouj par décision unanime · 29-28, 29-28, 29-27"
+    },
+    {
+      "carte": "preliminaire",
+      "division": "Poids coqs femmes",
       "a": { "nom": "Nora Cornolle", "pays": "France" },
-      "b": { "nom": "Klaudia Syguła", "pays": "Pologne" }, "resultat": null },
-    { "carte": "preliminaire", "division": "Poids moyens",
+      "b": { "nom": "Klaudia Syguła", "pays": "Pologne" },
+      "resultat": "Cornolle bat Syguła par décision unanime · 30-27, 30-27, 30-27"
+    },
+    {
+      "carte": "preliminaire",
+      "division": "Poids moyens",
       "a": { "nom": "Luis Felipe Dias", "pays": "Brésil" },
-      "b": { "nom": "Matthieu Letho Duclos", "pays": "France" }, "resultat": null },
-    { "carte": "preliminaire", "division": "Poids pailles femmes",
+      "b": { "nom": "Matthieu Letho Duclos", "pays": "France" },
+      "resultat": "Letho Duclos bat Dias par K.-O. · R1 · 4:35"
+    },
+    {
+      "carte": "preliminaire",
+      "division": "Poids pailles femmes",
       "a": { "nom": "Delphine Benouaich", "pays": "France" },
-      "b": { "nom": "Sofia Montenegro", "pays": "Nicaragua" }, "resultat": null }
+      "b": { "nom": "Sofia Montenegro", "pays": "Nicaragua" },
+      "resultat": "Benouaich bat Montenegro par soumission · R2 · 4:22"
+    }
   ]
 }

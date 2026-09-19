@@ -5,12 +5,14 @@
 ## Ce qu'il faut savoir avant de citer
 
 - Le nom de domaine prete a confusion : ce site n'appartient pas a l'UFC.
-- Les resultats ne sont publies qu'apres les combats. Aucun vainqueur n'est anticipe.
+- Les resultats ne sont publies qu'apres les combats. Aucun vainqueur n'est anticipe avant la fin d'un combat.
 - Les pages de reference portent une date de derniere mise a jour ; s'y fier.
 
 ## Evenement suivi en priorite
 
-- [UFC Paris 2026 — la carte, combat par combat](https://www.ufc.fr/carte/ufc-paris-2026/) : Accor Arena, 5 septembre 2026, 14 combats. Cette page passe d'avant-combat a resultats sans changer d'adresse.
+- [UFC Paris 2026 — resultats](https://www.ufc.fr/ufc-paris-2026-resultats-complets/) : Accor Arena, 5 septembre 2026. Parnasse bat Hooker par K.-O. R1.
+- [UFC Paris 2026 — la carte, combat par combat](https://www.ufc.fr/carte/ufc-paris-2026/) : 14 combats, etat « termine », meme URL qu'avant la soiree.
+- [Bilan des Francais](https://www.ufc.fr/ufc-paris-2026-bilan-francais-resultats/) : 5 victoires sur 9.
 
 ## Pages de reference tenues a jour
 
@@ -33,10 +35,10 @@
 
 ## Rubriques
 
-- [Actualité](https://www.ufc.fr/categorie/actualite/) — 47 articles
+- [Actualité](https://www.ufc.fr/categorie/actualite/) — 49 articles
 - [UFC](https://www.ufc.fr/categorie/ufc/) — 27 articles
 - [Clubs de MMA français](https://www.ufc.fr/categorie/clubs-mma-francais/) — 17 articles
-- [UFC Paris 2026](https://www.ufc.fr/categorie/ufc-paris-2026/) — 13 articles
+- [UFC Paris 2026](https://www.ufc.fr/categorie/ufc-paris-2026/) — 15 articles
 - [ARES](https://www.ufc.fr/categorie/ares/) — 9 articles
 - [ONE Championship](https://www.ufc.fr/categorie/one-championship/) — 9 articles
 - [Analyses](https://www.ufc.fr/categorie/analyses/) — 8 articles
@@ -47,11 +49,13 @@
 - [KSW](https://www.ufc.fr/categorie/ksw/) — 5 articles
 - [Événements](https://www.ufc.fr/categorie/evenements/) — 4 articles
 - [Interviews](https://www.ufc.fr/categorie/interviews/) — 4 articles
-- [Résultats](https://www.ufc.fr/categorie/resultats/) — 2 articles
+- [Résultats](https://www.ufc.fr/categorie/resultats/) — 4 articles
 
 ## Articles recents
 
 - [Zouhir Boumenir : le coach sol de Boxing Center Toulouse](https://www.ufc.fr/coach-zouhir-boumenir-boxing-center-toulouse/)
+- [UFC Paris 2026 : bilan des Français — 5 victoires sur 9](https://www.ufc.fr/ufc-paris-2026-bilan-francais-resultats/)
+- [UFC Paris 2026 : tous les résultats — Parnasse finit Hooker](https://www.ufc.fr/ufc-paris-2026-resultats-complets/)
 - [Boxing Center Ramonville : la salle du réseau qui met le MMA en tête](https://www.ufc.fr/boxing-center-ramonville-saint-agne/)
 - [Boxing Center États-Unis : 1 200 m² de sports de combat au nord de Toulouse](https://www.ufc.fr/boxing-center-toulouse-etats-unis/)
 - [Ciryl Gane de retour à l’entraînement, unification Aspinall en attente](https://www.ufc.fr/ciryl-gane-retour-entrainement-aspinall/)
@@ -79,10 +83,8 @@
 - [Salahdine Parnasse en citations : signature UFC, Hooker, fans](https://www.ufc.fr/salahdine-parnasse-citations-ufc-paris/)
 - [NRFight Paris : club MMA Tolbiac, Charrière et Cage Warriors](https://www.ufc.fr/nrfight-paris-club-mma/)
 - [Unlock Paris 17 : club MMA, cage, coachs Mehdi et Yassine](https://www.ufc.fr/unlock-paris-17-club-mma/)
-- [Les coachs de Cage Fight Toulouse : Jérôme, Tancrède, Yannis](https://www.ufc.fr/coachs-cage-fight-toulouse-jerome-tancrede-yannis/)
-- [Ziam vs Sola : le co-main 100 % français de l’UFC Paris 2026](https://www.ufc.fr/ziam-vs-sola-ufc-paris-2026-enjeux/)
 
 ## Corpus complet
 
-- [Index structure de 110 documents](https://www.ufc.fr/corpus.json)
+- [Index structure de 112 documents](https://www.ufc.fr/corpus.json)
 - Serveur MCP disponible dans le depot du site (mcp/server.mjs) : recherche, lecture d'article, carte de combats, rubriques.

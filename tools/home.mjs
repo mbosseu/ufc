@@ -68,10 +68,11 @@ const clubs = inCat("clubs-mma-francais");
 const portraits = byDate.filter((p) => p.slug.startsWith("portrait-"));
 const fil = byDate.filter((p) => !p.slug.startsWith("portrait-")).slice(0, 7);
 
-// Le dossier Bercy ouvre la page : trois jours avant l'événement, c'est la
-// seule hiérarchie défendable.
-const une = bySlug("ufc-paris-2026-date-lieu-carte-enjeux") || paris[0];
-const carte = bySlug("ufc-paris-2026-carte-complete-hooker-parnasse") || paris[1];
+// Après Bercy : les résultats ouvrent ; le dossier reste en second lien.
+const une =
+  bySlug("ufc-paris-2026-resultats-complets") ||
+  bySlug("ufc-paris-2026-date-lieu-carte-enjeux") ||
+  paris[0];
 
 const schema = [
   {
@@ -102,7 +103,7 @@ const schema = [
     "@type": "SportsEvent",
     name: "UFC Paris 2026 — Hooker vs Parnasse",
     startDate: "2026-09-05T21:00:00+02:00",
-    eventStatus: "https://schema.org/EventScheduled",
+    eventStatus: "https://schema.org/EventCompleted",
     eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
     location: {
       "@type": "Place",
@@ -131,6 +132,8 @@ const schema = [
 const EVENEMENT = "2026-09-05T21:00:00+02:00";
 function compteARebours() {
   const reste = new Date(EVENEMENT).getTime() - Date.now();
+  // Fin de soirée estimée ~minuit : au-delà, on n'affiche plus un compte à rebours.
+  if (reste <= -3 * 36e5) return "Terminé";
   if (reste <= 0) return "En cours";
   const h = Math.floor(reste / 36e5);
   if (h >= 48) return "J\u2212" + Math.floor(h / 24);
@@ -143,7 +146,7 @@ const html = `${head({
      « pas le site officiel » qui sautait — celle qui evite justement la
      deception au clic. Elle passe donc avant ce qui peut sauter. */
   description:
-    "Média MMA indépendant, pas le site officiel de l’UFC. UFC Paris 2026, résultats, champions de toutes les organisations et clubs français.",
+    "Média MMA indépendant, pas le site officiel de l’UFC. Résultats UFC Paris 2026, champions de toutes les organisations et clubs français.",
   canonical: "/",
   image: "/media/brand/ufc-fr-og.jpg",
   type: "website",
@@ -158,14 +161,14 @@ ${header("/", "home")}
        ornement, c'etait du decor qui ne dit rien — et il masquait les photos.
        Ce qui reste tient tout seul : deux hommes, la couture entre eux, leurs
        noms, et le compte a rebours, qui est l'information la plus utile de la
-       page a trois jours de Bercy. -->
+       page apres Bercy. -->
   <section class="hero hero-cage">
 
     <div class="hero-duel">
       <figure class="hero-man a">
-        <img src="/img/parnasse.webp" alt="Salahdine Parnasse, double champion KSW, avant ses debuts a l'UFC" width="1200" height="1600" fetchpriority="high" />
+        <img src="/img/parnasse.webp" alt="Salahdine Parnasse, vainqueur du main event UFC Paris 2026" width="1200" height="1600" fetchpriority="high" />
         <figcaption>
-          <span class="kicker">France · Debuts UFC</span>
+          <span class="kicker">France · Vainqueur</span>
           <span class="hero-name">Parnasse</span>
         </figcaption>
       </figure>
@@ -185,8 +188,8 @@ ${header("/", "home")}
         <b data-countdown="${EVENEMENT}">${compteARebours()}</b>
       </p>
       <div class="hero-actions">
-        <a class="btn btn-fill cut" href="/carte/ufc-paris-2026/">La carte, combat par combat</a>
-        <a class="btn btn-line cut" href="/${une.slug}/">Le dossier</a>
+        <a class="btn btn-fill cut" href="/${une.slug}/">Tous les résultats</a>
+        <a class="btn btn-line cut" href="/carte/ufc-paris-2026/">La carte, combat par combat</a>
       </div>
     </div>
   </section>
@@ -201,19 +204,19 @@ ${header("/", "home")}
     <div class="ticker-rail">
       <div class="ticker-run">
 ${[
-  ["Samedi 5 sept.", "Accor Arena · préliminaires 18h, carte principale 21h"],
-  ["Hooker–Parnasse", "Main event, poids légers"],
-  ["Neuf Français", "Sur la carte de Bercy"],
-  ["Ziam–Sola", "Duel tricolore en poids légers"],
-  ["Santos forfait", "Le combat de Wood à confirmer"],
+  ["Parnasse KO", "Hooker fini au R1 · 2:35 · débuts UFC"],
+  ["Sola KO Ziam", "Duel 100 % français en une minute 40"],
+  ["5 Français gagnent", "Sur neuf engagés à Bercy"],
+  ["Andrusca / Wood", "Santos forfait, Andrusca remplace"],
+  ["Résultats complets", "Carte à jour sur UFC.FR"],
   [`${posts.length} articles`, "Toutes organisations, en français"],
 ]
   .concat([
-    ["Samedi 5 sept.", "Accor Arena · préliminaires 18h, carte principale 21h"],
-    ["Hooker–Parnasse", "Main event, poids légers"],
-    ["Neuf Français", "Sur la carte de Bercy"],
-    ["Ziam–Sola", "Duel tricolore en poids légers"],
-    ["Santos forfait", "Le combat de Wood à confirmer"],
+    ["Parnasse KO", "Hooker fini au R1 · 2:35 · débuts UFC"],
+    ["Sola KO Ziam", "Duel 100 % français en une minute 40"],
+    ["5 Français gagnent", "Sur neuf engagés à Bercy"],
+    ["Andrusca / Wood", "Santos forfait, Andrusca remplace"],
+    ["Résultats complets", "Carte à jour sur UFC.FR"],
     [`${posts.length} articles`, "Toutes organisations, en français"],
   ])
   .map(([t, d], i) => `        <span class="tick"${i >= 6 ? ' aria-hidden="true"' : ""}><strong>${esc(t)}</strong><span>${esc(d)}</span></span>`)
@@ -228,15 +231,15 @@ ${[
     <div class="wrap ed-head" data-reveal>
       <span class="kicker">À la une</span>
       <h1>L’actualité du MMA, en français</h1>
-      <p class="lede">Bercy dans trois jours. Le reste du MMA n’attend pas.</p>
+      <p class="lede">Bercy est passé. Parnasse a gagné. Le MMA continue.</p>
       <a class="more" href="/actualite-du-mma/">Tout le fil (${posts.length})</a>
     </div>
-    <a class="ed-lead" href="/${carte ? carte.slug : une.slug}/" data-reveal data-reveal-media>
+    <a class="ed-lead" href="/${une.slug}/" data-reveal data-reveal-media>
       <div class="ed-lead-media" data-profondeur><img src="/img/ufc-paris-hooker-parnasse.webp" alt="UFC Paris 2026 : Parnasse vs Hooker, Accor Arena" width="1108" height="1108" loading="lazy" decoding="async" /></div>
       <div class="ed-lead-copy">
-        <span class="kicker">Dossier</span>
-        <h2>${T(carte || une)}</h2>
-        <p>${X(carte || une, 150)}</p>
+        <span class="kicker">Résultats</span>
+        <h2>${T(une)}</h2>
+        <p>${X(une, 150)}</p>
       </div>
     </a>
     <div class="wrap ed-aside">

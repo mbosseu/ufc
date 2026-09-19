@@ -135,6 +135,8 @@
 
   function ecrire() {
     var reste = cible - Date.now();
+    // Trois heures apres le debut annonce : la soiree est finie.
+    if (reste <= -3 * 36e5) { el.textContent = "Terminé"; return true; }
     if (reste <= 0) { el.textContent = "En cours"; return true; }
     var h = Math.floor(reste / 36e5);
     var j = Math.floor(h / 24);

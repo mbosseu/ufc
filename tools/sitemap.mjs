@@ -18,10 +18,20 @@ const urls = new Set(["/"]);
     const full = join(dir, name);
     if (statSync(full).isDirectory()) walk(full);
     else if (name.endsWith(".html")) {
-      const rel = full.slice(ROOT.length + 1);
+      // Windows : join() produit des \, inutilisables dans une URL.
+      const rel = full.slice(ROOT.length + 1).replace(/\\/g, "/");
       // Les coulisses sont en noindex : les lister serait se contredire.
       if (/noindex/.test(readFileSync(full, "utf8").slice(0, 1500))) continue;
-      urls.add(rel === "index.html" ? "/" : rel.endsWith("/index.html") ? "/" + rel.replace(/index\.html$/, "") : "/" + rel);
+      let path;
+      if (rel === "index.html") path = "/";
+      else if (rel.endsWith("/index.html")) path = "/" + rel.slice(0, -"index.html".length);
+      else {
+        // Anciennes pages .html plates (redirigées) : hors sitemap.
+        continue;
+      }
+      // Canonique site : trailing slash (vercel.json trailingSlash: true).
+      if (path !== "/" && !path.endsWith("/")) path += "/";
+      urls.add(path);
     }
   }
 })(ROOT);

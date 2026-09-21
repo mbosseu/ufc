@@ -22,7 +22,7 @@ import { fileURLToPath } from "node:url";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 const DATA = join(ROOT, "data", "wp");
-const SITE = "https://www.ufc.fr";
+const SITE = "https://ufc.fr";
 const BRAND = "UFC.FR";
 
 const read = (f) => JSON.parse(readFileSync(join(DATA, f), "utf8"));

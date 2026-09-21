@@ -54,8 +54,8 @@
   "redirects": [
     {
       "source": "/:path*",
-      "has": [{ "type": "host", "value": "ufc.fr" }],
-      "destination": "https://www.ufc.fr/:path*",
+      "has": [{ "type": "host", "value": "www.ufc.fr" }],
+      "destination": "https://ufc.fr/:path*",
       "permanent": true
     },
     {

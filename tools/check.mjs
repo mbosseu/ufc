@@ -9,6 +9,7 @@ import { fileURLToPath } from "node:url";
 import { CANONIQUES, ALIAS, REDIRECTS } from "./canoniques.mjs";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
+const SITE = "https://ufc.fr";
 const SKIP = new Set([".git", "node_modules", "data", "UFC", "tools", "mcp", ".registre", ".research", ".pages"]);
 const pages = [];
 (function walk(d) {
@@ -32,6 +33,12 @@ for (const p of pages) {
   if (/class="js-motion"/.test(h)) fail(`js-motion code en dur dans ${rel}`);
   if (!/rel="icon"/.test(h)) fail(`favicon absent de ${rel}`);
   if (!/og:title/.test(h)) fail(`Open Graph absent de ${rel}`);
+  if (/https:\/\/www\.ufc\.fr/.test(h)) fail(`ancienne origine www encore presente dans ${rel}`);
+  const canonical = (h.match(/<link rel="canonical" href="([^"]+)"/) || [])[1];
+  if (!/name="robots" content="noindex/.test(h)) {
+    if (!canonical) fail(`canonical absent de ${rel}`);
+    else if (!canonical.startsWith(SITE + "/")) fail(`canonical hors origine dans ${rel} : ${canonical}`);
+  }
   // Un gabarit mal echappe laisse `${...}` dans le document : le lien
   // devient inatteignable et rien d'autre ne le signale.
   if (/\$\{/.test(h)) fail(`litteral de gabarit non evalue dans ${rel}`);
@@ -153,8 +160,29 @@ try {
   if (pathRedirects.length !== REDIRECTS.length) {
     fail(`vercel.json : ${pathRedirects.length} redirections de chemin, ${REDIRECTS.length} attendues`);
   }
+  const redirectsHote = (vercel.redirects || []).filter((r) => r.has);
+  const wwwVersCanonique = redirectsHote.find((r) =>
+    r.source === "/:path*" &&
+    r.has.some((h) => h.type === "host" && h.value === "www.ufc.fr")
+  );
+  if (!wwwVersCanonique || wwwVersCanonique.destination !== `${SITE}/:path*` || !wwwVersCanonique.permanent) {
+    fail(`vercel.json : www.ufc.fr doit rediriger definitivement vers ${SITE}`);
+  }
+  if (redirectsHote.some((r) => r.has.some((h) => h.type === "host" && h.value === "ufc.fr"))) {
+    fail("vercel.json : le domaine canonique ufc.fr ne doit pas etre redirige");
+  }
 } catch (e) {
   if (e.code !== "ENOENT") fail(`vercel.json illisible : ${e.message}`);
+}
+
+const robots = readFileSync(join(ROOT, "robots.txt"), "utf8");
+if (!robots.includes(`Sitemap: ${SITE}/sitemap.xml`)) fail("robots.txt : URL du sitemap incoherente");
+
+const sitemap = readFileSync(join(ROOT, "sitemap.xml"), "utf8");
+const urlsSitemap = [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => m[1]);
+if (!urlsSitemap.length) fail("sitemap.xml : aucune URL");
+for (const url of urlsSitemap) {
+  if (!url.startsWith(SITE + "/")) fail(`sitemap.xml : origine incoherente pour ${url}`);
 }
 
 for (const [copie, canonique] of Object.entries(CANONIQUES)) {

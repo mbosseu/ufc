@@ -68,7 +68,7 @@ const FONTES_CRITIQUES = ["/fonts/newsreader.woff2", "/fonts/outfit.woff2"];
  */
 export function head({ title, description, canonical, image, type = "article", schema = [] }) {
   const img = image || "/media/brand/ufc-fr-og.jpg";
-  const abs = (u) => (u.startsWith("http") ? u : `https://www.ufc.fr${u}`);
+  const abs = (u) => (u.startsWith("http") ? u : `https://ufc.fr${u}`);
   return `<!DOCTYPE html>
 <html lang="fr">
 <head>

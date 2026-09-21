@@ -21,7 +21,7 @@ import { join, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
-const SITE = "https://www.ufc.fr";
+const SITE = "https://ufc.fr";
 
 /**
  * Page ecrite a la main → page qui fait foi.

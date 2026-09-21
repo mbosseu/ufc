@@ -2,14 +2,14 @@
  "media": "UFC.FR",
  "identite": "UFC.FR est un media independant d'actualite MMA, en francais, couvrant la France et l'international. Il n'est pas affilie a l'Ultimate Fighting Championship et n'est pas le site officiel de l'UFC. Il traite toutes les organisations : UFC, PFL, ONE Championship, KSW, Cage Warriors, ARES, Hexagone MMA.",
  "langue": "fr-FR",
- "url": "https://www.ufc.fr/",
+ "url": "https://ufc.fr/",
  "genere_le": "2026-09-19",
  "licence_citation": "Citation autorisee avec lien vers l'URL source.",
  "documents": [
   {
    "type": "article",
    "titre": "Zouhir Boumenir : le coach sol de Boxing Center Toulouse",
-   "url": "https://www.ufc.fr/coach-zouhir-boumenir-boxing-center-toulouse/",
+   "url": "https://ufc.fr/coach-zouhir-boumenir-boxing-center-toulouse/",
    "slug": "coach-zouhir-boumenir-boxing-center-toulouse",
    "publie": "2026-09-18",
    "maj": "2026-09-18",
@@ -23,7 +23,7 @@
   {
    "type": "article",
    "titre": "UFC Paris 2026 : bilan des Français — 5 victoires sur 9",
-   "url": "https://www.ufc.fr/ufc-paris-2026-bilan-francais-resultats/",
+   "url": "https://ufc.fr/ufc-paris-2026-bilan-francais-resultats/",
    "slug": "ufc-paris-2026-bilan-francais-resultats",
    "publie": "2026-09-06",
    "maj": "2026-09-06",
@@ -38,7 +38,7 @@
   {
    "type": "article",
    "titre": "UFC Paris 2026 : tous les résultats — Parnasse finit Hooker",
-   "url": "https://www.ufc.fr/ufc-paris-2026-resultats-complets/",
+   "url": "https://ufc.fr/ufc-paris-2026-resultats-complets/",
    "slug": "ufc-paris-2026-resultats-complets",
    "publie": "2026-09-06",
    "maj": "2026-09-06",
@@ -53,7 +53,7 @@
   {
    "type": "article",
    "titre": "Boxing Center Ramonville : la salle du réseau qui met le MMA en tête",
-   "url": "https://www.ufc.fr/boxing-center-ramonville-saint-agne/",
+   "url": "https://ufc.fr/boxing-center-ramonville-saint-agne/",
    "slug": "boxing-center-ramonville-saint-agne",
    "publie": "2026-09-03",
    "maj": "2026-09-03",
@@ -67,7 +67,7 @@
   {
    "type": "article",
    "titre": "Boxing Center États-Unis : 1 200 m² de sports de combat au nord de Toulouse",
-   "url": "https://www.ufc.fr/boxing-center-toulouse-etats-unis/",
+   "url": "https://ufc.fr/boxing-center-toulouse-etats-unis/",
    "slug": "boxing-center-toulouse-etats-unis",
    "publie": "2026-09-03",
    "maj": "2026-09-03",
@@ -81,7 +81,7 @@
   {
    "type": "article",
    "titre": "Ciryl Gane de retour à l’entraînement, unification Aspinall en attente",
-   "url": "https://www.ufc.fr/ciryl-gane-retour-entrainement-aspinall/",
+   "url": "https://ufc.fr/ciryl-gane-retour-entrainement-aspinall/",
    "slug": "ciryl-gane-retour-entrainement-aspinall",
    "publie": "2026-08-31",
    "maj": "2026-08-31",
@@ -96,7 +96,7 @@
   {
    "type": "article",
    "titre": "Dan Hooker en citations : « je vais ruiner la fête »",
-   "url": "https://www.ufc.fr/dan-hooker-citations-ufc-paris-parnasse/",
+   "url": "https://ufc.fr/dan-hooker-citations-ufc-paris-parnasse/",
    "slug": "dan-hooker-citations-ufc-paris-parnasse",
    "publie": "2026-08-31",
    "maj": "2026-08-31",
@@ -112,7 +112,7 @@
   {
    "type": "article",
    "titre": "Morgan Charrière en citations : Lima, Paris, le finish",
-   "url": "https://www.ufc.fr/morgan-charriere-citations-ufc-paris/",
+   "url": "https://ufc.fr/morgan-charriere-citations-ufc-paris/",
    "slug": "morgan-charriere-citations-ufc-paris",
    "publie": "2026-08-31",
    "maj": "2026-08-31",
@@ -128,7 +128,7 @@
   {
    "type": "article",
    "titre": "Monkey Gym Saint-Grégoire : MMA, muay-thaï, club de Rennes",
-   "url": "https://www.ufc.fr/monkey-gym-rennes-saint-gregoire/",
+   "url": "https://ufc.fr/monkey-gym-rennes-saint-gregoire/",
    "slug": "monkey-gym-rennes-saint-gregoire",
    "publie": "2026-08-31",
    "maj": "2026-08-31",
@@ -142,7 +142,7 @@
   {
    "type": "article",
    "titre": "Apex MMA Strasbourg : grappling, striking, 13 rue Hannah Arendt",
-   "url": "https://www.ufc.fr/apex-mma-strasbourg/",
+   "url": "https://ufc.fr/apex-mma-strasbourg/",
    "slug": "apex-mma-strasbourg",
    "publie": "2026-08-31",
    "maj": "2026-08-31",
@@ -156,7 +156,7 @@
   {
    "type": "article",
    "titre": "Cage Training Lattes : 800 m², cage officielle, MMA Montpellier",
-   "url": "https://www.ufc.fr/cage-training-montpellier-lattes/",
+   "url": "https://ufc.fr/cage-training-montpellier-lattes/",
    "slug": "cage-training-montpellier-lattes",
    "publie": "2026-08-31",
    "maj": "2026-08-31",
@@ -170,7 +170,7 @@
   {
    "type": "article",
    "titre": "UFC Paris 2027 : ce qu’on peut dire (et ce qu’on n’invente pas)",
-   "url": "https://www.ufc.fr/ufc-paris-2027/",
+   "url": "https://ufc.fr/ufc-paris-2027/",
    "slug": "ufc-paris-2027",
    "publie": "2026-08-31",
    "maj": "2026-08-31",
@@ -185,7 +185,7 @@
   {
    "type": "article",
    "titre": "Ziam et Sola en citations : « la guerre », pas la décision",
-   "url": "https://www.ufc.fr/ziam-sola-citations-ufc-paris/",
+   "url": "https://ufc.fr/ziam-sola-citations-ufc-paris/",
    "slug": "ziam-sola-citations-ufc-paris",
    "publie": "2026-08-31",
    "maj": "2026-08-31",
@@ -201,7 +201,7 @@
   {
    "type": "article",
    "titre": "Maccabi Nice : 1 000 m², cage MMA, quartier Libération",
-   "url": "https://www.ufc.fr/maccabi-nice-club-mma/",
+   "url": "https://ufc.fr/maccabi-nice-club-mma/",
    "slug": "maccabi-nice-club-mma",
    "publie": "2026-08-31",
    "maj": "2026-08-31",
@@ -215,7 +215,7 @@
   {
    "type": "article",
    "titre": "Fight’n’Fit Bordeaux : cage 6 m, Bastide, MMA associatif",
-   "url": "https://www.ufc.fr/fight-n-fit-bordeaux-club-mma/",
+   "url": "https://ufc.fr/fight-n-fit-bordeaux-club-mma/",
    "slug": "fight-n-fit-bordeaux-club-mma",
    "publie": "2026-08-31",
    "maj": "2026-08-31",
@@ -229,7 +229,7 @@
   {
    "type": "article",
    "titre": "Parabellum Combat Club Nantes : MMA depuis 2008",
-   "url": "https://www.ufc.fr/parabellum-nantes-club-mma/",
+   "url": "https://ufc.fr/parabellum-nantes-club-mma/",
    "slug": "parabellum-nantes-club-mma",
    "publie": "2026-08-31",
    "maj": "2026-08-31",
@@ -243,7 +243,7 @@
   {
    "type": "article",
    "titre": "Panthers Club Lille : MMA, muay-thaï, JJB, reprise le 9 septembre",
-   "url": "https://www.ufc.fr/panthers-club-lille-mma/",
+   "url": "https://ufc.fr/panthers-club-lille-mma/",
    "slug": "panthers-club-lille-mma",
    "publie": "2026-08-31",
    "maj": "2026-08-31",
@@ -257,7 +257,7 @@
   {
    "type": "article",
    "titre": "Team Ezbiri Lyon : le club de Farès Ziam, cage à Villeurbanne",
-   "url": "https://www.ufc.fr/team-ezbiri-lyon-club-mma/",
+   "url": "https://ufc.fr/team-ezbiri-lyon-club-mma/",
    "slug": "team-ezbiri-lyon-club-mma",
    "publie": "2026-08-31",
    "maj": "2026-08-31",
@@ -272,7 +272,7 @@
   {
    "type": "article",
    "titre": "Duclos et Aljarouj : deux débuts UFC à Paris, sans roman",
-   "url": "https://www.ufc.fr/duclos-aljarouj-debuts-ufc-paris-2026/",
+   "url": "https://ufc.fr/duclos-aljarouj-debuts-ufc-paris-2026/",
    "slug": "duclos-aljarouj-debuts-ufc-paris-2026",
    "publie": "2026-08-31",
    "maj": "2026-08-31",
@@ -289,7 +289,7 @@
   {
    "type": "article",
    "titre": "Femmes dans le MMA français : Cornolle, Benouaich, et la carte Paris",
-   "url": "https://www.ufc.fr/femmes-mma-francais-cornelle-benouaich/",
+   "url": "https://ufc.fr/femmes-mma-francais-cornelle-benouaich/",
    "slug": "femmes-mma-francais-cornelle-benouaich",
    "publie": "2026-08-31",
    "maj": "2026-08-31",
@@ -305,7 +305,7 @@
   {
    "type": "article",
    "titre": "Comment fonctionne une carte UFC ?",
-   "url": "https://www.ufc.fr/comment-fonctionne-carte-ufc/",
+   "url": "https://ufc.fr/comment-fonctionne-carte-ufc/",
    "slug": "comment-fonctionne-carte-ufc",
    "publie": "2026-08-31",
    "maj": "2026-08-31",
@@ -319,7 +319,7 @@
   {
    "type": "article",
    "titre": "UFC, PFL, ONE, KSW, Hexagone, ARES : quelles différences ?",
-   "url": "https://www.ufc.fr/differences-ufc-pfl-one-ksw-hexagone-ares/",
+   "url": "https://ufc.fr/differences-ufc-pfl-one-ksw-hexagone-ares/",
    "slug": "differences-ufc-pfl-one-ksw-hexagone-ares",
    "publie": "2026-08-31",
    "maj": "2026-08-31",
@@ -333,7 +333,7 @@
   {
    "type": "article",
    "titre": "Hexagone MMA à Rouen : 12 septembre 2026, Baybatyrov vs Trivunović",
-   "url": "https://www.ufc.fr/hexagone-mma-rouen-12-septembre-2026/",
+   "url": "https://ufc.fr/hexagone-mma-rouen-12-septembre-2026/",
    "slug": "hexagone-mma-rouen-12-septembre-2026",
    "publie": "2026-08-31",
    "maj": "2026-08-31",
@@ -348,7 +348,7 @@
   {
    "type": "article",
    "titre": "FMMAF : ce que la fédération change pour les clubs de MMA",
-   "url": "https://www.ufc.fr/fmmaf-federation-mma-france-clubs/",
+   "url": "https://ufc.fr/fmmaf-federation-mma-france-clubs/",
    "slug": "fmmaf-federation-mma-france-clubs",
    "publie": "2026-08-31",
    "maj": "2026-08-31",
@@ -363,7 +363,7 @@
   {
    "type": "article",
    "titre": "Fondation MMA Marseille : 700 m², cage 5×5, avenue de Toulon",
-   "url": "https://www.ufc.fr/fondation-mma-marseille-club/",
+   "url": "https://ufc.fr/fondation-mma-marseille-club/",
    "slug": "fondation-mma-marseille-club",
    "publie": "2026-08-31",
    "maj": "2026-08-31",
@@ -377,7 +377,7 @@
   {
    "type": "article",
    "titre": "Hexagone MMA 47 à Toulouse : date, lieu, carte annoncée",
-   "url": "https://www.ufc.fr/hexagone-mma-47-toulouse-2026/",
+   "url": "https://ufc.fr/hexagone-mma-47-toulouse-2026/",
    "slug": "hexagone-mma-47-toulouse-2026",
    "publie": "2026-08-31",
    "maj": "2026-08-31",
@@ -392,7 +392,7 @@
   {
    "type": "article",
    "titre": "UFC Paris : Mairon Santos forfait, Nathaniel Wood sans adversaire",
-   "url": "https://www.ufc.fr/ufc-paris-santos-forfait-wood/",
+   "url": "https://ufc.fr/ufc-paris-santos-forfait-wood/",
    "slug": "ufc-paris-santos-forfait-wood",
    "publie": "2026-08-31",
    "maj": "2026-08-31",
@@ -407,7 +407,7 @@
   {
    "type": "article",
    "titre": "Salahdine Parnasse en citations : signature UFC, Hooker, fans",
-   "url": "https://www.ufc.fr/salahdine-parnasse-citations-ufc-paris/",
+   "url": "https://ufc.fr/salahdine-parnasse-citations-ufc-paris/",
    "slug": "salahdine-parnasse-citations-ufc-paris",
    "publie": "2026-08-31",
    "maj": "2026-08-31",
@@ -423,7 +423,7 @@
   {
    "type": "article",
    "titre": "NRFight Paris : club MMA Tolbiac, Charrière et Cage Warriors",
-   "url": "https://www.ufc.fr/nrfight-paris-club-mma/",
+   "url": "https://ufc.fr/nrfight-paris-club-mma/",
    "slug": "nrfight-paris-club-mma",
    "publie": "2026-08-31",
    "maj": "2026-08-31",
@@ -437,7 +437,7 @@
   {
    "type": "article",
    "titre": "Unlock Paris 17 : club MMA, cage, coachs Mehdi et Yassine",
-   "url": "https://www.ufc.fr/unlock-paris-17-club-mma/",
+   "url": "https://ufc.fr/unlock-paris-17-club-mma/",
    "slug": "unlock-paris-17-club-mma",
    "publie": "2026-08-31",
    "maj": "2026-08-31",
@@ -451,7 +451,7 @@
   {
    "type": "article",
    "titre": "Les coachs de Cage Fight Toulouse : Jérôme, Tancrède, Yannis",
-   "url": "https://www.ufc.fr/coachs-cage-fight-toulouse-jerome-tancrede-yannis/",
+   "url": "https://ufc.fr/coachs-cage-fight-toulouse-jerome-tancrede-yannis/",
    "slug": "coachs-cage-fight-toulouse-jerome-tancrede-yannis",
    "publie": "2026-08-31",
    "maj": "2026-08-31",
@@ -465,7 +465,7 @@
   {
    "type": "article",
    "titre": "Ziam vs Sola : le co-main 100 % français de l’UFC Paris 2026",
-   "url": "https://www.ufc.fr/ziam-vs-sola-ufc-paris-2026-enjeux/",
+   "url": "https://ufc.fr/ziam-vs-sola-ufc-paris-2026-enjeux/",
    "slug": "ziam-vs-sola-ufc-paris-2026-enjeux",
    "publie": "2026-08-31",
    "maj": "2026-08-31",
@@ -481,7 +481,7 @@
   {
    "type": "article",
    "titre": "Salahdine Parnasse à l’UFC : ce que changent ses débuts à Paris",
-   "url": "https://www.ufc.fr/salahdine-parnasse-debuts-ufc-paris-2026/",
+   "url": "https://ufc.fr/salahdine-parnasse-debuts-ufc-paris-2026/",
    "slug": "salahdine-parnasse-debuts-ufc-paris-2026",
    "publie": "2026-08-31",
    "maj": "2026-08-31",
@@ -497,7 +497,7 @@
   {
    "type": "article",
    "titre": "Calendrier MMA France automne 2026 : Paris, Rouen, Toulouse",
-   "url": "https://www.ufc.fr/calendrier-mma-france-automne-2026/",
+   "url": "https://ufc.fr/calendrier-mma-france-automne-2026/",
    "slug": "calendrier-mma-france-automne-2026",
    "publie": "2026-08-31",
    "maj": "2026-08-31",
@@ -513,7 +513,7 @@
   {
    "type": "article",
    "titre": "ARES 43 : O’Connor vs Diatta pour le titre, le 25 septembre à Paris",
-   "url": "https://www.ufc.fr/ares-43-oconnor-diatta-adidas-arena/",
+   "url": "https://ufc.fr/ares-43-oconnor-diatta-adidas-arena/",
    "slug": "ares-43-oconnor-diatta-adidas-arena",
    "publie": "2026-08-31",
    "maj": "2026-08-31",
@@ -528,7 +528,7 @@
   {
    "type": "article",
    "titre": "Catégories de poids en MMA : le guide simple (UFC et France)",
-   "url": "https://www.ufc.fr/categories-poids-mma-guide/",
+   "url": "https://ufc.fr/categories-poids-mma-guide/",
    "slug": "categories-poids-mma-guide",
    "publie": "2026-08-31",
    "maj": "2026-08-31",
@@ -542,7 +542,7 @@
   {
    "type": "article",
    "titre": "UFC à Paris : de Gane–Tuivasa à Parnasse, quatre soirs à l’Accor Arena",
-   "url": "https://www.ufc.fr/ufc-paris-historique-accor-arena/",
+   "url": "https://ufc.fr/ufc-paris-historique-accor-arena/",
    "slug": "ufc-paris-historique-accor-arena",
    "publie": "2026-08-31",
    "maj": "2026-08-31",
@@ -557,7 +557,7 @@
   {
    "type": "article",
    "titre": "Cage Fight Toulouse : le club 100 % MMA de référence en Occitanie",
-   "url": "https://www.ufc.fr/cage-fight-toulouse-club-mma/",
+   "url": "https://ufc.fr/cage-fight-toulouse-club-mma/",
    "slug": "cage-fight-toulouse-club-mma",
    "publie": "2026-08-31",
    "maj": "2026-08-31",
@@ -571,7 +571,7 @@
   {
    "type": "article",
    "titre": "UFC Paris 2026 : les 8 combattants français à suivre",
-   "url": "https://www.ufc.fr/ufc-paris-2026-combattants-francais/",
+   "url": "https://ufc.fr/ufc-paris-2026-combattants-francais/",
    "slug": "ufc-paris-2026-combattants-francais",
    "publie": "2026-08-31",
    "maj": "2026-08-31",
@@ -587,7 +587,7 @@
   {
    "type": "article",
    "titre": "UFC Paris 2026 : la carte complète Hooker vs Parnasse",
-   "url": "https://www.ufc.fr/ufc-paris-2026-carte-complete-hooker-parnasse/",
+   "url": "https://ufc.fr/ufc-paris-2026-carte-complete-hooker-parnasse/",
    "slug": "ufc-paris-2026-carte-complete-hooker-parnasse",
    "publie": "2026-08-31",
    "maj": "2026-08-31",
@@ -602,7 +602,7 @@
   {
    "type": "article",
    "titre": "UFC Paris 2026 : date, lieu, carte et enjeux à l’Accor Arena",
-   "url": "https://www.ufc.fr/ufc-paris-2026-date-lieu-carte-enjeux/",
+   "url": "https://ufc.fr/ufc-paris-2026-date-lieu-carte-enjeux/",
    "slug": "ufc-paris-2026-date-lieu-carte-enjeux",
    "publie": "2026-08-31",
    "maj": "2026-08-31",
@@ -617,7 +617,7 @@
   {
    "type": "article",
    "titre": "UFC Shanghai : Song Yadong KO Umar Nurmagomedov",
-   "url": "https://www.ufc.fr/ufc-shanghai-song-yadong-ko-umar-nurmagomedov/",
+   "url": "https://ufc.fr/ufc-shanghai-song-yadong-ko-umar-nurmagomedov/",
    "slug": "ufc-shanghai-song-yadong-ko-umar-nurmagomedov",
    "publie": "2026-08-30",
    "maj": "2026-08-31",
@@ -632,7 +632,7 @@
   {
    "type": "article",
    "titre": "UFC Sacramento : Gregory Rodrigues bat Anthony Hernandez",
-   "url": "https://www.ufc.fr/ufc-sacramento-rodrigues-hernandez-resultats/",
+   "url": "https://ufc.fr/ufc-sacramento-rodrigues-hernandez-resultats/",
    "slug": "ufc-sacramento-rodrigues-hernandez-resultats",
    "publie": "2026-08-23",
    "maj": "2026-08-31",
@@ -647,7 +647,7 @@
   {
    "type": "article",
    "titre": "UFC 315 : Jack Della Maddalena détrône Belal Muhammad et devient champion des poids welters",
-   "url": "https://www.ufc.fr/ufc-315-jack-della-maddalena-detrone-belal-muhammad-et-devient-champion-des-poids-welters/",
+   "url": "https://ufc.fr/ufc-315-jack-della-maddalena-detrone-belal-muhammad-et-devient-champion-des-poids-welters/",
    "slug": "ufc-315-jack-della-maddalena-detrone-belal-muhammad-et-devient-champion-des-poids-welters",
    "publie": "2025-06-05",
    "maj": "2025-06-05",
@@ -660,7 +660,7 @@
   {
    "type": "article",
    "titre": "Hexagone MMA : Toulouse devient capitale du MMA en septembre",
-   "url": "https://www.ufc.fr/actualite-combat-ufc-mma-toulouse-capital-mma-315-welterweight/",
+   "url": "https://ufc.fr/actualite-combat-ufc-mma-toulouse-capital-mma-315-welterweight/",
    "slug": "actualite-combat-ufc-mma-toulouse-capital-mma-315-welterweight",
    "publie": "2025-05-13",
    "maj": "2025-06-05",
@@ -673,7 +673,7 @@
   {
    "type": "article",
    "titre": "PFL Africa : Johnny Eblen défend sa ceinture à Cape Town",
-   "url": "https://www.ufc.fr/actualite-combat-pfl-africa-johnny-eblen/",
+   "url": "https://ufc.fr/actualite-combat-pfl-africa-johnny-eblen/",
    "slug": "actualite-combat-pfl-africa-johnny-eblen",
    "publie": "2025-05-13",
    "maj": "2025-05-17",
@@ -686,7 +686,7 @@
   {
    "type": "article",
    "titre": "UFC 315 : Manon Fiorot vise l’exploit face à Shevchenko",
-   "url": "https://www.ufc.fr/actualite-combat-ufc-315-manon-fiorot/",
+   "url": "https://ufc.fr/actualite-combat-ufc-315-manon-fiorot/",
    "slug": "actualite-combat-ufc-315-manon-fiorot",
    "publie": "2025-05-13",
    "maj": "2025-05-17",
@@ -699,7 +699,7 @@
   {
    "type": "article",
    "titre": "Yuya Wakamatsu",
-   "url": "https://www.ufc.fr/portrait-one-championship-yuya-wakamatsu/",
+   "url": "https://ufc.fr/portrait-one-championship-yuya-wakamatsu/",
    "slug": "portrait-one-championship-yuya-wakamatsu",
    "publie": "2025-05-13",
    "maj": "2026-08-31",
@@ -712,7 +712,7 @@
   {
    "type": "article",
    "titre": "Xiong Jing Nan",
-   "url": "https://www.ufc.fr/portrait-one-championship-xiong-jing-nan/",
+   "url": "https://ufc.fr/portrait-one-championship-xiong-jing-nan/",
    "slug": "portrait-one-championship-xiong-jing-nan",
    "publie": "2025-05-13",
    "maj": "2026-08-31",
@@ -725,7 +725,7 @@
   {
    "type": "article",
    "titre": "Tang Kai",
-   "url": "https://www.ufc.fr/portrait-one-championship-tang-kai/",
+   "url": "https://ufc.fr/portrait-one-championship-tang-kai/",
    "slug": "portrait-one-championship-tang-kai",
    "publie": "2025-05-13",
    "maj": "2026-08-31",
@@ -738,7 +738,7 @@
   {
    "type": "article",
    "titre": "Oumar Kane",
-   "url": "https://www.ufc.fr/portrait-one-championship-oumar-kane/",
+   "url": "https://ufc.fr/portrait-one-championship-oumar-kane/",
    "slug": "portrait-one-championship-oumar-kane",
    "publie": "2025-05-13",
    "maj": "2026-08-31",
@@ -751,7 +751,7 @@
   {
    "type": "article",
    "titre": "Joshua Pacio",
-   "url": "https://www.ufc.fr/portrait-one-championship-joshua-pacio/",
+   "url": "https://ufc.fr/portrait-one-championship-joshua-pacio/",
    "slug": "portrait-one-championship-joshua-pacio",
    "publie": "2025-05-13",
    "maj": "2026-08-31",
@@ -764,7 +764,7 @@
   {
    "type": "article",
    "titre": "Fabricio Andrade",
-   "url": "https://www.ufc.fr/portrait-one-championship-fabricio-andrade/",
+   "url": "https://ufc.fr/portrait-one-championship-fabricio-andrade/",
    "slug": "portrait-one-championship-fabricio-andrade",
    "publie": "2025-05-13",
    "maj": "2026-08-31",
@@ -777,7 +777,7 @@
   {
    "type": "article",
    "titre": "Denice Zamboanga",
-   "url": "https://www.ufc.fr/portrait-one-championship-denice-zamboanga/",
+   "url": "https://ufc.fr/portrait-one-championship-denice-zamboanga/",
    "slug": "portrait-one-championship-denice-zamboanga",
    "publie": "2025-05-13",
    "maj": "2026-08-31",
@@ -790,7 +790,7 @@
   {
    "type": "article",
    "titre": "Christian Lee",
-   "url": "https://www.ufc.fr/portrait-one-championship-christian-lee/",
+   "url": "https://ufc.fr/portrait-one-championship-christian-lee/",
    "slug": "portrait-one-championship-christian-lee",
    "publie": "2025-05-12",
    "maj": "2026-08-31",
@@ -803,7 +803,7 @@
   {
    "type": "article",
    "titre": "Anatoly Malykhin",
-   "url": "https://www.ufc.fr/portrait-one-championship-anatoly-malykhin/",
+   "url": "https://ufc.fr/portrait-one-championship-anatoly-malykhin/",
    "slug": "portrait-one-championship-anatoly-malykhin",
    "publie": "2025-05-12",
    "maj": "2026-08-31",
@@ -816,7 +816,7 @@
   {
    "type": "article",
    "titre": "Felix Klinkhammer",
-   "url": "https://www.ufc.fr/portrait-ares-felix-klinkhammer/",
+   "url": "https://ufc.fr/portrait-ares-felix-klinkhammer/",
    "slug": "portrait-ares-felix-klinkhammer",
    "publie": "2025-05-12",
    "maj": "2026-08-31",
@@ -829,7 +829,7 @@
   {
    "type": "article",
    "titre": "Axel Sola",
-   "url": "https://www.ufc.fr/portrait-ares-axel-sola/",
+   "url": "https://ufc.fr/portrait-ares-axel-sola/",
    "slug": "portrait-ares-axel-sola",
    "publie": "2025-05-12",
    "maj": "2026-08-31",
@@ -842,7 +842,7 @@
   {
    "type": "article",
    "titre": "Jady Menezes",
-   "url": "https://www.ufc.fr/portrait-ares-jady-menezes/",
+   "url": "https://ufc.fr/portrait-ares-jady-menezes/",
    "slug": "portrait-ares-jady-menezes",
    "publie": "2025-05-12",
    "maj": "2026-08-31",
@@ -855,7 +855,7 @@
   {
    "type": "article",
    "titre": "Aboubakar Younousov",
-   "url": "https://www.ufc.fr/portrait-ares-aboubakar-younousov/",
+   "url": "https://ufc.fr/portrait-ares-aboubakar-younousov/",
    "slug": "portrait-ares-aboubakar-younousov",
    "publie": "2025-05-12",
    "maj": "2026-08-31",
@@ -868,7 +868,7 @@
   {
    "type": "article",
    "titre": "Aboubacar Bathily",
-   "url": "https://www.ufc.fr/portrait-ares-aboubacar-bathily/",
+   "url": "https://ufc.fr/portrait-ares-aboubacar-bathily/",
    "slug": "portrait-ares-aboubacar-bathily",
    "publie": "2025-05-12",
    "maj": "2026-08-31",
@@ -881,7 +881,7 @@
   {
    "type": "article",
    "titre": "Abdulrakhman Yakhyaev",
-   "url": "https://www.ufc.fr/portrait-ares-abdulrakhman-yakhyaev/",
+   "url": "https://ufc.fr/portrait-ares-abdulrakhman-yakhyaev/",
    "slug": "portrait-ares-abdulrakhman-yakhyaev",
    "publie": "2025-05-12",
    "maj": "2026-08-31",
@@ -894,7 +894,7 @@
   {
    "type": "article",
    "titre": "Virgil Augen",
-   "url": "https://www.ufc.fr/portrait-ares-virgil-augen/",
+   "url": "https://ufc.fr/portrait-ares-virgil-augen/",
    "slug": "portrait-ares-virgil-augen",
    "publie": "2025-05-11",
    "maj": "2026-08-31",
@@ -907,7 +907,7 @@
   {
    "type": "article",
    "titre": "Matthieu Duclos",
-   "url": "https://www.ufc.fr/portrait-hexagone-mma-matthieu-duclos/",
+   "url": "https://ufc.fr/portrait-hexagone-mma-matthieu-duclos/",
    "slug": "portrait-hexagone-mma-matthieu-duclos",
    "publie": "2025-05-11",
    "maj": "2026-08-31",
@@ -920,7 +920,7 @@
   {
    "type": "article",
    "titre": "Prince Aounallah",
-   "url": "https://www.ufc.fr/portrait-hexagone-mma-prince-aounallah/",
+   "url": "https://ufc.fr/portrait-hexagone-mma-prince-aounallah/",
    "slug": "portrait-hexagone-mma-prince-aounallah",
    "publie": "2025-05-11",
    "maj": "2026-08-31",
@@ -933,7 +933,7 @@
   {
    "type": "article",
    "titre": "Harry Hardwick",
-   "url": "https://www.ufc.fr/portrait-cage-wrarriors-harry-hardwick/",
+   "url": "https://ufc.fr/portrait-cage-wrarriors-harry-hardwick/",
    "slug": "portrait-cage-wrarriors-harry-hardwick",
    "publie": "2025-05-11",
    "maj": "2026-08-31",
@@ -946,7 +946,7 @@
   {
    "type": "article",
    "titre": "Samuel Silva",
-   "url": "https://www.ufc.fr/portrait-cage-wrarriors-samuel-silva/",
+   "url": "https://ufc.fr/portrait-cage-wrarriors-samuel-silva/",
    "slug": "portrait-cage-wrarriors-samuel-silva",
    "publie": "2025-05-09",
    "maj": "2026-08-31",
@@ -959,7 +959,7 @@
   {
    "type": "article",
    "titre": "Justin Burlinson",
-   "url": "https://www.ufc.fr/portrait-cage-wrarriors-justin-burlinson/",
+   "url": "https://ufc.fr/portrait-cage-wrarriors-justin-burlinson/",
    "slug": "portrait-cage-wrarriors-justin-burlinson",
    "publie": "2025-05-09",
    "maj": "2026-08-31",
@@ -972,7 +972,7 @@
   {
    "type": "article",
    "titre": "Dario Bellandi",
-   "url": "https://www.ufc.fr/portrait-cage-warriors-dario-bellandi/",
+   "url": "https://ufc.fr/portrait-cage-warriors-dario-bellandi/",
    "slug": "portrait-cage-warriors-dario-bellandi",
    "publie": "2025-05-09",
    "maj": "2026-08-31",
@@ -985,7 +985,7 @@
   {
    "type": "article",
    "titre": "James Webb",
-   "url": "https://www.ufc.fr/portrait-cage-warriors-james-webb/",
+   "url": "https://ufc.fr/portrait-cage-warriors-james-webb/",
    "slug": "portrait-cage-warriors-james-webb",
    "publie": "2025-05-09",
    "maj": "2026-08-31",
@@ -998,7 +998,7 @@
   {
    "type": "article",
    "titre": "Cage Warriors 191 : Gittins VS Giordano",
-   "url": "https://www.ufc.fr/actualite-combat-cage-warriors-gittins-vs-giordano/",
+   "url": "https://ufc.fr/actualite-combat-cage-warriors-gittins-vs-giordano/",
    "slug": "actualite-combat-cage-warriors-gittins-vs-giordano",
    "publie": "2025-05-09",
    "maj": "2025-05-17",
@@ -1011,7 +1011,7 @@
   {
    "type": "article",
    "titre": "ONE Fight Night 32 : Nakrob VS Jaosuayai",
-   "url": "https://www.ufc.fr/actualite-combat-one-nakrob-vs-jaosuayai/",
+   "url": "https://ufc.fr/actualite-combat-one-nakrob-vs-jaosuayai/",
    "slug": "actualite-combat-one-nakrob-vs-jaosuayai",
    "publie": "2025-05-09",
    "maj": "2025-05-17",
@@ -1024,7 +1024,7 @@
   {
    "type": "article",
    "titre": "PFL 2025 : Demi-finales mondial à Nashville",
-   "url": "https://www.ufc.fr/actualite-combat-pfl-tournoi-mondial/",
+   "url": "https://ufc.fr/actualite-combat-pfl-tournoi-mondial/",
    "slug": "actualite-combat-pfl-tournoi-mondial",
    "publie": "2025-05-09",
    "maj": "2025-05-17",
@@ -1037,7 +1037,7 @@
   {
    "type": "article",
    "titre": "UFC 316 : Dvalishvili vs O’Malley 2",
-   "url": "https://www.ufc.fr/actualite-combat-ufc-dvalishvili-vs-o-malley/",
+   "url": "https://ufc.fr/actualite-combat-ufc-dvalishvili-vs-o-malley/",
    "slug": "actualite-combat-ufc-dvalishvili-vs-o-malley",
    "publie": "2025-05-09",
    "maj": "2025-05-17",
@@ -1050,7 +1050,7 @@
   {
    "type": "article",
    "titre": "Sebastian Przybysz",
-   "url": "https://www.ufc.fr/portrait-ksw-sebastian-przybysz/",
+   "url": "https://ufc.fr/portrait-ksw-sebastian-przybysz/",
    "slug": "portrait-ksw-sebastian-przybysz",
    "publie": "2025-05-02",
    "maj": "2026-08-31",
@@ -1063,7 +1063,7 @@
   {
    "type": "article",
    "titre": "Salahdine Parnasse",
-   "url": "https://www.ufc.fr/portrait-ksw-slahdine-parnasse/",
+   "url": "https://ufc.fr/portrait-ksw-slahdine-parnasse/",
    "slug": "portrait-ksw-slahdine-parnasse",
    "publie": "2025-05-02",
    "maj": "2026-08-31",
@@ -1076,7 +1076,7 @@
   {
    "type": "article",
    "titre": "Rafał Haratyk",
-   "url": "https://www.ufc.fr/portrait-ksw-rafal-haratyk/",
+   "url": "https://ufc.fr/portrait-ksw-rafal-haratyk/",
    "slug": "portrait-ksw-rafal-haratyk",
    "publie": "2025-05-02",
    "maj": "2026-08-31",
@@ -1089,7 +1089,7 @@
   {
    "type": "article",
    "titre": "Phil De Fries",
-   "url": "https://www.ufc.fr/portrait-ksw-phil-de-fries/",
+   "url": "https://ufc.fr/portrait-ksw-phil-de-fries/",
    "slug": "portrait-ksw-phil-de-fries",
    "publie": "2025-05-02",
    "maj": "2026-08-31",
@@ -1102,7 +1102,7 @@
   {
    "type": "article",
    "titre": "Pawel Pawlak",
-   "url": "https://www.ufc.fr/portrait-ksw-pawel-pawlak/",
+   "url": "https://ufc.fr/portrait-ksw-pawel-pawlak/",
    "slug": "portrait-ksw-pawel-pawlak",
    "publie": "2025-05-02",
    "maj": "2026-08-31",
@@ -1115,7 +1115,7 @@
   {
    "type": "article",
    "titre": "Timur Khizriev",
-   "url": "https://www.ufc.fr/portrait-pfl-timur-khizriev/",
+   "url": "https://ufc.fr/portrait-pfl-timur-khizriev/",
    "slug": "portrait-pfl-timur-khizriev",
    "publie": "2025-05-01",
    "maj": "2026-08-31",
@@ -1128,7 +1128,7 @@
   {
    "type": "article",
    "titre": "Shamil Musaev",
-   "url": "https://www.ufc.fr/portrait-pfl-shamil-musaev/",
+   "url": "https://ufc.fr/portrait-pfl-shamil-musaev/",
    "slug": "portrait-pfl-shamil-musaev",
    "publie": "2025-05-01",
    "maj": "2026-08-31",
@@ -1141,7 +1141,7 @@
   {
    "type": "article",
    "titre": "Gadzhi Rabadanov",
-   "url": "https://www.ufc.fr/portrait-pfl-gadzhi-rabadanov/",
+   "url": "https://ufc.fr/portrait-pfl-gadzhi-rabadanov/",
    "slug": "portrait-pfl-gadzhi-rabadanov",
    "publie": "2025-05-01",
    "maj": "2026-08-31",
@@ -1154,7 +1154,7 @@
   {
    "type": "article",
    "titre": "Denis Goltsov",
-   "url": "https://www.ufc.fr/portrait-pfl-denis-goltsov/",
+   "url": "https://ufc.fr/portrait-pfl-denis-goltsov/",
    "slug": "portrait-pfl-denis-goltsov",
    "publie": "2025-05-01",
    "maj": "2026-08-31",
@@ -1167,7 +1167,7 @@
   {
    "type": "article",
    "titre": "Dakota Ditcheva",
-   "url": "https://www.ufc.fr/portrait-pfl-dakota-ditcheva/",
+   "url": "https://ufc.fr/portrait-pfl-dakota-ditcheva/",
    "slug": "portrait-pfl-dakota-ditcheva",
    "publie": "2025-04-30",
    "maj": "2026-08-31",
@@ -1180,7 +1180,7 @@
   {
    "type": "article",
    "titre": "Dovletdzhan Yagshimuradov",
-   "url": "https://www.ufc.fr/portrait-pfl-dovletdzhan-yagshimuradov/",
+   "url": "https://ufc.fr/portrait-pfl-dovletdzhan-yagshimuradov/",
    "slug": "portrait-pfl-dovletdzhan-yagshimuradov",
    "publie": "2025-04-30",
    "maj": "2026-08-31",
@@ -1193,7 +1193,7 @@
   {
    "type": "article",
    "titre": "Alexandre Pantoja",
-   "url": "https://www.ufc.fr/portrait-ufc-alexandre-pantoja/",
+   "url": "https://ufc.fr/portrait-ufc-alexandre-pantoja/",
    "slug": "portrait-ufc-alexandre-pantoja",
    "publie": "2025-04-30",
    "maj": "2026-08-31",
@@ -1206,7 +1206,7 @@
   {
    "type": "article",
    "titre": "Merab Dvalishvili",
-   "url": "https://www.ufc.fr/portrait-ufc-merab-dvalishvili/",
+   "url": "https://ufc.fr/portrait-ufc-merab-dvalishvili/",
    "slug": "portrait-ufc-merab-dvalishvili",
    "publie": "2025-04-30",
    "maj": "2026-08-31",
@@ -1219,7 +1219,7 @@
   {
    "type": "article",
    "titre": "Ventina Shevchenko",
-   "url": "https://www.ufc.fr/portrait-ufc-valentina-shevchenko/",
+   "url": "https://ufc.fr/portrait-ufc-valentina-shevchenko/",
    "slug": "portrait-ufc-valentina-shevchenko",
    "publie": "2025-04-30",
    "maj": "2026-08-31",
@@ -1232,7 +1232,7 @@
   {
    "type": "article",
    "titre": "Julianna Peña",
-   "url": "https://www.ufc.fr/portrait-ufc-julianna-pena/",
+   "url": "https://ufc.fr/portrait-ufc-julianna-pena/",
    "slug": "portrait-ufc-julianna-pena",
    "publie": "2025-04-30",
    "maj": "2026-08-31",
@@ -1245,7 +1245,7 @@
   {
    "type": "article",
    "titre": "Belal Muhammad",
-   "url": "https://www.ufc.fr/portrait-ufc-belal-muhammad/",
+   "url": "https://ufc.fr/portrait-ufc-belal-muhammad/",
    "slug": "portrait-ufc-belal-muhammad",
    "publie": "2025-04-29",
    "maj": "2026-08-31",
@@ -1258,7 +1258,7 @@
   {
    "type": "article",
    "titre": "Llia Topuria",
-   "url": "https://www.ufc.fr/portrait-ufc-llia-topuria/",
+   "url": "https://ufc.fr/portrait-ufc-llia-topuria/",
    "slug": "portrait-ufc-llia-topuria",
    "publie": "2025-04-29",
    "maj": "2026-08-31",
@@ -1271,7 +1271,7 @@
   {
    "type": "article",
    "titre": "Zhang Weili",
-   "url": "https://www.ufc.fr/portrait-ufc-zhang-weili/",
+   "url": "https://ufc.fr/portrait-ufc-zhang-weili/",
    "slug": "portrait-ufc-zhang-weili",
    "publie": "2025-04-29",
    "maj": "2026-08-31",
@@ -1284,7 +1284,7 @@
   {
    "type": "article",
    "titre": "Magomed Ankalaev",
-   "url": "https://www.ufc.fr/portrait-ufc-magomed-ankalaev/",
+   "url": "https://ufc.fr/portrait-ufc-magomed-ankalaev/",
    "slug": "portrait-ufc-magomed-ankalaev",
    "publie": "2025-04-29",
    "maj": "2026-08-31",
@@ -1297,7 +1297,7 @@
   {
    "type": "article",
    "titre": "John Jones",
-   "url": "https://www.ufc.fr/portrait-ufc-john-jones/",
+   "url": "https://ufc.fr/portrait-ufc-john-jones/",
    "slug": "portrait-ufc-john-jones",
    "publie": "2025-04-24",
    "maj": "2026-08-31",
@@ -1310,7 +1310,7 @@
   {
    "type": "article",
    "titre": "Dricus Du Plessis",
-   "url": "https://www.ufc.fr/portrait-ufc-dricus-du-plessis/",
+   "url": "https://ufc.fr/portrait-ufc-dricus-du-plessis/",
    "slug": "portrait-ufc-dricus-du-plessis",
    "publie": "2025-04-24",
    "maj": "2026-08-31",
@@ -1323,7 +1323,7 @@
   {
    "type": "page",
    "titre": "Suivi SEO UFC.FR — méthode",
-   "url": "https://www.ufc.fr/suivi-seo/",
+   "url": "https://ufc.fr/suivi-seo/",
    "slug": "suivi-seo",
    "publie": "2026-08-31",
    "maj": "2026-08-31",
@@ -1334,7 +1334,7 @@
   {
    "type": "page",
    "titre": "Classements UFC (août 2026) : légers, moyens, lourds et Paris",
-   "url": "https://www.ufc.fr/classements-ufc-aout-2026/",
+   "url": "https://ufc.fr/classements-ufc-aout-2026/",
    "slug": "classements-ufc-aout-2026",
    "publie": "2026-08-31",
    "maj": "2026-08-31",
@@ -1345,7 +1345,7 @@
   {
    "type": "page",
    "titre": "Forum et communauté MMA",
-   "url": "https://www.ufc.fr/forum-communaute-mma/",
+   "url": "https://ufc.fr/forum-communaute-mma/",
    "slug": "forum-communaute-mma",
    "publie": "2026-08-31",
    "maj": "2026-08-31",
@@ -1356,7 +1356,7 @@
   {
    "type": "page",
    "titre": "À propos d’UFC.FR — média MMA indépendant",
-   "url": "https://www.ufc.fr/a-propos/",
+   "url": "https://ufc.fr/a-propos/",
    "slug": "a-propos",
    "publie": "2026-08-31",
    "maj": "2026-08-31",
@@ -1367,7 +1367,7 @@
   {
    "type": "page",
    "titre": "Les clubs de MMA français",
-   "url": "https://www.ufc.fr/clubs-mma-francais/",
+   "url": "https://ufc.fr/clubs-mma-francais/",
    "slug": "clubs-mma-francais",
    "publie": "2026-08-31",
    "maj": "2026-08-31",
@@ -1378,7 +1378,7 @@
   {
    "type": "page",
    "titre": "Champions MMA actuels : UFC, PFL, ONE, KSW, Hexagone, ARES",
-   "url": "https://www.ufc.fr/champions-mma-actuels/",
+   "url": "https://ufc.fr/champions-mma-actuels/",
    "slug": "champions-mma-actuels",
    "publie": "2026-08-31",
    "maj": "2026-08-31",
@@ -1389,7 +1389,7 @@
   {
    "type": "page",
    "titre": "Mentions légales & confidentialités",
-   "url": "https://www.ufc.fr/mentions-legales-confidentialites/",
+   "url": "https://ufc.fr/mentions-legales-confidentialites/",
    "slug": "mentions-legales-confidentialites",
    "publie": "2025-04-25",
    "maj": "2026-08-31",
@@ -1400,7 +1400,7 @@
   {
    "type": "page",
    "titre": "Konfrontacja Sztuk Walki – KSW",
-   "url": "https://www.ufc.fr/organisation-mma-ksw/",
+   "url": "https://ufc.fr/organisation-mma-ksw/",
    "slug": "organisation-mma-ksw",
    "publie": "2025-04-23",
    "maj": "2026-08-31",
@@ -1411,7 +1411,7 @@
   {
    "type": "page",
    "titre": "Hexagone MMA",
-   "url": "https://www.ufc.fr/organisation-hexagone-mma/",
+   "url": "https://ufc.fr/organisation-hexagone-mma/",
    "slug": "organisation-hexagone-mma",
    "publie": "2025-04-23",
    "maj": "2026-08-31",
@@ -1422,7 +1422,7 @@
   {
    "type": "page",
    "titre": "ARES Fighting Championship",
-   "url": "https://www.ufc.fr/organisation-mma-ares-fighting-championship/",
+   "url": "https://ufc.fr/organisation-mma-ares-fighting-championship/",
    "slug": "organisation-mma-ares-fighting-championship",
    "publie": "2025-04-23",
    "maj": "2026-08-31",
@@ -1433,7 +1433,7 @@
   {
    "type": "page",
    "titre": "Cage Warriors",
-   "url": "https://www.ufc.fr/organisation-mma-cage-warriors/",
+   "url": "https://ufc.fr/organisation-mma-cage-warriors/",
    "slug": "organisation-mma-cage-warriors",
    "publie": "2025-04-23",
    "maj": "2026-08-31",
@@ -1444,7 +1444,7 @@
   {
    "type": "page",
    "titre": "ONE Championship",
-   "url": "https://www.ufc.fr/organisation-mma-one-championship/",
+   "url": "https://ufc.fr/organisation-mma-one-championship/",
    "slug": "organisation-mma-one-championship",
    "publie": "2025-04-23",
    "maj": "2026-08-31",
@@ -1455,7 +1455,7 @@
   {
    "type": "page",
    "titre": "Professional Fighters League",
-   "url": "https://www.ufc.fr/organisation-mma-professional-fighters-league/",
+   "url": "https://ufc.fr/organisation-mma-professional-fighters-league/",
    "slug": "organisation-mma-professional-fighters-league",
    "publie": "2025-04-23",
    "maj": "2026-08-31",
@@ -1466,7 +1466,7 @@
   {
    "type": "page",
    "titre": "Ultimate Fighting Championship",
-   "url": "https://www.ufc.fr/organisation-mma-ultimate-fighting-championship/",
+   "url": "https://ufc.fr/organisation-mma-ultimate-fighting-championship/",
    "slug": "organisation-mma-ultimate-fighting-championship",
    "publie": "2025-04-23",
    "maj": "2026-08-31",
@@ -1477,7 +1477,7 @@
   {
    "type": "page",
    "titre": "Portraits de champions",
-   "url": "https://www.ufc.fr/mma-portraits-de-champions/",
+   "url": "https://ufc.fr/mma-portraits-de-champions/",
    "slug": "mma-portraits-de-champions",
    "publie": "2025-04-23",
    "maj": "2026-08-31",
@@ -1488,7 +1488,7 @@
   {
    "type": "page",
    "titre": "L’actualité du MMA",
-   "url": "https://www.ufc.fr/actualite-du-mma/",
+   "url": "https://ufc.fr/actualite-du-mma/",
    "slug": "actualite-du-mma",
    "publie": "2025-04-23",
    "maj": "2026-08-31",

@@ -15,7 +15,7 @@ import { dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
-const SITE = "https://www.ufc.fr";
+const SITE = "https://ufc.fr";
 
 // Pages de coulisses : utiles à l'équipe, sans valeur pour un lecteur, et
 // nuisibles dans l'index d'un site d'actualité.

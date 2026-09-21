@@ -24,7 +24,7 @@ import { fileURLToPath } from "node:url";
 import { createInterface } from "node:readline";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
-const SITE = "https://www.ufc.fr";
+const SITE = "https://ufc.fr";
 
 const lire = (p) => JSON.parse(readFileSync(join(ROOT, p), "utf8"));
 const posts = lire("data/wp/posts.json");

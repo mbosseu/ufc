@@ -8,7 +8,7 @@ import { join, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
-const SITE = "https://www.ufc.fr";
+const SITE = "https://ufc.fr";
 const IGNORE = new Set([".git", "node_modules", "data", "media", "UFC", "tools", "mcp", "img", "css", "js", "logo", ".registre", ".research", ".pages"]);
 
 const urls = new Set(["/"]);

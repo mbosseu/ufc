@@ -2567,7 +2567,9 @@ html.motion .cage-frame .cage-draw { animation: cage-close 1.5s var(--ease) 0.15
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: 50% 16%;
+  /* Portrait 4:5 dans un heros large : trop haut (16 %) ne montrait
+     que le front. On cadre visage + buste. */
+  object-position: 50% 30%;
   filter: grayscale(1) contrast(1.1) brightness(0.82);
   transition: filter 0.9s var(--ease), transform 1.4s var(--ease);
 }
@@ -2608,8 +2610,13 @@ html.motion .cage-frame .cage-draw { animation: cage-close 1.5s var(--ease) 0.15
 }
 .hero-solo .kicker { color: var(--mist); }
 @media (max-width: 600px) {
-  .hero-solo .hero-solo-fig img { object-position: 48% 12%; }
+  .hero-solo .hero-solo-fig img { object-position: 48% 26%; }
   .hero-solo .hero-name { font-size: clamp(36px, 12vw, 64px); }
+}
+
+/* Hero solo un peu moins haut : moins de crop agressif sur le portrait. */
+.hero-cage.hero-solo {
+  min-height: min(88svh, 760px);
 }
 
 .hero-man::after {

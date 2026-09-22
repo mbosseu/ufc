@@ -67,9 +67,24 @@ const paris = inCat("ufc-paris-2026");
 const clubsCat = inCat("clubs-mma-francais");
 const clubSlugs = new Set(clubsCat.map((p) => p.slug));
 const portraits = byDate.filter((p) => p.slug.startsWith("portrait-"));
-// À la une = actu / résultats / événements — pas les fiches clubs (déjà en palier salles).
+// À la une = actu fraîche. On écarte les clubs (palier salles) et les
+// pages promo pré-Paris qui ne doivent plus ouvrir le fil.
+const EXCLUS_UNE = new Set([
+  "dan-hooker-citations-ufc-paris-parnasse",
+  "morgan-charriere-citations-ufc-paris",
+  "ziam-sola-citations-ufc-paris",
+  "salahdine-parnasse-citations-ufc-paris",
+  "ciryl-gane-retour-entrainement-aspinall",
+  "ufc-paris-santos-forfait-wood",
+  "ufc-paris-2027",
+]);
 const fil = byDate
-  .filter((p) => !p.slug.startsWith("portrait-") && !clubSlugs.has(p.slug))
+  .filter(
+    (p) =>
+      !p.slug.startsWith("portrait-") &&
+      !clubSlugs.has(p.slug) &&
+      !EXCLUS_UNE.has(p.slug)
+  )
   .slice(0, 7);
 
 const une =

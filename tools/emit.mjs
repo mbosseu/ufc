@@ -182,9 +182,23 @@ function ouvertureOrg(doc) {
 
 function featuredImage(doc) {
   // Une photo maison, quand le sujet en a une, passe avant l'image du CMS.
+  // Sauf pour les articles rediges dans data/articles/ : leur champ `image`
+  // est une decision editoriale, pas un repli a ecraser (sinon
+  // « ufc-334-gane-… » recevait toujours gane.webp a cause du mot « gane »
+  // dans le slug).
+  const fm = doc._embedded?.["wp:featuredmedia"]?.[0];
+  if (doc.maison && fm?.source_url) {
+    const local = localMedia(fm.source_url);
+    return {
+      url: local ? local.url : fm.source_url,
+      alt: fm.alt_text || stripTags(fm.title?.rendered || ""),
+      credit: fm.credit || "",
+      width: fm.media_details?.width,
+      height: fm.media_details?.height,
+    };
+  }
   const maison = imageMaison(doc.slug);
   if (maison) return { url: maison.url, alt: decode(doc.title.rendered), credit: maison.credit };
-  const fm = doc._embedded?.["wp:featuredmedia"]?.[0];
   if (!fm?.source_url) return null;
   const local = localMedia(fm.source_url);
   return {

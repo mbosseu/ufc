@@ -27,9 +27,14 @@ const inCat = (slug) => {
 const bySlug = (s) => posts.find((p) => p.slug === s);
 
 function media(p) {
+  const fm = p?._embedded?.["wp:featuredmedia"]?.[0];
+  // Articles maison : la photo du JSON prime sur le repli par nom dans le slug.
+  if (p?.maison && fm?.source_url) {
+    const l = localMedia(fm.source_url);
+    return { url: l ? l.url : fm.source_url, alt: fm.alt_text || decode(p.title.rendered) };
+  }
   const maison = imageMaison(p?.slug);
   if (maison) return { url: maison.url, alt: decode(p.title.rendered) };
-  const fm = p?._embedded?.["wp:featuredmedia"]?.[0];
   if (!fm?.source_url) return null;
   const l = localMedia(fm.source_url);
   return { url: l ? l.url : fm.source_url, alt: fm.alt_text || "", w: fm.media_details?.width, h: fm.media_details?.height };

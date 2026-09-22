@@ -3,9 +3,39 @@
  "identite": "UFC.FR est un media independant d'actualite MMA, en francais, couvrant la France et l'international. Il n'est pas affilie a l'Ultimate Fighting Championship et n'est pas le site officiel de l'UFC. Il traite toutes les organisations : UFC, PFL, ONE Championship, KSW, Cage Warriors, ARES, Hexagone MMA.",
  "langue": "fr-FR",
  "url": "https://ufc.fr/",
- "genere_le": "2026-09-19",
+ "genere_le": "2026-09-22",
  "licence_citation": "Citation autorisee avec lien vers l'URL source.",
  "documents": [
+  {
+   "type": "article",
+   "titre": "UFC 334 : Gane–Hokit, ce qu’il faut savoir avant le 14 novembre",
+   "url": "https://ufc.fr/ufc-334-gane-hokit-ce-quil-faut-savoir/",
+   "slug": "ufc-334-gane-hokit-ce-quil-faut-savoir",
+   "publie": "2026-09-22",
+   "maj": "2026-09-22",
+   "rubriques": [
+    "evenements",
+    "actualite",
+    "ufc"
+   ],
+   "resume": "Première défense de Ciryl Gane en champion incontesté : Josh Hokit au Madison Square Garden le 14 novembre 2026. Affiche, contexte Aspinall, et ce qui reste à confirmer côté diffusion France.",
+   "mots": 265
+  },
+  {
+   "type": "article",
+   "titre": "Ciryl Gane devient le premier Français champion incontesté de l’UFC",
+   "url": "https://ufc.fr/ciryl-gane-champion-inconteste-ufc-hokit/",
+   "slug": "ciryl-gane-champion-inconteste-ufc-hokit",
+   "publie": "2026-09-20",
+   "maj": "2026-09-20",
+   "rubriques": [
+    "actualite",
+    "ufc",
+    "combattants"
+   ],
+   "resume": "Après l’abandon de ceinture de Tom Aspinall, Ciryl Gane est promu champion incontesté des poids lourds. Première défense annoncée : Josh Hokit, le 14 novembre 2026 au Madison Square Garden (UFC 334).",
+   "mots": 321
+  },
   {
    "type": "article",
    "titre": "Zouhir Boumenir : le coach sol de Boxing Center Toulouse",
@@ -19,6 +49,21 @@
    ],
    "resume": "BPJEPS Lutte et Grappling, ceinture noire de jiu-jitsu brésilien, près de vingt ans d'enseignement : chez Boxing Center Toulouse, Zouhir Boumenir incarne le travail au sol — JJB, grappling et MMA — pour débutants comme pour confirmés.",
    "mots": 514
+  },
+  {
+   "type": "article",
+   "titre": "Hexagone MMA Rouen : Baybatyrov KO en 44 secondes, Baudot revient",
+   "url": "https://ufc.fr/hexagone-mma-rouen-resultats-baybatyrov/",
+   "slug": "hexagone-mma-rouen-resultats-baybatyrov",
+   "publie": "2026-09-13",
+   "maj": "2026-09-13",
+   "rubriques": [
+    "resultats",
+    "hexagone-mma",
+    "actualite"
+   ],
+   "resume": "Le 12 septembre au Zénith de Rouen, Anzor Baybatyrov a fini Božidar Trivunović en 44 secondes. Alan Baudot, de retour après plus de quatre ans, s’impose aux points. Environ 4 000 spectateurs.",
+   "mots": 221
   },
   {
    "type": "article",
@@ -1381,10 +1426,10 @@
    "url": "https://ufc.fr/champions-mma-actuels/",
    "slug": "champions-mma-actuels",
    "publie": "2026-08-31",
-   "maj": "2026-08-31",
+   "maj": "2026-09-22",
    "rubriques": [],
-   "resume": "Dernière mise à jour : 31 août 2026. Cette page recense les ceintures des principales organisations suivies par UFC.FR, média MMA indépendant. Les titres bougent à chaque gala : une date de MAJ figure sous chaque tableau. Sources croisées : ESPN, Wikipedia (listes de champions), sites d’organisation",
-   "mots": 697
+   "resume": "Dernière mise à jour : 22 septembre 2026. Cette page recense les ceintures des principales organisations suivies par UFC.FR, média MMA indépendant. Les titres bougent à chaque gala : une date de MAJ figure sous chaque tableau. Sources croisées : ESPN, Wikipedia (listes de champions), sites d’organis",
+   "mots": 693
   },
   {
    "type": "page",

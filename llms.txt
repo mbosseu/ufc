@@ -35,25 +35,28 @@
 
 ## Rubriques
 
-- [Actualité](https://ufc.fr/categorie/actualite/) — 49 articles
-- [UFC](https://ufc.fr/categorie/ufc/) — 27 articles
+- [Actualité](https://ufc.fr/categorie/actualite/) — 52 articles
+- [UFC](https://ufc.fr/categorie/ufc/) — 29 articles
 - [Clubs de MMA français](https://ufc.fr/categorie/clubs-mma-francais/) — 17 articles
 - [UFC Paris 2026](https://ufc.fr/categorie/ufc-paris-2026/) — 15 articles
 - [ARES](https://ufc.fr/categorie/ares/) — 9 articles
 - [ONE Championship](https://ufc.fr/categorie/one-championship/) — 9 articles
 - [Analyses](https://ufc.fr/categorie/analyses/) — 8 articles
-- [Combattants](https://ufc.fr/categorie/combattants/) — 7 articles
+- [Combattants](https://ufc.fr/categorie/combattants/) — 8 articles
+- [Hexagone MMA](https://ufc.fr/categorie/hexagone-mma/) — 6 articles
 - [PFL](https://ufc.fr/categorie/pfl/) — 6 articles
 - [Cage Warriors](https://ufc.fr/categorie/cage-warriors/) — 5 articles
-- [Hexagone MMA](https://ufc.fr/categorie/hexagone-mma/) — 5 articles
+- [Événements](https://ufc.fr/categorie/evenements/) — 5 articles
 - [KSW](https://ufc.fr/categorie/ksw/) — 5 articles
-- [Événements](https://ufc.fr/categorie/evenements/) — 4 articles
+- [Résultats](https://ufc.fr/categorie/resultats/) — 5 articles
 - [Interviews](https://ufc.fr/categorie/interviews/) — 4 articles
-- [Résultats](https://ufc.fr/categorie/resultats/) — 4 articles
 
 ## Articles recents
 
+- [UFC 334 : Gane–Hokit, ce qu’il faut savoir avant le 14 novembre](https://ufc.fr/ufc-334-gane-hokit-ce-quil-faut-savoir/)
+- [Ciryl Gane devient le premier Français champion incontesté de l’UFC](https://ufc.fr/ciryl-gane-champion-inconteste-ufc-hokit/)
 - [Zouhir Boumenir : le coach sol de Boxing Center Toulouse](https://ufc.fr/coach-zouhir-boumenir-boxing-center-toulouse/)
+- [Hexagone MMA Rouen : Baybatyrov KO en 44 secondes, Baudot revient](https://ufc.fr/hexagone-mma-rouen-resultats-baybatyrov/)
 - [UFC Paris 2026 : bilan des Français — 5 victoires sur 9](https://ufc.fr/ufc-paris-2026-bilan-francais-resultats/)
 - [UFC Paris 2026 : tous les résultats — Parnasse finit Hooker](https://ufc.fr/ufc-paris-2026-resultats-complets/)
 - [Boxing Center Ramonville : la salle du réseau qui met le MMA en tête](https://ufc.fr/boxing-center-ramonville-saint-agne/)
@@ -80,11 +83,8 @@
 - [Fondation MMA Marseille : 700 m², cage 5×5, avenue de Toulon](https://ufc.fr/fondation-mma-marseille-club/)
 - [Hexagone MMA 47 à Toulouse : date, lieu, carte annoncée](https://ufc.fr/hexagone-mma-47-toulouse-2026/)
 - [UFC Paris : Mairon Santos forfait, Nathaniel Wood sans adversaire](https://ufc.fr/ufc-paris-santos-forfait-wood/)
-- [Salahdine Parnasse en citations : signature UFC, Hooker, fans](https://ufc.fr/salahdine-parnasse-citations-ufc-paris/)
-- [NRFight Paris : club MMA Tolbiac, Charrière et Cage Warriors](https://ufc.fr/nrfight-paris-club-mma/)
-- [Unlock Paris 17 : club MMA, cage, coachs Mehdi et Yassine](https://ufc.fr/unlock-paris-17-club-mma/)
 
 ## Corpus complet
 
-- [Index structure de 112 documents](https://ufc.fr/corpus.json)
+- [Index structure de 115 documents](https://ufc.fr/corpus.json)
 - Serveur MCP disponible dans le depot du site (mcp/server.mjs) : recherche, lecture d'article, carte de combats, rubriques.

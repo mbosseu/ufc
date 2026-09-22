@@ -56,22 +56,26 @@ function pic(p, cls = "", unique = true) {
 // reserve avant que le fil se serve, sinon les deux fiches Boxing Center
 // reviennent en carte avec la meme photo quelques centaines de pixels plus
 // haut.
-vues.add("/img/parnasse.webp");
-vues.add("/img/hooker.webp");
+vues.add("/img/gane.webp");
+vues.add("/img/ceinture.webp");
 vues.add("/img/gym.webp");
-vues.add("/img/ufc-paris-hooker-parnasse.webp");
+vues.add("/img/fight.webp");
 vues.add("/media/clubs/boxing-center-etats-unis.webp");
 vues.add("/media/clubs/boxing-center-ramonville.webp");
 
 const paris = inCat("ufc-paris-2026");
-const clubs = inCat("clubs-mma-francais");
+const clubsCat = inCat("clubs-mma-francais");
+const clubSlugs = new Set(clubsCat.map((p) => p.slug));
 const portraits = byDate.filter((p) => p.slug.startsWith("portrait-"));
-const fil = byDate.filter((p) => !p.slug.startsWith("portrait-")).slice(0, 7);
+// À la une = actu / résultats / événements — pas les fiches clubs (déjà en palier salles).
+const fil = byDate
+  .filter((p) => !p.slug.startsWith("portrait-") && !clubSlugs.has(p.slug))
+  .slice(0, 7);
 
-// Après Bercy : les résultats ouvrent ; le dossier reste en second lien.
 const une =
+  bySlug("ciryl-gane-champion-inconteste-ufc-hokit") ||
+  bySlug("ufc-334-gane-hokit-ce-quil-faut-savoir") ||
   bySlug("ufc-paris-2026-resultats-complets") ||
-  bySlug("ufc-paris-2026-date-lieu-carte-enjeux") ||
   paris[0];
 
 const schema = [
@@ -101,39 +105,23 @@ const schema = [
   {
     "@context": "https://schema.org",
     "@type": "SportsEvent",
-    name: "UFC Paris 2026 — Hooker vs Parnasse",
-    startDate: "2026-09-05T21:00:00+02:00",
-    eventStatus: "https://schema.org/EventCompleted",
+    name: "UFC 334 — Gane vs Hokit",
+    startDate: "2026-11-14T22:00:00-05:00",
+    eventStatus: "https://schema.org/EventScheduled",
     eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
     location: {
       "@type": "Place",
-      name: "Accor Arena",
-      address: { "@type": "PostalAddress", addressLocality: "Paris", addressCountry: "FR" },
+      name: "Madison Square Garden",
+      address: { "@type": "PostalAddress", addressLocality: "New York", addressCountry: "US" },
     },
     sport: "Mixed Martial Arts",
-    url: SITE + "/carte/ufc-paris-2026/",
+    url: SITE + "/ufc-334-gane-hokit-ce-quil-faut-savoir/",
   },
 ];
 
-/**
- * Le compte a rebours, ecrit des la construction.
- *
- * Le repli sans JavaScript affichait « 21h00 » — l'heure de l'evenement — a
- * l'endroit exact ou le script ecrit « 46h00 », qui veut dire « dans 46
- * heures ». Meme forme, sens oppose. Un lecteur sans JavaScript, ou pendant
- * les deux cents millisecondes qui precedent son execution, lisait donc une
- * information fausse.
- *
- * On applique ici la regle du script, au mot pres : au-dela de deux jours on
- * parle en jours, en deca en heures et minutes. La valeur vieillit entre
- * deux constructions, mais elle vieillit dans le bon sens — elle reste un
- * compte a rebours, et le script la corrige des qu'il tourne.
- */
-const EVENEMENT = "2026-09-05T21:00:00+02:00";
+const EVENEMENT = "2026-11-14T22:00:00-05:00";
 function compteARebours() {
   const reste = new Date(EVENEMENT).getTime() - Date.now();
-  // Fin de soirée estimée ~minuit : au-delà, on n'affiche plus un compte à rebours.
-  if (reste <= -3 * 36e5) return "Terminé";
   if (reste <= 0) return "En cours";
   const h = Math.floor(reste / 36e5);
   if (h >= 48) return "J\u2212" + Math.floor(h / 24);
@@ -146,7 +134,7 @@ const html = `${head({
      « pas le site officiel » qui sautait — celle qui evite justement la
      deception au clic. Elle passe donc avant ce qui peut sauter. */
   description:
-    "Média MMA indépendant, pas le site officiel de l’UFC. Résultats UFC Paris 2026, champions de toutes les organisations et clubs français.",
+    "Média MMA indépendant, pas le site officiel de l’UFC. Ciryl Gane champion, résultats, champions de toutes les organisations et clubs français.",
   canonical: "/",
   image: "/media/brand/ufc-fr-og.jpg",
   type: "website",
@@ -155,68 +143,57 @@ const html = `${head({
 ${header("/", "home")}
   <main id="contenu">
 
-  <!-- Palier 1 — l'evenement.
-       Pas de cadre decoratif ici : l'octogone appartient a la page carte, ou
-       il porte la progression dans la soiree. Le reprendre sur l'accueil en
-       ornement, c'etait du decor qui ne dit rien — et il masquait les photos.
-       Ce qui reste tient tout seul : deux hommes, la couture entre eux, leurs
-       noms, et le compte a rebours, qui est l'information la plus utile de la
-       page apres Bercy. -->
+  <!-- Palier 1 — Gane champion, défense le 14 novembre. -->
   <section class="hero hero-cage">
 
     <div class="hero-duel">
       <figure class="hero-man a">
-        <img src="/img/parnasse.webp" alt="Salahdine Parnasse, vainqueur du main event UFC Paris 2026" width="1200" height="1600" fetchpriority="high" />
+        <img src="/img/gane.webp" alt="Ciryl Gane, champion incontesté UFC des poids lourds" width="1200" height="1600" fetchpriority="high" />
         <figcaption>
-          <span class="kicker">France · Vainqueur</span>
-          <span class="hero-name">Parnasse</span>
+          <span class="kicker">France · Champion UFC</span>
+          <span class="hero-name">Gane</span>
         </figcaption>
       </figure>
       <p class="hero-vs" aria-hidden="true">contre</p>
       <figure class="hero-man b">
-        <img src="/img/hooker.webp" alt="Dan Hooker, poids legers, Nouvelle-Zelande" width="1200" height="1600" fetchpriority="high" />
+        <img src="/img/ceinture.webp" alt="Ceinture de champion UFC, illustration défense de titre" width="1200" height="1600" fetchpriority="high" />
         <figcaption>
-          <span class="kicker">Nouvelle-Zelande</span>
-          <span class="hero-name">Hooker</span>
+          <span class="kicker">UFC 334 · Challenger</span>
+          <span class="hero-name">Hokit</span>
         </figcaption>
       </figure>
     </div>
 
     <div class="hero-foot">
       <p class="hero-when">
-        <time datetime="2026-09-05T21:00:00+02:00">Samedi 5 septembre · Accor Arena</time>
+        <time datetime="2026-11-14">14 novembre · Madison Square Garden</time>
         <b data-countdown="${EVENEMENT}">${compteARebours()}</b>
       </p>
       <div class="hero-actions">
-        <a class="btn btn-fill cut" href="/${une.slug}/">Tous les résultats</a>
-        <a class="btn btn-line cut" href="/carte/ufc-paris-2026/">La carte, combat par combat</a>
+        <a class="btn btn-fill cut" href="/${une.slug}/">Gane champion incontesté</a>
+        <a class="btn btn-line cut" href="/ufc-334-gane-hokit-ce-quil-faut-savoir/">UFC 334 : le dossier</a>
       </div>
     </div>
   </section>
 
-  <!-- Le bandeau d'info. Un ticker qui ne defile pas n'est pas un ticker,
-       c'est une ligne de texte. Le contenu est double dans le balisage : la
-       boucle se ferme sans saut parce que la seconde copie prend la place de
-       la premiere exactement quand celle-ci sort. Le point rouge, lui, reste
-       fixe — c'est le repere, il ne defile pas avec l'information. -->
   <div class="ticker">
     <div class="pulse"><b></b></div>
     <div class="ticker-rail">
       <div class="ticker-run">
 ${[
-  ["Parnasse KO", "Hooker fini au R1 · 2:35 · débuts UFC"],
-  ["Sola KO Ziam", "Duel 100 % français en une minute 40"],
-  ["5 Français gagnent", "Sur neuf engagés à Bercy"],
-  ["Andrusca / Wood", "Santos forfait, Andrusca remplace"],
-  ["Résultats complets", "Carte à jour sur UFC.FR"],
+  ["Gane champion", "Premier Français incontesté à l’UFC"],
+  ["UFC 334", "Gane vs Hokit · 14 nov. · MSG"],
+  ["Hexagone Rouen", "Baybatyrov KO en 44 secondes"],
+  ["UFC Paris", "Parnasse KO Hooker · résultats"],
+  ["Champions", "Ceintures mises à jour"],
   [`${posts.length} articles`, "Toutes organisations, en français"],
 ]
   .concat([
-    ["Parnasse KO", "Hooker fini au R1 · 2:35 · débuts UFC"],
-    ["Sola KO Ziam", "Duel 100 % français en une minute 40"],
-    ["5 Français gagnent", "Sur neuf engagés à Bercy"],
-    ["Andrusca / Wood", "Santos forfait, Andrusca remplace"],
-    ["Résultats complets", "Carte à jour sur UFC.FR"],
+    ["Gane champion", "Premier Français incontesté à l’UFC"],
+    ["UFC 334", "Gane vs Hokit · 14 nov. · MSG"],
+    ["Hexagone Rouen", "Baybatyrov KO en 44 secondes"],
+    ["UFC Paris", "Parnasse KO Hooker · résultats"],
+    ["Champions", "Ceintures mises à jour"],
     [`${posts.length} articles`, "Toutes organisations, en français"],
   ])
   .map(([t, d], i) => `        <span class="tick"${i >= 6 ? ' aria-hidden="true"' : ""}><strong>${esc(t)}</strong><span>${esc(d)}</span></span>`)
@@ -225,19 +202,17 @@ ${[
     </div>
   </div>
 
-  <!-- Palier 2 — le fil. Refus de la grille égale : une pièce large, deux
-       moyennes, puis une liste. La hiérarchie est l'information. -->
   <section class="block ed-week">
     <div class="wrap ed-head" data-reveal>
       <span class="kicker">À la une</span>
       <h1>L’actualité du MMA, en français</h1>
-      <p class="lede">Bercy est passé. Parnasse a gagné. Le MMA continue.</p>
+      <p class="lede">Gane est champion. Hexagone a frappé à Rouen. La suite, ici.</p>
       <a class="more" href="/actualite-du-mma/">Tout le fil (${posts.length})</a>
     </div>
     <a class="ed-lead" href="/${une.slug}/" data-reveal data-reveal-media>
-      <div class="ed-lead-media" data-profondeur><img src="/img/ufc-paris-hooker-parnasse.webp" alt="UFC Paris 2026 : Parnasse vs Hooker, Accor Arena" width="1108" height="1108" loading="lazy" decoding="async" /></div>
+      <div class="ed-lead-media" data-profondeur><img src="/img/gane.webp" alt="Ciryl Gane, champion incontesté UFC des poids lourds" width="1200" height="1600" loading="lazy" decoding="async" /></div>
       <div class="ed-lead-copy">
-        <span class="kicker">Résultats</span>
+        <span class="kicker">Actualité</span>
         <h2>${T(une)}</h2>
         <p>${X(une, 150)}</p>
       </div>
@@ -371,4 +346,4 @@ ${footer()}`;
 writeFileSync(join(ROOT, "index.html"), html, "utf8");
 console.log("[accueil] index.html régénéré depuis le corpus");
 console.log(`  une: ${une.slug}`);
-console.log(`  fil: ${fil.length} · portraits: ${portraits.length} · clubs: ${clubs.length}`);
+console.log(`  fil: ${fil.length} · portraits: ${portraits.length} · clubs: ${clubsCat.length}`);

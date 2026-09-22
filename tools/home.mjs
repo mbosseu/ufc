@@ -56,12 +56,11 @@ function pic(p, cls = "", unique = true) {
 // reserve avant que le fil se serve, sinon les deux fiches Boxing Center
 // reviennent en carte avec la meme photo quelques centaines de pixels plus
 // haut.
-vues.add("/img/gane.webp");
-vues.add("/img/ceinture.webp");
 vues.add("/img/gym.webp");
-vues.add("/img/fight.webp");
 vues.add("/media/clubs/boxing-center-etats-unis.webp");
 vues.add("/media/clubs/boxing-center-ramonville.webp");
+// gane.webp n'est PAS reserve ici : il sert a la une et aux vignettes
+// d'actu. Le reserver vidait les cartes aside (pic() renvoyait "").
 
 const paris = inCat("ufc-paris-2026");
 const clubsCat = inCat("clubs-mma-francais");
@@ -78,20 +77,20 @@ const EXCLUS_UNE = new Set([
   "ufc-paris-santos-forfait-wood",
   "ufc-paris-2027",
 ]);
-const fil = byDate
-  .filter(
-    (p) =>
-      !p.slug.startsWith("portrait-") &&
-      !clubSlugs.has(p.slug) &&
-      !EXCLUS_UNE.has(p.slug)
-  )
-  .slice(0, 7);
-
 const une =
   bySlug("ciryl-gane-champion-inconteste-ufc-hokit") ||
   bySlug("ufc-334-gane-hokit-ce-quil-faut-savoir") ||
   bySlug("ufc-paris-2026-resultats-complets") ||
   paris[0];
+const fil = byDate
+  .filter(
+    (p) =>
+      !p.slug.startsWith("portrait-") &&
+      !clubSlugs.has(p.slug) &&
+      !EXCLUS_UNE.has(p.slug) &&
+      p.slug !== une?.slug
+  )
+  .slice(0, 7);
 
 const schema = [
   {
@@ -158,26 +157,18 @@ const html = `${head({
 ${header("/", "home")}
   <main id="contenu">
 
-  <!-- Palier 1 — Gane champion, défense le 14 novembre. -->
-  <section class="hero hero-cage">
+  <!-- Palier 1 — un seul portrait, bien cadre : on n'a pas de photo de
+       Hokit, donc pas de faux duel. Gane occupe l'ecran en champion. -->
+  <section class="hero hero-cage hero-solo">
 
-    <div class="hero-duel">
-      <figure class="hero-man a">
-        <img src="/img/gane.webp" alt="Ciryl Gane, champion incontesté UFC des poids lourds" width="1200" height="1600" fetchpriority="high" />
-        <figcaption>
-          <span class="kicker">France · Champion UFC</span>
-          <span class="hero-name">Gane</span>
-        </figcaption>
-      </figure>
-      <p class="hero-vs" aria-hidden="true">contre</p>
-      <figure class="hero-man b">
-        <img src="/img/ceinture.webp" alt="Ceinture de champion UFC, illustration défense de titre" width="1200" height="1600" fetchpriority="high" />
-        <figcaption>
-          <span class="kicker">UFC 334 · Challenger</span>
-          <span class="hero-name">Hokit</span>
-        </figcaption>
-      </figure>
-    </div>
+    <figure class="hero-solo-fig">
+      <img src="/img/gane.webp" alt="Ciryl Gane, champion incontesté UFC des poids lourds" width="1290" height="1814" fetchpriority="high" />
+      <figcaption>
+        <span class="kicker">France · Champion incontesté UFC</span>
+        <span class="hero-name">Ciryl Gane</span>
+        <span class="hero-sub">UFC 334 · vs Josh Hokit · 14 novembre · MSG</span>
+      </figcaption>
+    </figure>
 
     <div class="hero-foot">
       <p class="hero-when">
@@ -225,7 +216,7 @@ ${[
       <a class="more" href="/actualite-du-mma/">Tout le fil (${posts.length})</a>
     </div>
     <a class="ed-lead" href="/${une.slug}/" data-reveal data-reveal-media>
-      <div class="ed-lead-media" data-profondeur><img src="/img/gane.webp" alt="Ciryl Gane, champion incontesté UFC des poids lourds" width="1200" height="1600" loading="lazy" decoding="async" /></div>
+      <div class="ed-lead-media" data-profondeur><img src="/img/gane.webp" alt="Ciryl Gane, champion incontesté UFC des poids lourds" width="1290" height="1814" loading="lazy" decoding="async" style="object-position:50% 18%" /></div>
       <div class="ed-lead-copy">
         <span class="kicker">Actualité</span>
         <h2>${T(une)}</h2>

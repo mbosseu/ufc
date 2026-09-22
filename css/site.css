@@ -999,6 +999,20 @@ img[src$="gane.webp"] { object-position: center 18%; }
   min-height: 420px;
   object-position: center 12%;
 }
+.figure img[src$="octagon.webp"],
+img[src$="octagon.webp"] {
+  aspect-ratio: 16 / 9;
+  object-position: center 42%;
+}
+.figure img[src$="fight.webp"],
+img[src$="fight.webp"] {
+  object-position: center 38%;
+}
+.figure img[src$="ceinture.webp"],
+img[src$="ceinture.webp"] {
+  /* Landscape action crop — avoid dead sky when used as lead */
+  object-position: center 35%;
+}
 .figure img[src$="charriere.webp"],
 img[src$="charriere.webp"] { object-position: center 8%; }
 .figure img[src$="imavov.webp"],
@@ -1295,6 +1309,10 @@ section.block.ed-club { padding: 0; }
 }
 .ed-aside-item img[src$="parnasse.webp"] { object-position: center 10%; }
 .ed-aside-item img[src$="zebo.webp"] { object-position: center 24%; }
+.ed-aside-item img[src$="gane.webp"] { object-position: center 16%; }
+.ed-aside-item img[src$="octagon.webp"] { object-position: center 45%; }
+.ed-aside-item img[src$="fight.webp"] { object-position: center 40%; }
+.ed-lead-media img[src$="gane.webp"] { object-position: 50% 16%; }
 .ed-aside-item h3 {
   font-family: var(--serif);
   font-style: italic;
@@ -2535,6 +2553,65 @@ html.motion .cage-frame .cage-draw { animation: cage-close 1.5s var(--ease) 0.15
 /* La couleur revient sur celui qu'on regarde : le survol dit qui on a
    choisi, sans deplacer quoi que ce soit. */
 .hero-man:hover img { filter: grayscale(0) contrast(1.05) brightness(0.92); transform: scale(1.03); }
+
+/* Hero champion — un seul portrait, cadre sur le visage.
+   Sans photo de challenger, le faux duel coupait Gane et affichait
+   une image sans rapport sous le nom « Hokit ». */
+.hero-solo .hero-solo-fig {
+  position: relative;
+  margin: 0;
+  min-height: 0;
+  overflow: hidden;
+}
+.hero-solo .hero-solo-fig img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 16%;
+  filter: grayscale(1) contrast(1.1) brightness(0.82);
+  transition: filter 0.9s var(--ease), transform 1.4s var(--ease);
+}
+.hero-solo .hero-solo-fig:hover img {
+  filter: grayscale(0.15) contrast(1.05) brightness(0.9);
+  transform: scale(1.02);
+}
+.hero-solo .hero-solo-fig::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(to top, rgba(7, 7, 7, 0.94) 0%, rgba(7, 7, 7, 0.35) 42%, rgba(7, 7, 7, 0.15) 70%),
+    linear-gradient(to right, rgba(7, 7, 7, 0.45) 0%, transparent 38%);
+  pointer-events: none;
+}
+.hero-solo .hero-solo-fig figcaption {
+  position: absolute;
+  left: clamp(20px, 4vw, 54px);
+  right: clamp(20px, 4vw, 54px);
+  bottom: clamp(26px, 6vh, 68px);
+  z-index: 2;
+  display: grid;
+  gap: 10px;
+  max-width: min(920px, 100%);
+}
+.hero-solo .hero-name {
+  font-size: clamp(42px, 8vw, 110px);
+  line-height: 0.88;
+  overflow-wrap: normal;
+}
+.hero-solo .hero-sub {
+  font-family: var(--ui);
+  font-size: clamp(12px, 1.2vw, 15px);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--mist);
+}
+.hero-solo .kicker { color: var(--mist); }
+@media (max-width: 600px) {
+  .hero-solo .hero-solo-fig img { object-position: 48% 12%; }
+  .hero-solo .hero-name { font-size: clamp(36px, 12vw, 64px); }
+}
+
 .hero-man::after {
   content: "";
   position: absolute;

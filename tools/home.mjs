@@ -82,6 +82,7 @@ const EXCLUS_UNE = new Set([
   "ufc-paris-santos-forfait-wood",
   "ufc-paris-2027",
 ]);
+const SUJETS_UNE = new Set(["coach-zouhir-boumenir-boxing-center-toulouse"]);
 const une =
   bySlug("ciryl-gane-champion-inconteste-ufc-hokit") ||
   bySlug("ufc-334-gane-hokit-ce-quil-faut-savoir") ||
@@ -91,7 +92,7 @@ const fil = byDate
   .filter(
     (p) =>
       !p.slug.startsWith("portrait-") &&
-      !clubSlugs.has(p.slug) &&
+      (!clubSlugs.has(p.slug) || SUJETS_UNE.has(p.slug)) &&
       !EXCLUS_UNE.has(p.slug) &&
       p.slug !== une?.slug
   )

@@ -3,9 +3,23 @@
  "identite": "UFC.FR est un media independant d'actualite MMA, en francais, couvrant la France et l'international. Il n'est pas affilie a l'Ultimate Fighting Championship et n'est pas le site officiel de l'UFC. Il traite toutes les organisations : UFC, PFL, ONE Championship, KSW, Cage Warriors, ARES, Hexagone MMA.",
  "langue": "fr-FR",
  "url": "https://ufc.fr/",
- "genere_le": "2026-09-22",
+ "genere_le": "2026-09-23",
  "licence_citation": "Citation autorisee avec lien vers l'URL source.",
  "documents": [
+  {
+   "type": "article",
+   "titre": "Zouhir Boumenir : le coach sol de Boxing Center Toulouse",
+   "url": "https://ufc.fr/coach-zouhir-boumenir-boxing-center-toulouse/",
+   "slug": "coach-zouhir-boumenir-boxing-center-toulouse",
+   "publie": "2026-09-23",
+   "maj": "2026-09-23",
+   "rubriques": [
+    "clubs-mma-francais",
+    "actualite"
+   ],
+   "resume": "BPJEPS Lutte et Grappling, ceinture noire de jiu-jitsu brésilien, près de vingt ans d'enseignement : chez Boxing Center Toulouse, Zouhir Boumenir incarne le travail au sol — JJB, grappling et MMA — pour débutants comme pour confirmés.",
+   "mots": 514
+  },
   {
    "type": "article",
    "titre": "UFC 334 : Gane–Hokit, ce qu’il faut savoir avant le 14 novembre",
@@ -35,20 +49,6 @@
    ],
    "resume": "Après l’abandon de ceinture de Tom Aspinall, Ciryl Gane est promu champion incontesté des poids lourds. Première défense annoncée : Josh Hokit, le 14 novembre 2026 au Madison Square Garden (UFC 334).",
    "mots": 321
-  },
-  {
-   "type": "article",
-   "titre": "Zouhir Boumenir : le coach sol de Boxing Center Toulouse",
-   "url": "https://ufc.fr/coach-zouhir-boumenir-boxing-center-toulouse/",
-   "slug": "coach-zouhir-boumenir-boxing-center-toulouse",
-   "publie": "2026-09-18",
-   "maj": "2026-09-18",
-   "rubriques": [
-    "clubs-mma-francais",
-    "actualite"
-   ],
-   "resume": "BPJEPS Lutte et Grappling, ceinture noire de jiu-jitsu brésilien, près de vingt ans d'enseignement : chez Boxing Center Toulouse, Zouhir Boumenir incarne le travail au sol — JJB, grappling et MMA — pour débutants comme pour confirmés.",
-   "mots": 514
   },
   {
    "type": "article",

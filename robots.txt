@@ -6,6 +6,7 @@ Disallow: /seo-suivi.html
 Disallow: /calendrier-editorial.html
 
 Sitemap: https://ufc.fr/sitemap.xml
+Sitemap: https://ufc.fr/feed.xml
 
 # Corpus lisible par machine, pour les moteurs de reponse.
 # UFC.FR est un media independant, non affilie a l'Ultimate Fighting Championship.

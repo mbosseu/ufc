@@ -5,10 +5,11 @@
   "description": "UFC.FR — media MMA independant. Site statique genere depuis data/.",
   "type": "module",
   "scripts": {
-    "build": "node tools/emit.mjs && node tools/listings.mjs && node tools/carte.mjs && node tools/home.mjs && node tools/recherche.mjs && node tools/geo.mjs && node tools/doublons.mjs && node tools/sitemap.mjs && node tools/typo.mjs",
+    "build": "node tools/emit.mjs && node tools/listings.mjs && node tools/carte.mjs && node tools/home.mjs && node tools/recherche.mjs && node tools/geo.mjs && node tools/doublons.mjs && node tools/feed.mjs && node tools/sitemap.mjs && node tools/typo.mjs",
     "dev": "npm run build && node tools/serve.mjs",
     "extract": "python3 tools/wp-extract.py",
     "check": "node tools/check.mjs",
+    "audit:seo": "node tools/seo-audit.mjs",
     "mcp": "node mcp/server.mjs",
     "shots": "node tools/shots.mjs",
     "pages": "bash tools/deploy-pages.sh"

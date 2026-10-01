@@ -25,16 +25,21 @@ raison même d'avoir conservé les slugs d'origine lors de la migration.
 Si un jour la production répond `308` sur une URL en `/…/`, c'est que ce
 réglage a sauté ou qu'un vieux build est encore en ligne.
 
-## Aucune construction côté Vercel
+## Construction côté Vercel
 
-`buildCommand` et `installCommand` ne font rien volontairement. Le site est
-généré ici, par `npm run build`, et le résultat est commité. Faire construire
-Vercel ajouterait un point de rupture entre le push et la mise en ligne, à
-deux jours de l'événement, pour un gain nul : il n'y a aucune dépendance à
-installer.
+`buildCommand` exécute `npm run build`. Le site reste statique et le build
+n'utilise que Node.js, mais la production doit être régénérée depuis les
+sources à chaque push. Sans cela, une correction du gabarit, du sitemap ou du
+flux RSS peut être présente dans le générateur tout en restant absente des
+fichiers servis en ligne.
 
-La conséquence : **il faut lancer `npm run build` avant de commiter**, sinon
-c'est l'ancien HTML qui part en ligne.
+`installCommand` reste vide volontairement : le build de production n'a
+aucune dépendance externe. Les dépendances de développement servent seulement
+aux captures visuelles locales.
+
+Il reste utile de lancer `npm run build && npm run check` avant de commiter :
+Vercel rejouera le même build, et le contrôle local attrapera les erreurs avant
+le déploiement.
 
 ## En-têtes de cache
 

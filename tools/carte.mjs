@@ -119,7 +119,7 @@ const html = `${head({
   description: desc,
   canonical: `/carte/${carte.slug}/`,
   image: "/media/brand/ufc-fr-og.jpg",
-  type: "article",
+  type: "website",
   schema: [schema],
 })}
 ${header("", "home")}

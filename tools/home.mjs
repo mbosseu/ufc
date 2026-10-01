@@ -64,8 +64,10 @@ function pic(p, cls = "", unique = true) {
 vues.add("/img/gym.webp");
 vues.add("/media/clubs/boxing-center-etats-unis.webp");
 vues.add("/media/clubs/boxing-center-ramonville.webp");
-// gane.webp n'est PAS reserve ici : il sert a la une et aux vignettes
-// d'actu. Le reserver vidait les cartes aside (pic() renvoyait "").
+// Le portrait de Gane occupe deja le heros. Une seconde occurrence dans le
+// fil donnait l'impression d'un accueil fige et faisait echouer le controle
+// d'images dupliquees.
+vues.add("/img/gane.webp");
 
 const paris = inCat("ufc-paris-2026");
 const clubsCat = inCat("clubs-mma-francais");
@@ -88,15 +90,17 @@ const une =
   bySlug("ufc-334-gane-hokit-ce-quil-faut-savoir") ||
   bySlug("ufc-paris-2026-resultats-complets") ||
   paris[0];
-const fil = byDate
-  .filter(
+const flux = byDate.filter(
     (p) =>
       !p.slug.startsWith("portrait-") &&
       (!clubSlugs.has(p.slug) || SUJETS_UNE.has(p.slug)) &&
       !EXCLUS_UNE.has(p.slug) &&
       p.slug !== une?.slug
-  )
-  .slice(0, 7);
+  );
+const vedette = flux[0] || une;
+const fil = flux.filter((p) => p.slug !== vedette?.slug).slice(0, 7);
+const imageVedette = media(vedette);
+if (imageVedette) vues.add(imageVedette.url);
 
 const schema = [
   {
@@ -115,9 +119,15 @@ const schema = [
   {
     "@context": "https://schema.org",
     "@type": "NewsMediaOrganization",
+    "@id": SITE + "/#organization",
     name: "UFC.FR",
     url: SITE + "/",
-    logo: { "@type": "ImageObject", url: SITE + "/logo/ufc.fr.jpeg" },
+    logo: {
+      "@type": "ImageObject",
+      url: SITE + "/media/2025/04/ufc-fr-mma-sans-compromis-1.png",
+      width: 512,
+      height: 512,
+    },
     description: "Média indépendant d’actualité MMA en France et à l’international. Non affilié à l’Ultimate Fighting Championship.",
     diversityPolicy: SITE + "/a-propos/",
     ethicsPolicy: SITE + "/a-propos/",
@@ -221,12 +231,12 @@ ${[
       <p class="lede">Gane est champion. Hexagone a frappé à Rouen. La suite, ici.</p>
       <a class="more" href="/actualite-du-mma/">Tout le fil (${posts.length})</a>
     </div>
-    <a class="ed-lead" href="/${une.slug}/" data-reveal data-reveal-media>
-      <div class="ed-lead-media" data-profondeur><img src="/img/gane.webp" alt="Ciryl Gane, champion incontesté UFC des poids lourds" width="1290" height="1814" loading="lazy" decoding="async" style="object-position:50% 18%" /></div>
+    <a class="ed-lead" href="/${vedette.slug}/" data-reveal data-reveal-media>
+      <div class="ed-lead-media" data-profondeur>${imageVedette ? `<img src="${imageVedette.url}" alt="${esc(imageVedette.alt)}"${imageVedette.w && imageVedette.h ? ` width="${imageVedette.w}" height="${imageVedette.h}"` : ""} loading="lazy" decoding="async" />` : ""}</div>
       <div class="ed-lead-copy">
         <span class="kicker">Actualité</span>
-        <h2>${T(une)}</h2>
-        <p>${X(une, 150)}</p>
+        <h2>${T(vedette)}</h2>
+        <p>${X(vedette, 150)}</p>
       </div>
     </a>
     <div class="wrap ed-aside">

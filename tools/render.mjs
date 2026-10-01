@@ -54,6 +54,7 @@ const ORGS = [
 /* Les polices sont chez nous. Voir css/polices.css pour le pourquoi : un
  * site d'actualite ne fait pas dependre son texte d'un domaine tiers. */
 const POLICES = "/css/polices.css";
+const SITE_FEED = "https://ufc.fr/feed.xml";
 
 /* Les deux fontes du premier ecran : le serif des titres et l'interface.
  * Le reste (l'italique du serif, la police d'affichage) arrive ensuite sans
@@ -66,7 +67,16 @@ const FONTES_CRITIQUES = ["/fonts/newsreader.woff2", "/fonts/outfit.woff2"];
  * couche plus durement que le reste : tout ce qu'un robot — Google ou un
  * moteur de réponse — peut lire se décide ici.
  */
-export function head({ title, description, canonical, image, type = "article", schema = [] }) {
+export function head({
+  title,
+  description,
+  canonical,
+  image,
+  type = "article",
+  schema = [],
+  datePublished = "",
+  dateModified = "",
+}) {
   const img = image || "/media/brand/ufc-fr-og.jpg";
   const abs = (u) => (u.startsWith("http") ? u : `https://ufc.fr${u}`);
   return `<!DOCTYPE html>
@@ -76,7 +86,9 @@ export function head({ title, description, canonical, image, type = "article", s
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>${esc(title)}</title>
   <meta name="description" content="${esc(description)}" />
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
   <link rel="canonical" href="${abs(canonical)}" />
+  <link rel="alternate" type="application/rss+xml" title="UFC.FR - Derniers articles" href="${SITE_FEED}" />
   <meta property="og:site_name" content="UFC.FR" />
   <meta property="og:locale" content="fr_FR" />
   <meta property="og:type" content="${type}" />
@@ -84,6 +96,8 @@ export function head({ title, description, canonical, image, type = "article", s
   <meta property="og:description" content="${esc(description)}" />
   <meta property="og:url" content="${abs(canonical)}" />
   <meta property="og:image" content="${abs(img)}" />
+${type === "article" && datePublished ? `  <meta property="article:published_time" content="${esc(datePublished)}" />` : ""}
+${type === "article" && dateModified ? `  <meta property="article:modified_time" content="${esc(dateModified)}" />` : ""}
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="${esc(title)}" />
   <meta name="twitter:description" content="${esc(description)}" />

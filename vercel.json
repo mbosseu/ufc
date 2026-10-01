@@ -2,7 +2,7 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "framework": null,
   "installCommand": "echo 'aucune dependance a installer'",
-  "buildCommand": "echo 'site pre-genere, aucune construction necessaire'",
+  "buildCommand": "npm run build",
   "outputDirectory": ".",
   "trailingSlash": true,
   "headers": [

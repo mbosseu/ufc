@@ -50,9 +50,15 @@ function copyMedia() {
  */
 const publisher = {
   "@type": "NewsMediaOrganization",
+  "@id": SITE + "/#organization",
   name: "UFC.FR",
   url: SITE + "/",
-  logo: { "@type": "ImageObject", url: SITE + "/logo/ufc.fr.jpeg" },
+  logo: {
+    "@type": "ImageObject",
+    url: SITE + "/media/2025/04/ufc-fr-mma-sans-compromis-1.png",
+    width: 512,
+    height: 512,
+  },
   description:
     "Média indépendant d’actualité MMA en France et à l’international. Non affilié à l’Ultimate Fighting Championship.",
 };
@@ -442,6 +448,8 @@ function renderDocument(doc, { isPage }) {
     image: img?.url,
     type: isPage ? "website" : "article",
     schema,
+    datePublished: isPage ? "" : doc.date_gmt + "Z",
+    dateModified: doc.modified_gmt + "Z",
   })}
 ${header()}
   <main id="contenu">
@@ -457,7 +465,7 @@ ${header()}
       <header class="ah" data-reveal>
         <span class="kicker">${esc(kicker)}</span>
         <h1>${esc(title)}</h1>
-        <p class="byline">Rédaction UFC.FR · Publié le <time datetime="${doc.date.slice(0, 10)}">${dateFr(doc.date)}</time>${
+        <p class="byline"><a href="/a-propos/" rel="author">Rédaction UFC.FR</a> · Publié le <time datetime="${doc.date.slice(0, 10)}">${dateFr(doc.date)}</time>${
           doc.modified.slice(0, 10) !== doc.date.slice(0, 10)
             ? ` · Mis à jour le <time datetime="${doc.modified.slice(0, 10)}">${dateFr(doc.modified)}</time>`
             : ""

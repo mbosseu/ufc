@@ -13,7 +13,7 @@
  * ignore par git). A lancer avant tout push qui touche au CSS.
  */
 import { chromium } from "playwright-core";
-import { mkdirSync } from "node:fs";
+import { existsSync, mkdirSync } from "node:fs";
 import { join, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -41,7 +41,17 @@ const CIBLES = [
 ];
 
 mkdirSync(OUT, { recursive: true });
-const b = await chromium.launch({ executablePath: process.env.CHROME || "/opt/pw-browsers/chromium" });
+const navigateurs = [
+  process.env.CHROME,
+  process.env.ProgramFiles && join(process.env.ProgramFiles, "Google", "Chrome", "Application", "chrome.exe"),
+  process.env["ProgramFiles(x86)"] && join(process.env["ProgramFiles(x86)"], "Google", "Chrome", "Application", "chrome.exe"),
+  process.env.LOCALAPPDATA && join(process.env.LOCALAPPDATA, "Google", "Chrome", "Application", "chrome.exe"),
+  process.env.ProgramFiles && join(process.env.ProgramFiles, "Microsoft", "Edge", "Application", "msedge.exe"),
+  "/opt/pw-browsers/chromium",
+].filter(Boolean);
+const executablePath = navigateurs.find((fichier) => existsSync(fichier));
+if (!executablePath) throw new Error("Chrome, Edge ou Chromium est introuvable. Definir CHROME avec le chemin de l'executable.");
+const b = await chromium.launch({ executablePath });
 let defauts = 0;
 
 for (const [nom, url, scroll] of CIBLES) {

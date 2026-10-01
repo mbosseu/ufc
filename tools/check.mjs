@@ -22,6 +22,15 @@ const pages = [];
 
 let fails = 0;
 const fail = (m) => { console.log("  ✗ " + m); fails++; };
+const indexables = new Map();
+const redirectSources = new Set();
+
+function routePublique(fichier) {
+  const rel = fichier.slice(ROOT.length + 1).replace(/\\/g, "/");
+  if (rel === "index.html") return "/";
+  if (rel.endsWith("/index.html")) return "/" + rel.slice(0, -"index.html".length);
+  return "";
+}
 
 console.log(`[controle] ${pages.length} pages`);
 
@@ -29,21 +38,32 @@ console.log(`[controle] ${pages.length} pages`);
 for (const p of pages) {
   const h = readFileSync(p, "utf8");
   const rel = p.slice(ROOT.length + 1);
+  const noindex = /name="robots" content="[^"]*noindex/i.test(h);
+  const route = routePublique(p);
   if (/wp-content|wp-json|class="[^"]*wp-|elementor/i.test(h)) fail(`trace CMS dans ${rel}`);
   if (/class="js-motion"/.test(h)) fail(`js-motion code en dur dans ${rel}`);
   if (!/rel="icon"/.test(h)) fail(`favicon absent de ${rel}`);
   if (!/og:title/.test(h)) fail(`Open Graph absent de ${rel}`);
   if (/https:\/\/www\.ufc\.fr/.test(h)) fail(`ancienne origine www encore presente dans ${rel}`);
   const canonical = (h.match(/<link rel="canonical" href="([^"]+)"/) || [])[1];
-  if (!/name="robots" content="noindex/.test(h)) {
+  if (!noindex) {
     if (!canonical) fail(`canonical absent de ${rel}`);
     else if (!canonical.startsWith(SITE + "/")) fail(`canonical hors origine dans ${rel} : ${canonical}`);
+    if (route) {
+      const attendu = SITE + route;
+      if (canonical && canonical !== attendu) fail(`canonical de ${rel} : ${canonical}, attendu ${attendu}`);
+      indexables.set(attendu, { html: h, rel });
+    }
+    if (!/max-image-preview:large/.test(h)) fail(`apercu image large non autorise dans ${rel}`);
+    if (!/rel="alternate" type="application\/rss\+xml"[^>]+href="https:\/\/ufc\.fr\/feed\.xml"/.test(h)) {
+      fail(`flux RSS non declare dans ${rel}`);
+    }
   }
   // Un gabarit mal echappe laisse `${...}` dans le document : le lien
   // devient inatteignable et rien d'autre ne le signale.
   if (/\$\{/.test(h)) fail(`litteral de gabarit non evalue dans ${rel}`);
   const h1 = (h.match(/<h1[\s>]/g) || []).length;
-  if (h1 !== 1 && !/name="robots" content="noindex/.test(h)) fail(`${h1} h1 dans ${rel}`);
+  if (h1 !== 1 && !noindex) fail(`${h1} h1 dans ${rel}`);
   // 2. Aucune image repetee dans une page.
   //    Ajoute apres avoir livre une galerie ou neuf combattants differents
   //    portaient la meme photo de ceinture : rien ne le signalait, ni le
@@ -51,7 +71,7 @@ for (const p of pages) {
   // Les copies mises en noindex sont des pages superseedees qu'on garde
   // accessibles sans les entretenir : leur repetition d'images ne se corrige
   // pas, elle disparaitra avec elles.
-  if (/name="robots" content="noindex/.test(h)) { /* controle allege */ }
+  if (noindex) { /* controle allege */ }
   else {
   // La marque revient en en-tete et en pied : c'est voulu, elle est exclue.
   const imgs = [...h.matchAll(/<img[^>]+src="([^"]+)"/g)]
@@ -152,7 +172,11 @@ try {
   const vercel = JSON.parse(readFileSync(join(ROOT, "vercel.json"), "utf8"));
   for (const k of Object.keys(vercel))
     if (!CLES_VERCEL.has(k)) fail(`vercel.json : propriete « ${k} » inconnue de Vercel — l'import sera refuse`);
+  if (vercel.buildCommand !== "npm run build") {
+    fail("vercel.json : le deploiement doit regenerer le site avec npm run build");
+  }
   const pathRedirects = (vercel.redirects || []).filter((r) => !r.has);
+  for (const r of pathRedirects) redirectSources.add(r.source);
   const posees = new Map(pathRedirects.map((r) => [r.source, r.destination]));
   for (const r of REDIRECTS) {
     if (posees.get(r.source) !== r.destination) fail(`vercel.json : ${r.source} devrait aller vers ${r.destination}`);
@@ -165,7 +189,9 @@ try {
     r.source === "/:path*" &&
     r.has.some((h) => h.type === "host" && h.value === "www.ufc.fr")
   );
-  if (!wwwVersCanonique || wwwVersCanonique.destination !== `${SITE}/:path*` || !wwwVersCanonique.permanent) {
+  const redirectionPermanente = wwwVersCanonique &&
+    (wwwVersCanonique.permanent === true || [301, 308].includes(wwwVersCanonique.statusCode));
+  if (!wwwVersCanonique || wwwVersCanonique.destination !== `${SITE}/:path*` || !redirectionPermanente) {
     fail(`vercel.json : www.ufc.fr doit rediriger definitivement vers ${SITE}`);
   }
   if (redirectsHote.some((r) => r.has.some((h) => h.type === "host" && h.value === "ufc.fr"))) {
@@ -177,12 +203,63 @@ try {
 
 const robots = readFileSync(join(ROOT, "robots.txt"), "utf8");
 if (!robots.includes(`Sitemap: ${SITE}/sitemap.xml`)) fail("robots.txt : URL du sitemap incoherente");
+if (!robots.includes(`Sitemap: ${SITE}/feed.xml`)) fail("robots.txt : flux RSS absent des sources de decouverte");
 
 const sitemap = readFileSync(join(ROOT, "sitemap.xml"), "utf8");
-const urlsSitemap = [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => m[1]);
+const entreesSitemap = [...sitemap.matchAll(/<url>([\s\S]*?)<\/url>/g)].map((m) => ({
+  loc: (m[1].match(/<loc>([^<]+)<\/loc>/) || [])[1] || "",
+  lastmod: (m[1].match(/<lastmod>([^<]+)<\/lastmod>/) || [])[1] || "",
+}));
+const urlsSitemap = entreesSitemap.map((entree) => entree.loc);
+const sitemapParUrl = new Map(entreesSitemap.map((entree) => [entree.loc, entree]));
 if (!urlsSitemap.length) fail("sitemap.xml : aucune URL");
+if (sitemapParUrl.size !== urlsSitemap.length) fail("sitemap.xml : URL dupliquee");
 for (const url of urlsSitemap) {
   if (!url.startsWith(SITE + "/")) fail(`sitemap.xml : origine incoherente pour ${url}`);
+}
+for (const [url, page] of indexables) {
+  const entree = sitemapParUrl.get(url);
+  if (!entree) {
+    fail(`sitemap.xml : page indexable absente (${page.rel})`);
+    continue;
+  }
+  const date =
+    (page.html.match(/"dateModified"\s*:\s*"([^"]+)"/) ||
+      page.html.match(/"datePublished"\s*:\s*"([^"]+)"/) || [])[1] || "";
+  if (date && entree.lastmod !== date) {
+    fail(`sitemap.xml : lastmod de ${url} vaut « ${entree.lastmod || "absent"} », attendu « ${date} »`);
+  }
+}
+for (const url of urlsSitemap) {
+  if (!indexables.has(url)) fail(`sitemap.xml : URL non indexable ou inexistante (${url})`);
+}
+
+const feedPath = join(ROOT, "feed.xml");
+if (!existsSync(feedPath)) fail("feed.xml absent");
+else {
+  const feed = readFileSync(feedPath, "utf8");
+  const liens = [...feed.matchAll(/<item>[\s\S]*?<link>([^<]+)<\/link>[\s\S]*?<\/item>/g)].map((m) => m[1]);
+  if (!liens.length) fail("feed.xml : aucun article");
+  for (const url of liens) {
+    if (!url.startsWith(SITE + "/")) fail(`feed.xml : origine incoherente pour ${url}`);
+    if (!indexables.has(url)) fail(`feed.xml : article non indexable ou absent (${url})`);
+  }
+}
+
+function cibleLocaleExiste(href) {
+  const chemin = href.split(/[?#]/)[0];
+  if (!chemin || chemin === "/") return true;
+  if (redirectSources.has(chemin)) return true;
+  const relatif = chemin.replace(/^\//, "");
+  if (/\.[a-z0-9]+$/i.test(relatif)) return existsSync(join(ROOT, relatif));
+  return existsSync(join(ROOT, relatif, "index.html"));
+}
+
+for (const page of indexables.values()) {
+  const liens = new Set([...page.html.matchAll(/href="(\/[^"]*)"/g)].map((m) => m[1]));
+  for (const href of liens) {
+    if (!cibleLocaleExiste(href)) fail(`lien interne mort dans ${page.rel} : ${href}`);
+  }
 }
 
 for (const [copie, canonique] of Object.entries(CANONIQUES)) {

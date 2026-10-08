@@ -2614,9 +2614,13 @@ html.motion .cage-frame .cage-draw { animation: cage-close 1.5s var(--ease) 0.15
   .hero-solo .hero-name { font-size: clamp(36px, 12vw, 64px); }
 }
 
-/* Hero solo un peu moins haut : moins de crop agressif sur le portrait. */
+/* Le hero solo doit avoir une hauteur resolue. Avec une simple min-height,
+   la hauteur en pourcentage de l'image restait indeterminee et le portrait
+   reprenait ses proportions intrinseques, ce qui faisait grandir la grille
+   bien au-dela du viewport. */
 .hero-cage.hero-solo {
-  min-height: min(88svh, 760px);
+  height: min(88svh, 760px);
+  min-height: 0;
 }
 
 .hero-man::after {
@@ -4086,6 +4090,14 @@ section.block > .wrap > .tete-liste { margin-bottom: 40px; }
   }
   .hero-cage {
     min-height: auto;
+  }
+  .hero-cage.hero-solo {
+    height: auto;
+    min-height: 0;
+  }
+  .hero-solo .hero-solo-fig {
+    height: min(64svh, 560px);
+    min-height: 420px;
   }
   .hero-duel {
     min-height: 78svh;

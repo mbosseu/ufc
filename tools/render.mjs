@@ -117,7 +117,7 @@ ${type === "article" && dateModified ? `  <meta property="article:modified_time"
        navigateur de chaque lecteur. -->
 ${FONTES_CRITIQUES.map((f) => `  <link rel="preload" as="font" type="font/woff2" href="${f}" crossorigin />`).join("\n")}
   <link rel="stylesheet" href="${POLICES}" />
-  <link rel="stylesheet" href="/css/site.css" />
+  <link rel="stylesheet" href="/css/site.css?v=20261008" />
 ${schema.map((s) => `  <script type="application/ld+json">${JSON.stringify(s)}</script>`).join("\n")}
 </head>`;
 }

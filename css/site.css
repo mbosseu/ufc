@@ -4157,17 +4157,57 @@ section.block > .wrap > .tete-liste { margin-bottom: 40px; }
 }
 
 /* Affiche éditoriale : conserver les noms et la date dans le cadre. */
-.article > .wrap-read > .figure.lead:has(img[src$="buckley-vs-malott-affiche.png"]) {
+.article > .wrap-read > .figure.lead:has(img[src$="-affiche.png"]) {
   margin-right: 0;
   min-height: 0;
   aspect-ratio: auto;
   align-self: center;
 }
-.article .figure.lead img[src$="buckley-vs-malott-affiche.png"] {
+.article .figure.lead img[src$="-affiche.png"] {
   width: 100%;
   height: auto;
   min-height: 0;
   max-height: none;
   aspect-ratio: auto;
   object-fit: contain;
+}
+
+/* Une affiche contient déjà son texte : la présenter entière, séparée du titre. */
+.ed-lead:has(img[src$="-affiche.png"]) {
+  min-height: 0;
+  color: var(--ink);
+  background: var(--paper);
+}
+.ed-lead:has(img[src$="-affiche.png"])::after { display: none; }
+.ed-lead:has(img[src$="-affiche.png"]) .ed-lead-media {
+  position: relative;
+  inset: auto;
+  width: min(calc(100% - 32px), 1440px);
+  margin: 0 auto;
+  transform: none !important;
+}
+.ed-lead:has(img[src$="-affiche.png"]) .ed-lead-media img {
+  position: static;
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  transform: none !important;
+}
+.ed-lead:has(img[src$="-affiche.png"]) .ed-lead-copy {
+  min-height: 0;
+  padding: 28px 0 36px;
+}
+.ed-lead:has(img[src$="-affiche.png"]) .ed-lead-copy h2 {
+  font-size: clamp(28px, 3.2vw, 48px);
+  line-height: 1.12;
+  max-width: 36ch;
+}
+.ed-lead:has(img[src$="-affiche.png"]) .ed-lead-copy p {
+  font-size: 16px;
+  line-height: 1.6;
+  letter-spacing: normal;
+  text-transform: none;
+  opacity: 1;
+  max-width: 75ch;
 }

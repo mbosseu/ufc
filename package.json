@@ -12,7 +12,10 @@
     "audit:seo": "node tools/seo-audit.mjs",
     "mcp": "node mcp/server.mjs",
     "shots": "node tools/shots.mjs",
-    "pages": "bash tools/deploy-pages.sh"
+    "pages": "bash tools/deploy-pages.sh",
+    "bot": "python tools/editorial_bot.py",
+    "bot:publish": "python tools/editorial_bot.py --publish",
+    "bot:check": "python tools/editorial_bot.py --doctor --api-check"
   },
   "engines": {
     "node": ">=18"

@@ -5,7 +5,7 @@
  */
 import { createServer } from "node:http";
 import { readFile, stat } from "node:fs/promises";
-import { join, extname, dirname } from "node:path";
+import { join, extname, dirname, resolve, sep } from "node:path";
 import { fileURLToPath } from "node:url";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
@@ -20,6 +20,12 @@ const TYPES = {
 
 createServer(async (req, res) => {
   const url = decodeURIComponent(req.url.split("?")[0]);
+  // La configuration du bot et ses preuves ne sont jamais servies au navigateur.
+  const target = resolve(ROOT, "." + url);
+  if (url.split("/").some((part) => part.startsWith(".")) ||
+      (target !== resolve(ROOT) && !target.startsWith(resolve(ROOT) + sep))) {
+    res.writeHead(404); res.end(); return;
+  }
   const candidates = url.endsWith("/") ? [join(ROOT, url, "index.html")] : [join(ROOT, url), join(ROOT, url, "index.html")];
   for (const file of candidates) {
     try {
@@ -32,4 +38,4 @@ createServer(async (req, res) => {
   }
   res.writeHead(404, { "Content-Type": "text/html; charset=utf-8" });
   res.end("<h1>404</h1>");
-}).listen(PORT, () => console.log(`UFC.FR → http://localhost:${PORT}`));
+}).listen(PORT, "127.0.0.1", () => console.log(`UFC.FR → http://localhost:${PORT}`));

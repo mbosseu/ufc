@@ -3,3 +3,7 @@
 .research/
 Thumbs.db
 node_modules/
+.env
+.env.*
+!.env.example
+__pycache__/

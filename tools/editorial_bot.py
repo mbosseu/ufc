@@ -243,6 +243,16 @@ def evidence(topic, run):
                   'verified_fields doit contenir les champs réellement vérifiés parmi fighters,event,event_date,venue,news_date,facts. '
                   'ok=false si une information factuelle du dossier manque de preuve.\nDOSSIER '+json.dumps(factual_topic,ensure_ascii=False)+'\nSOURCES '+json.dumps(docs,ensure_ascii=False),notes=run/'verification-faits.json')
     required = {'fighters','event','event_date','venue','news_date','facts'}
+    if verdict.get('ok') is not True:
+        # Une formulation issue de la recherche peut être trop large : reconstruire
+        # les faits depuis les textes réels, puis les soumettre à nouveau au contrôle.
+        topic['facts']=drafting_facts(topic,docs,run)
+        factual_topic={k:v for k,v in topic.items() if k!='portraits'}
+        verdict=ask('Vérifie ce dossier corrigé contre les sources. Noms, événement, date locale, salle, date de l’actualité et faits doivent être justifiés. '
+                    'Retourne {"ok":true/false,"problems":[],"verified_fields":[]}. verified_fields contient les champs effectivement vérifiés parmi '
+                    'fighters,event,event_date,venue,news_date,facts. Ne confonds pas une date locale américaine avec sa date de diffusion française. '
+                    '\nDOSSIER '+json.dumps(factual_topic,ensure_ascii=False)+'\nSOURCES '+json.dumps(docs,ensure_ascii=False),notes=run/'verification-faits-corrected.json')
+        save(run/'topic-verified.json',topic)
     if verdict.get('ok') is not True or not required.issubset(set(verdict.get('verified_fields', []))):
         raise Stop('Vérification factuelle non concluante : '+str(verdict.get('problems', [])))
     return docs
@@ -370,7 +380,8 @@ def write_article(topic, docs, existing, run):
     routes={'/'+item['slug']+'/' for item in existing}
     times=france_times(topic)
     save(run/'horaires-france.json',times)
-    facts=drafting_facts(topic,docs,run)
+    if (run/'drafting-facts.json').exists():facts=json.loads((run/'drafting-facts.json').read_text(encoding='utf-8'))
+    else:facts=drafting_facts(topic,docs,run)
     article=ask('Rédige un article original français de 350 à 650 mots. JSON : slug,titre,titre_seo,chapo,meta_description,categorie,corps (HTML p h2 h3 strong em ul li a uniquement). '
         'Pas de liens sortants, pas de source publique ; deux ou trois liens internes parmi les routes fournies. Aucun attribut sauf href sur a. '
         'Faits uniquement du dossier vérifié et de la fiche de faits fournie ; horaires uniquement des conversions fournies. Si absents, ne pas inventer. '

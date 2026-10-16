@@ -44,5 +44,11 @@ class ReportTests(unittest.TestCase):
             mod.notify({'job':'success','state':'live'},'https://github.com/owner/repo/actions/runs/4')
             self.assertEqual(api.call_args_list[-1].args[1],{'state':'closed'})
 
+    def test_no_new_topic_does_not_prove_failed_publication_is_fixed(self):
+        old={'number':7,'title':mod.TITLE,'body':mod.MARKER}
+        with patch.dict(os.environ,{'GITHUB_REPOSITORY':'owner/repo'}),patch.object(mod,'api',return_value=[old]) as api:
+            mod.notify({'job':'success','state':'no_eligible_topic'},'https://github.com/owner/repo/actions/runs/5')
+            self.assertEqual(api.call_count,1)
+
 
 if __name__=='__main__':unittest.main()

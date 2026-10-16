@@ -114,5 +114,16 @@ class EditorialTests(unittest.TestCase):
         self.assertTrue(bot.title_matches('<h1>UFC Edmonton\u00a0: l&#39;affiche &amp; les enjeux</h1>',"UFC Edmonton : l'affiche & les enjeux"))
         self.assertFalse(bot.title_matches('<h1>Ancien article</h1>','Nouvel article'))
 
+    def test_reviewer_must_quote_real_article_and_source(self):
+        article={'corps':'<p>Le combat est prévu à Paris.</p>'};docs={'https://ufc.com/news/test':'Le combat est prévu à Edmonton au Canada.'}
+        issue={'type':'contradiction','article_quote':'Le combat est prévu à Paris.','source_url':'https://ufc.com/news/test','source_quote':docs['https://ufc.com/news/test']}
+        self.assertTrue(bot.grounded_review({'ok':False,'issues':[issue]},article,docs))
+        issue['article_quote']='Un passage absent de cet article.'
+        self.assertFalse(bot.grounded_review({'ok':False,'issues':[issue]},article,docs))
+
+    def test_missing_detail_is_not_a_factual_error(self):
+        self.assertFalse(bot.grounded_review({'ok':False,'issues':[{'type':'omission'}]},self.article(),{}))
+        self.assertFalse(bot.grounded_review({'ok':False,'problems':['Il faut plus de détails.']},self.article(),{}))
+
 
 if __name__=='__main__':unittest.main()

@@ -61,7 +61,7 @@ def notify(result,run_url):
         else:api('/repos/'+repo+'/issues',{'title':TITLE,'body':body,'assignees':[repo.split('/')[0]]},'POST')
     elif result['job']=='success' and existing:
         # Un simple test de configuration ne prouve pas le rétablissement de la publication.
-        if result['state'] in ('live','no_eligible_topic'):
+        if result['state']=='live':
             api('/repos/'+repo+'/issues/'+str(existing['number'])+'/comments',{'body':'Fonctionnement rétabli. [Passage vérifié]('+run_url+').'},'POST')
             api('/repos/'+repo+'/issues/'+str(existing['number']),{'state':'closed'},'PATCH')
 

@@ -73,8 +73,9 @@ def ask(prompt, *, web=False, images=(), notes=None):
     for path in images:
         mime = 'image/jpeg' if path.suffix.lower() in ('.jpg','.jpeg') else 'image/png'
         content.append({'type': 'input_image', 'image_url': 'data:'+mime+';base64,' + base64.b64encode(path.read_bytes()).decode()})
+    effort='medium' if notes and any(word in notes.name for word in ('verification-faits','drafting-facts','writing','article-qa')) else 'low'
     payload = {'model': os.environ.get('IA_MODEL', 'gpt-6-luna'), 'instructions': RULES,
-               'input': [{'role': 'user', 'content': content}], 'reasoning': {'effort':'low'}, 'max_output_tokens': 7000, 'store': False}
+               'input': [{'role': 'user', 'content': content}], 'reasoning': {'effort':effort}, 'max_output_tokens': 10000, 'store': False}
     if web:
         payload['tools'] = [{'type': 'web_search'}]
         payload['tool_choice'] = 'required'
@@ -377,6 +378,38 @@ def drafting_facts(topic,docs,run):
     return facts
 
 
+def grounded_review(review,article,docs):
+    if review.get('ok') is True:return True
+    issues=review.get('issues',[])
+    if not issues:return False
+    def norm(s):return re.sub(r'\s+',' ',html.unescape(re.sub('<[^>]+>',' ',s))).casefold().strip()
+    article_text=norm(' '.join(str(article.get(k,'')) for k in ('titre','chapo','meta_description','corps')))
+    for issue in issues:
+        if issue.get('type') not in ('contradiction','unsupported_claim'):return False
+        quote=norm(issue.get('article_quote',''));source_quote=norm(issue.get('source_quote',''))
+        if len(quote)<8 or quote not in article_text:return False
+        if len(source_quote)<12 or source_quote not in norm(docs.get(issue.get('source_url'),'')):return False
+    return True
+
+
+def review_article(article,topic,times,docs,run,name):
+    prompt=('Contrôle factuel d’un article français. Recherche uniquement des contradictions ou affirmations factuelles non justifiées. '
+            'Ne rejette jamais une omission facultative (rang, heure exacte d’une finition, diffuseur), ni une paraphrase fidèle au sens. '
+            'Un article n’a pas à reproduire toutes les précisions des sources. Une analyse explicitement signalée n’est pas une annonce officielle. '
+            'Pour les chronologies, compare réellement les dates : mars 2024 précède novembre 2024, qui précède novembre 2025. '
+            'La date locale de l’événement est celle de la salle ; les horaires français sont des conversions calculées par le programme. '
+            'Retourne {"ok":true/false,"problems":[],"issues":[{"type":"contradiction|unsupported_claim","article_quote":"extrait exact du texte incriminé",'
+            '"source_url":"URL fournie","source_quote":"extrait exact de la source qui justifie le constat","explanation":"contradiction précise","correction":"formulation correcte ou suppression"}]}. '
+            'ok=false exige au moins une issue prouvée par les deux extraits ; aucune issue pour une omission. '
+            '\nARTICLE '+json.dumps(article,ensure_ascii=False)+'\nDOSSIER '+json.dumps({k:v for k,v in topic.items() if k!='portraits'},ensure_ascii=False)+
+            '\nHORAIRES '+json.dumps(times)+'\nSOURCES '+json.dumps(docs,ensure_ascii=False))
+    review=ask(prompt,notes=run/name)
+    if not grounded_review(review,article,docs):
+        review=ask(prompt+'\nUn premier avis a été rejeté car ses preuves n’étaient pas vérifiables. Repars du texte et des sources, sans tenir cet avis pour vrai.',notes=run/('second-'+name))
+    if not grounded_review(review,article,docs):raise Stop('Verdict factuel non étayé : aucune réécriture automatique autorisée.')
+    return review
+
+
 def write_article(topic, docs, existing, run):
     routes={'/'+item['slug']+'/' for item in existing}
     times=france_times(topic)
@@ -409,10 +442,7 @@ def write_article(topic, docs, existing, run):
     article['categorie']='resultats' if topic['angle']=='results' else 'evenements' if topic['angle']=='preview' else 'actualite'
     validate_article(article,topic,routes)
     article={k:article[k] for k in ('slug','titre','titre_seo','chapo','meta_description','categorie','corps')}
-    review=ask('Contrôle factuel final du texte : chaque affirmation doit être justifiée par les faits et textes fournis ; les analyses doivent être signalées. '
-               'Vérifie en particulier les horaires, les résultats et les diffuseurs. La date locale de l’événement est explicitement celle du lieu indiqué, pas une date française ; les conversions France proviennent du programme. '
-               'Retourne {"ok":true/false,"problems":[]}.\nARTICLE '+json.dumps(article,ensure_ascii=False)+
-               '\nDOSSIER '+json.dumps(topic,ensure_ascii=False)+'\nHORAIRES '+json.dumps(times)+'\nSOURCES '+json.dumps(docs,ensure_ascii=False),notes=run/'article-qa.json')
+    review=review_article(article,topic,times,docs,run,'article-qa.json')
     for correction in range(3):
         if review.get('ok') is True:break
         article=ask('Corrige les erreurs factuelles signalées dans cet article. Retourne le même objet JSON complet, sans nouveaux faits ni nouveaux liens. '
@@ -426,9 +456,7 @@ def write_article(topic, docs, existing, run):
         article['categorie']='resultats' if topic['angle']=='results' else 'evenements' if topic['angle']=='preview' else 'actualite'
         validate_article(article,topic,routes)
         article={k:article[k] for k in ('slug','titre','titre_seo','chapo','meta_description','categorie','corps')}
-        review=ask('Vérifie les faits du texte corrigé contre les sources officielles. Ne pas rejeter une omission facultative : aucun diffuseur ne doit être inventé, mais il peut ne pas être cité. '
-                   'Retourne {"ok":true/false,"problems":[]}.\nARTICLE '+json.dumps(article,ensure_ascii=False)+'\nSOURCES '+json.dumps(docs,ensure_ascii=False)+
-                   '\nHORAIRES '+json.dumps(times),notes=run/f'article-qa-corrected-{correction+1}.json')
+        review=review_article(article,topic,times,docs,run,f'article-qa-corrected-{correction+1}.json')
     if review.get('ok') is not True: raise Stop('Article rejeté après trois corrections contrôlées : '+str(review.get('problems',[])))
     article.update(date=datetime.now(ZoneInfo('Europe/Paris')).date().isoformat(),categories_secondaires=['actualite',topic['organisation']],
         image=f'/media/{datetime.now():%Y/%m}/{topic["slug"]}-affiche.png', image_format='poster',

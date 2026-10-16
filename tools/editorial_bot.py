@@ -466,6 +466,7 @@ def main(argv=None):
     try: handle=os.open(lock,os.O_CREAT|os.O_EXCL|os.O_WRONLY)
     except FileExistsError: raise Stop('Une exécution est déjà active (run.lock).') from None
     run=PRIVATE/datetime.now().strftime('%Y%m%d-%H%M%S-%f'); run.mkdir()
+    stage='preflight'
     try:
         os.write(handle,str(os.getpid()).encode()); os.close(handle)
         if args.publish: ensure_clean()
@@ -475,18 +476,29 @@ def main(argv=None):
         prompt+='Ne rejette PAS un sujet UFC faute de fichiers portrait indexés : retourne portraits:[] et le programme extraira les photos des fiches officielles UFC. Si aucun sujet vérifiable, retourne {"skip_reason":"..."}. Sinon retourne {slug,angle:preview|results|announcement,organisation:ufc|pfl|one-championship|ksw|hexagone-mma|ares, fighters:[nom1,nom2],event,event_date:YYYY-MM-DD,venue,news_date:YYYY-MM-DD,sources:[{url}],facts:[{claim,source_url,quote}],times:[{label,iso:horaire avec offset,source_url,quote}],portraits:[{fighter,image_url,source_page_url,license:UNKNOWN|CC0|PUBLIC_DOMAIN|OTHER,author}]}. '
         prompt+='Chaque champ doit être justifié par les sources officielles ; extraits littéraux courts. Les horaires doivent inclure un offset UTC explicite et leur preuve. '
         prompt+='Priorité aux domaines '+json.dumps(OFFICIAL)+'. Date France : '+str(today)+'. Suggestion : '+str(args.topic)+'. Catalogue : '+json.dumps(existing,ensure_ascii=False)
+        stage='research';save(run/'state.json',{'state':'running','stage':stage})
         topic=ask(prompt,web=True,notes=run/'research-response.json'); save(run/'topic.json',topic)
         if topic.get('skip_reason'):
             save(run/'state.json',{'state':'no_eligible_topic','reason':topic['skip_reason']}); print(topic['skip_reason']); return
+        stage='portraits_resolution';save(run/'state.json',{'state':'running','stage':stage})
         resolve_portraits(topic); save(run/'topic.json',topic)
         validate_topic(topic,existing,today)
-        docs=evidence(topic,run); paths=portraits(topic,run); poster=make_poster(topic,paths,run)
-        article=write_article(topic,docs,existing,run); site=stage_site(article,poster,run)
+        stage='facts';save(run/'state.json',{'state':'running','stage':stage})
+        docs=evidence(topic,run)
+        stage='portraits_quality';save(run/'state.json',{'state':'running','stage':stage})
+        paths=portraits(topic,run)
+        stage='poster';save(run/'state.json',{'state':'running','stage':stage})
+        poster=make_poster(topic,paths,run)
+        stage='writing';save(run/'state.json',{'state':'running','stage':stage})
+        article=write_article(topic,docs,existing,run)
+        stage='visual_checks';save(run/'state.json',{'state':'running','stage':stage})
+        site=stage_site(article,poster,run)
         save(run/'state.json',{'state':'ready','slug':article['slug'],'site':str(site)})
-        if args.publish: publish(article,poster,site,run)
+        if args.publish:
+            stage='publication';publish(article,poster,site,run)
         else: print('Préparation vérifiée, non publiée :',run)
     except Exception as error:
-        save(run/'state.json',{'state':'failed','reason':str(error)[:2000]}); raise
+        save(run/'state.json',{'state':'failed','stage':stage,'reason':str(error)[:2000]}); raise
     finally:
         lock.unlink(missing_ok=True)
 

@@ -1,0 +1,81 @@
+name: Bot editorial UFC.fr
+
+on:
+  schedule:
+    - cron: '0 9 * * *'
+      timezone: Europe/Paris
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: Action à effectuer
+        type: choice
+        options: [check, prepare, publish]
+        default: check
+
+permissions:
+  contents: write
+  issues: write
+
+concurrency:
+  group: ufc-editorial-publication
+  cancel-in-progress: false
+
+jobs:
+  editorial:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    env:
+      IA_MODEL: gpt-6-luna
+      IMAGE_MODEL: gpt-image-2
+      PYTHONUNBUFFERED: '1'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Installer le navigateur dans un dossier externe au dépôt
+        shell: bash
+        run: |
+          npm install --prefix "$RUNNER_TEMP/ufc-browser" playwright@1.58.2
+          "$RUNNER_TEMP/ufc-browser/node_modules/.bin/playwright" install --with-deps chromium
+          echo "PLAYWRIGHT_MODULE=$RUNNER_TEMP/ufc-browser/node_modules/playwright" >> "$GITHUB_ENV"
+          python -m pip install tzdata
+      - name: Configurer les commits
+        env:
+          AUTHOR_NAME: ${{ vars.EDITORIAL_AUTHOR_NAME }}
+          AUTHOR_EMAIL: ${{ vars.EDITORIAL_AUTHOR_EMAIL }}
+        shell: bash
+        run: |
+          git config user.name "${AUTHOR_NAME:-mbosseu}"
+          git config user.email "${AUTHOR_EMAIL:-204330386+mbosseu@users.noreply.github.com}"
+      - name: Tester les contrôles et les accès
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: |
+          python -m unittest discover -s tools -p 'test_editorial*.py' -q
+          python tools/editorial_bot.py --doctor --api-check
+      - name: Rechercher, rédiger, vérifier et publier
+        if: github.event_name == 'schedule' || inputs.mode != 'check'
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          MODE: ${{ github.event_name == 'schedule' && 'publish' || inputs.mode }}
+        shell: bash
+        run: |
+          if [ "$MODE" = publish ]; then
+            python tools/editorial_bot.py --publish
+          else
+            python tools/editorial_bot.py
+          fi
+      - name: Rapport et alerte en cas d’erreur
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+          JOB_STATUS: ${{ job.status }}
+          BOT_MODE: ${{ github.event_name == 'schedule' && 'publish' || inputs.mode }}
+        run: python tools/editorial_report.py

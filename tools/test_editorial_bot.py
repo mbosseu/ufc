@@ -100,5 +100,15 @@ class EditorialTests(unittest.TestCase):
             self.assertIsNone(bot.choose_topic('Recherche',[],date(2026,10,16),Path(d)))
             self.assertEqual(ask.call_count,3)
 
+    def test_drafting_facts_reject_unverifiable_quotes(self):
+        with tempfile.TemporaryDirectory() as d,patch.object(bot,'ask',return_value={'facts':[{'claim':'Fait inventé','source_url':'https://ufc.com/news/test','quote':'citation absente du texte'}]*8}):
+            with self.assertRaises(bot.Stop):bot.drafting_facts(self.topic(),{'https://ufc.com/news/test':'Document réel'},Path(d))
+
+    def test_drafting_facts_keep_only_real_source_excerpts(self):
+        fact={'claim':'Fait utile','source_url':'https://ufc.com/news/test','quote':'Une phrase réellement présente dans la source.'}
+        with tempfile.TemporaryDirectory() as d,patch.object(bot,'ask',return_value={'facts':[dict(fact) for _ in range(3)]+[{'claim':'Inventé','source_url':'https://ufc.com/news/test','quote':'Une citation qui n’existe pas dans le document'}]}):
+            result=bot.drafting_facts(self.topic(),{'https://ufc.com/news/test':fact['quote']},Path(d))
+            self.assertEqual(len(result),3)
+
 
 if __name__=='__main__':unittest.main()

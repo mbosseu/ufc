@@ -349,36 +349,57 @@ def validate_article(article, topic, routes):
     if article.get('categorie') not in ('evenements','resultats','actualite'): raise Stop('Catégorie invalide.')
 
 
+def drafting_facts(topic,docs,run):
+    result=ask('Extrais 8 à 12 faits précis utiles à un article sur les deux combattants du dossier. '
+               'Retourne {"facts":[{"claim":"fait en français","source_url":"URL fournie","quote":"extrait CONTIGU EXACT de la source"}]}. '
+               'Aucune prédiction, aucune chance au titre supposée, aucun classement des médias, aucune opinion sur un troisième athlète. '
+               'Un rang UFC doit être explicitement identifié comme rang UFC, avec sa catégorie. Ne transforme pas une déclaration en fait acquis. '
+               'Extraits courts, sans reformulation dans quote. Si moins de faits sont attestés, renvoie seulement ceux réellement justifiés. '
+               '\nDOSSIER '+json.dumps({k:v for k,v in topic.items() if k!='portraits'},ensure_ascii=False)+'\nSOURCES '+json.dumps(docs,ensure_ascii=False),notes=run/'drafting-facts-response.json')
+    facts=[]
+    for fact in result.get('facts',[]):
+        quote=re.sub(r'\s+',' ',fact.get('quote','')).strip()
+        source=docs.get(fact.get('source_url'),'')
+        if len(quote)>=12 and quote.casefold() in source.casefold():facts.append(fact)
+    if len(facts)<3:raise Stop('Fiche de rédaction trop pauvre en faits justifiés.')
+    save(run/'drafting-facts.json',facts)
+    return facts
+
+
 def write_article(topic, docs, existing, run):
     routes={'/'+item['slug']+'/' for item in existing}
     times=france_times(topic)
     save(run/'horaires-france.json',times)
+    facts=drafting_facts(topic,docs,run)
     article=ask('Rédige un article original français de 350 à 650 mots. JSON : slug,titre,titre_seo,chapo,meta_description,categorie,corps (HTML p h2 h3 strong em ul li a uniquement). '
         'Pas de liens sortants, pas de source publique ; deux ou trois liens internes parmi les routes fournies. Aucun attribut sauf href sur a. '
-        'Faits uniquement du dossier vérifié et des textes officiels fournis ; horaires uniquement des conversions fournies. Si absents, ne pas inventer. '
+        'Faits uniquement du dossier vérifié et de la fiche de faits fournie ; horaires uniquement des conversions fournies. Si absents, ne pas inventer. '
         'Les analyses portent la mention Notre analyse. Ne pas inventer de diffuseur français. Éviter de répéter le chapo dans le premier paragraphe. '
         'Écrire un vrai article informatif : expliquer la nouveauté, les éléments de parcours et les enjeux réellement documentés. '
         'Aucun remplissage ni commentaire sur nos limites de recherche : ne pas écrire que les informations sont insuffisantes ou qu’il serait prématuré d’analyser. '
         'Une courte analyse est facultative. Ne pas répéter trois fois date, salle et horaires. '
-        '\nDOSSIER '+json.dumps(topic,ensure_ascii=False)+'\nSOURCES OFFICIELLES '+json.dumps(docs,ensure_ascii=False)+'\nHORAIRES '+json.dumps(times)+'\nROUTES '+json.dumps(sorted(routes)),notes=run/'writing-response.json')
+        '\nDOSSIER '+json.dumps(topic,ensure_ascii=False)+'\nFICHE DE FAITS '+json.dumps(facts,ensure_ascii=False)+'\nHORAIRES '+json.dumps(times)+'\nROUTES '+json.dumps(sorted(routes)),notes=run/'writing-response.json')
     article['categorie']='resultats' if topic['angle']=='results' else 'evenements' if topic['angle']=='preview' else 'actualite'
     validate_article(article,topic,routes)
     article={k:article[k] for k in ('slug','titre','titre_seo','chapo','meta_description','categorie','corps')}
     review=ask('Contrôle factuel final du texte : chaque affirmation doit être justifiée par les faits et textes fournis ; les analyses doivent être signalées. '
                'Vérifie en particulier les horaires, les résultats et les diffuseurs. Retourne {"ok":true/false,"problems":[]}.\nARTICLE '+json.dumps(article,ensure_ascii=False)+
                '\nDOSSIER '+json.dumps(topic,ensure_ascii=False)+'\nHORAIRES '+json.dumps(times)+'\nSOURCES '+json.dumps(docs,ensure_ascii=False),notes=run/'article-qa.json')
-    if review.get('ok') is not True:
-        article=ask('Corrige uniquement les erreurs factuelles signalées dans cet article. Retourne le même objet JSON complet, sans nouveaux faits ni nouveaux liens. '
-                    'Une information facultative absente, comme le diffuseur, n’est pas une erreur. '\
+    for correction in range(3):
+        if review.get('ok') is True:break
+        article=ask('Corrige les erreurs factuelles signalées dans cet article. Retourne le même objet JSON complet, sans nouveaux faits ni nouveaux liens. '
+                    'Supprime une précision douteuse plutôt que la remplacer par un autre fait non prouvé. Garde les formulations de la fiche de faits pour les rangs et statuts. '
+                    'Une information facultative absente, comme le diffuseur, n’est pas une erreur. '
                     '\nARTICLE '+json.dumps(article,ensure_ascii=False)+'\nERREURS '+json.dumps(review,ensure_ascii=False)+
-                    '\nSOURCES '+json.dumps(docs,ensure_ascii=False),notes=run/'writing-correction.json')
+                    '\nFICHE DE FAITS '+json.dumps(facts,ensure_ascii=False)+'\nHORAIRES '+json.dumps(times)+
+                    '\nSOURCES '+json.dumps(docs,ensure_ascii=False),notes=run/f'writing-correction-{correction+1}.json')
         article['categorie']='resultats' if topic['angle']=='results' else 'evenements' if topic['angle']=='preview' else 'actualite'
         validate_article(article,topic,routes)
         article={k:article[k] for k in ('slug','titre','titre_seo','chapo','meta_description','categorie','corps')}
         review=ask('Vérifie les faits du texte corrigé contre les sources officielles. Ne pas rejeter une omission facultative : aucun diffuseur ne doit être inventé, mais il peut ne pas être cité. '
                    'Retourne {"ok":true/false,"problems":[]}.\nARTICLE '+json.dumps(article,ensure_ascii=False)+'\nSOURCES '+json.dumps(docs,ensure_ascii=False)+
-                   '\nHORAIRES '+json.dumps(times),notes=run/'article-qa-corrected.json')
-    if review.get('ok') is not True: raise Stop('Article rejeté à la relecture factuelle après une correction : '+str(review.get('problems',[])))
+                   '\nHORAIRES '+json.dumps(times),notes=run/f'article-qa-corrected-{correction+1}.json')
+    if review.get('ok') is not True: raise Stop('Article rejeté après trois corrections contrôlées : '+str(review.get('problems',[])))
     article.update(date=datetime.now(ZoneInfo('Europe/Paris')).date().isoformat(),categories_secondaires=['actualite',topic['organisation']],
         image=f'/media/{datetime.now():%Y/%m}/{topic["slug"]}-affiche.png', image_format='poster',
         image_alt=f'Illustration éditoriale non officielle : {topic["fighters"][0]} contre {topic["fighters"][1]}, {topic["event_date"]}',

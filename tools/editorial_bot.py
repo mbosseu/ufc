@@ -458,7 +458,7 @@ def write_article(topic, docs, existing, run):
         article={k:article[k] for k in ('slug','titre','titre_seo','chapo','meta_description','categorie','corps')}
         review=review_article(article,topic,times,docs,run,f'article-qa-corrected-{correction+1}.json')
     if review.get('ok') is not True: raise Stop('Article rejeté après trois corrections contrôlées : '+str(review.get('problems',[])))
-    article.update(date=datetime.now(ZoneInfo('Europe/Paris')).date().isoformat(),categories_secondaires=['actualite',topic['organisation']],
+    article.update(date=datetime.now(ZoneInfo('Europe/Paris')).date().isoformat(),published_at=datetime.now(ZoneInfo('Europe/Paris')).isoformat(timespec='seconds'),categories_secondaires=['actualite',topic['organisation']],
         image=f'/media/{datetime.now():%Y/%m}/{topic["slug"]}-affiche.png', image_format='poster',
         image_alt=f'Illustration éditoriale non officielle : {topic["fighters"][0]} contre {topic["fighters"][1]}, {topic["event_date"]}',
         image_credit='Illustration éditoriale assistée par IA · UFC.FR · visuel non officiel')

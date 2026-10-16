@@ -66,13 +66,17 @@ function articlesMaison() {
           : "") +
         (a.source ? `\n<p class="source-note">${a.source}</p>` : "");
 
+      const publication = a.published_at ? new Date(a.published_at) : null;
+      if (publication && Number.isNaN(publication.getTime())) throw new Error(`Date de publication invalide : ${a.slug}`);
+      const dateLocale = a.published_at || `${a.date}T09:00:00`;
+      const dateUTC = publication ? publication.toISOString().replace(/Z$/, "") : `${a.date}T07:00:00`;
       return {
         id: 900000 + Math.abs([...a.slug].reduce((h, c) => (h * 31 + c.charCodeAt(0)) | 0, 7)) % 90000,
         slug: a.slug,
-        date: `${a.date}T09:00:00`,
-        date_gmt: `${a.date}T07:00:00`,
-        modified: `${a.date}T09:00:00`,
-        modified_gmt: `${a.date}T07:00:00`,
+        date: dateLocale,
+        date_gmt: dateUTC,
+        modified: dateLocale,
+        modified_gmt: dateUTC,
         title: { rendered: a.titre },
         content: { rendered: corps },
         excerpt: { rendered: `<p>${a.chapo}</p>` },

@@ -167,6 +167,27 @@ def resolve_portraits(topic):
     topic['portraits']=found
 
 
+def choose_topic(prompt,existing,today,run):
+    rejected=[]
+    for attempt in range(3):
+        topic=ask(prompt+'\nSujets écartés : '+json.dumps(rejected,ensure_ascii=False)+
+                  '\nPrivilégie un sujet UFC avec deux fiches athlètes disponibles. Ne propose pas à nouveau un sujet écarté. Si un sujet hors UFC manque de portraits, choisis un sujet UFC différent.',
+                  web=True,notes=run/f'research-response-{attempt+1}.json')
+        if topic.get('skip_reason'):
+            rejected.append({'reason':topic['skip_reason']});continue
+        try:
+            resolve_portraits(topic)
+            validate_topic(topic,existing,today)
+        except Stop as error:
+            rejected.append({'slug':topic.get('slug'),'reason':str(error)})
+            save(run/'rejected-topics.json',rejected)
+            continue
+        save(run/'topic.json',topic)
+        return topic
+    save(run/'rejected-topics.json',rejected)
+    return None
+
+
 def validate_topic(topic, existing, today):
     slug = topic.get('slug', '')
     if not re.fullmatch('[a-z0-9]+(?:-[a-z0-9]+)*', slug): raise Stop('Slug invalide.')
@@ -477,12 +498,10 @@ def main(argv=None):
         prompt+='Chaque champ doit être justifié par les sources officielles ; extraits littéraux courts. Les horaires doivent inclure un offset UTC explicite et leur preuve. '
         prompt+='Priorité aux domaines '+json.dumps(OFFICIAL)+'. Date France : '+str(today)+'. Suggestion : '+str(args.topic)+'. Catalogue : '+json.dumps(existing,ensure_ascii=False)
         stage='research';save(run/'state.json',{'state':'running','stage':stage})
-        topic=ask(prompt,web=True,notes=run/'research-response.json'); save(run/'topic.json',topic)
-        if topic.get('skip_reason'):
-            save(run/'state.json',{'state':'no_eligible_topic','reason':topic['skip_reason']}); print(topic['skip_reason']); return
-        stage='portraits_resolution';save(run/'state.json',{'state':'running','stage':stage})
-        resolve_portraits(topic); save(run/'topic.json',topic)
-        validate_topic(topic,existing,today)
+        topic=choose_topic(prompt,existing,today,run)
+        if topic is None:
+            save(run/'state.json',{'state':'no_eligible_topic','reason':'Aucun sujet exploitable après trois recherches.'})
+            print('Aucun sujet exploitable après trois recherches.'); return
         stage='facts';save(run/'state.json',{'state':'running','stage':stage})
         docs=evidence(topic,run)
         stage='portraits_quality';save(run/'state.json',{'state':'running','stage':stage})

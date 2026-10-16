@@ -88,5 +88,17 @@ class EditorialTests(unittest.TestCase):
         for url in ('http://ufc.com/news','https://127.0.0.1/test','https://example.com/test'):
             with self.assertRaises(bot.Stop):bot.get_url(url,official=True)
 
+    def test_missing_portraits_try_another_topic(self):
+        first=self.topic();first['slug']='premier-sujet';first['organisation']='pfl'
+        second=self.topic()
+        with tempfile.TemporaryDirectory() as d,patch.object(bot,'ask',side_effect=[first,second]) as ask,patch.object(bot,'resolve_portraits',side_effect=[bot.Stop('Portrait absent'),None]):
+            topic=bot.choose_topic('Recherche',[],date(2026,10,16),Path(d))
+            self.assertEqual(topic['slug'],second['slug']);self.assertEqual(ask.call_count,2)
+
+    def test_no_topic_does_not_loop_forever(self):
+        with tempfile.TemporaryDirectory() as d,patch.object(bot,'ask',return_value={'skip_reason':'Aucun sujet'}) as ask:
+            self.assertIsNone(bot.choose_topic('Recherche',[],date(2026,10,16),Path(d)))
+            self.assertEqual(ask.call_count,3)
+
 
 if __name__=='__main__':unittest.main()

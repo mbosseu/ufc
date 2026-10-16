@@ -24,6 +24,31 @@ class EditorialTests(unittest.TestCase):
             corps='<h2>Les enjeux</h2><p>'+('texte original ' * 160)+
             '<a href="/guide/">guide</a> <a href="/evenements/">événements</a></p>')
 
+    def test_failed_evidence_selects_another_topic(self):
+        first=self.topic();first['slug']='premier-sujet'
+        second=self.topic()
+        with tempfile.TemporaryDirectory() as d,patch.object(bot,'ask',side_effect=[first,second]) as ask,patch.object(bot,'resolve_portraits'),patch.object(bot,'evidence',side_effect=[bot.Stop('Date incorrecte'),{'source':'Texte'}]):
+            result=bot.choose_topic('Recherche',[],date(2026,10,16),Path(d),verify=True)
+            self.assertEqual(result['slug'],second['slug'])
+            self.assertIn('Date incorrecte',ask.call_args.args[0])
+
+    def test_correct_source_date_then_recheck(self):
+        t=self.topic();t['news_date']='2026-10-17'
+        fields=['fighters','event','event_date','venue','news_date','facts']
+        replies=[{'ok':False,'problems':['Publication le 16, combat le 17']},
+                 {'news_date':'2026-10-16','facts':t['facts'],'times':[]},
+                 {'ok':True,'verified_fields':fields}]
+        with tempfile.TemporaryDirectory() as d,patch.object(bot,'get_url',return_value='An official test announcement '*30),patch.object(bot,'ask',side_effect=replies):
+            bot.evidence(t,Path(d))
+            self.assertEqual(t['news_date'],'2026-10-16')
+            self.assertEqual(t['event_date'],'2026-10-17')
+            bot.validate_topic(t,[],date(2026,10,16))
+
+    def test_three_failed_sources_stop_without_publication(self):
+        with tempfile.TemporaryDirectory() as d,patch.object(bot,'ask',side_effect=[self.topic() for _ in range(3)]) as ask,patch.object(bot,'resolve_portraits'),patch.object(bot,'evidence',side_effect=bot.Stop('Source non concluante')) as check:
+            self.assertIsNone(bot.choose_topic('Recherche',[],date(2026,10,16),Path(d),verify=True))
+            self.assertEqual(check.call_count,3)
+
     def test_duplicate_match(self):
         with self.assertRaises(bot.Stop):
             bot.validate_topic(self.topic(),[{'slug':'alpha-beta-presentation','titre':'Alpha face à Beta'}],date(2026,10,16))

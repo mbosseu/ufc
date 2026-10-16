@@ -168,7 +168,7 @@ def resolve_portraits(topic):
     topic['portraits']=found
 
 
-def choose_topic(prompt,existing,today,run):
+def choose_topic(prompt,existing,today,run, *, verify=False):
     rejected=[]
     for attempt in range(3):
         topic=ask(prompt+'\nSujets écartés : '+json.dumps(rejected,ensure_ascii=False)+
@@ -180,6 +180,12 @@ def choose_topic(prompt,existing,today,run):
         try:
             resolve_portraits(topic)
             validate_topic(topic,existing,today)
+            if verify:
+                candidate=run/f'candidate-{attempt+1}'; candidate.mkdir()
+                docs=evidence(topic,candidate)
+                validate_topic(topic,existing,today)
+                save(run/'sources.json',docs)
+                save(run/'topic-verified.json',topic)
         except Stop as error:
             print(f'Sujet écarté ({attempt+1}/3) : {error}',flush=True)
             rejected.append({'slug':topic.get('slug'),'reason':str(error)})
@@ -244,10 +250,18 @@ def evidence(topic, run):
                   'verified_fields doit contenir les champs réellement vérifiés parmi fighters,event,event_date,venue,news_date,facts. '
                   'ok=false si une information factuelle du dossier manque de preuve.\nDOSSIER '+json.dumps(factual_topic,ensure_ascii=False)+'\nSOURCES '+json.dumps(docs,ensure_ascii=False),notes=run/'verification-faits.json')
     required = {'fighters','event','event_date','venue','news_date','facts'}
-    if verdict.get('ok') is not True:
-        # Une formulation issue de la recherche peut être trop large : reconstruire
-        # les faits depuis les textes réels, puis les soumettre à nouveau au contrôle.
-        topic['facts']=drafting_facts(topic,docs,run)
+    if verdict.get('ok') is not True or not required.issubset(set(verdict.get('verified_fields', []))):
+        repaired=ask('Corrige les champs factuels signalés uniquement depuis les sources téléchargées. '
+                     'news_date est la date de publication de la source, event_date la date locale du combat ; elles peuvent différer. '
+                     'Retourne un objet JSON avec news_date,event_date,event,venue,facts,times. '
+                     'Conserve les identités des combattants et le sujet. Chaque fait et horaire exige source_url et quote littéral. '
+                     'Ne transforme jamais une date de combat en date de publication. '
+                     '\nERREURS '+json.dumps(verdict,ensure_ascii=False)+'\nDOSSIER '+json.dumps(factual_topic,ensure_ascii=False)+
+                     '\nSOURCES '+json.dumps(docs,ensure_ascii=False),notes=run/'topic-correction.json')
+        for field in ('news_date','event_date','event','venue','facts','times'):
+            if field in repaired: topic[field]=repaired[field]
+        if not topic.get('facts') or not all(exact(f) for f in checks()):
+            raise Stop('Correction factuelle sans extraits vérifiables.')
         factual_topic={k:v for k,v in topic.items() if k!='portraits'}
         verdict=ask('Vérifie ce dossier corrigé contre les sources. Noms, événement, date locale, salle, date de l’actualité et faits doivent être justifiés. '
                     'Retourne {"ok":true/false,"problems":[],"verified_fields":[]}. verified_fields contient les champs effectivement vérifiés parmi '
@@ -586,12 +600,12 @@ def main(argv=None):
         prompt+='Chaque champ doit être justifié par les sources officielles ; extraits littéraux courts. Les horaires doivent inclure un offset UTC explicite et leur preuve. '
         prompt+='Priorité aux domaines '+json.dumps(OFFICIAL)+'. Date France : '+str(today)+'. Suggestion : '+str(args.topic)+'. Catalogue : '+json.dumps(existing,ensure_ascii=False)
         stage='research';save(run/'state.json',{'state':'running','stage':stage})
-        topic=choose_topic(prompt,existing,today,run)
+        topic=choose_topic(prompt,existing,today,run,verify=True)
         if topic is None:
             save(run/'state.json',{'state':'no_eligible_topic','reason':'Aucun sujet exploitable après trois recherches.'})
             print('Aucun sujet exploitable après trois recherches.'); return
         stage='facts';save(run/'state.json',{'state':'running','stage':stage})
-        docs=evidence(topic,run)
+        docs=json.loads((run/'sources.json').read_text(encoding='utf-8'))
         stage='portraits_quality';save(run/'state.json',{'state':'running','stage':stage})
         paths=portraits(topic,run)
         stage='poster';save(run/'state.json',{'state':'running','stage':stage})

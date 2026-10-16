@@ -91,3 +91,9 @@ npm run check
 Documentation API utilisée : Responses + web_search et Images edits.
 https://developers.openai.com/api/docs/guides/tools-web-search
 https://developers.openai.com/api/docs/guides/image-generation
+
+En cas de rejet factuel du sujet, une correction des champs depuis les sources
+est suivie d’une seconde vérification. La date de publication de la source reste
+distincte de la date locale du combat. Un sujet toujours refusé est enregistré
+dans les diagnostics, puis la recherche passe à un autre sujet (trois maximum).
+Les fenêtres éditoriales sont contrôlées à nouveau après correction.

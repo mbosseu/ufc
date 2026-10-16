@@ -49,6 +49,14 @@ class EditorialTests(unittest.TestCase):
             self.assertIsNone(bot.choose_topic('Recherche',[],date(2026,10,16),Path(d),verify=True))
             self.assertEqual(check.call_count,3)
 
+    def test_converted_time_does_not_keep_source_timezone_label(self):
+        t={'times':[{'label':'Début de l’événement, heure de l’Est des États-Unis (EST)', 'iso':'2026-11-21T13:00:00-05:00'}]}
+        converted=bot.france_times(t)[0]
+        self.assertEqual(converted['france'],'2026-11-21T19:00:00+01:00')
+        self.assertEqual(converted['label'],'Début annoncé de l’événement')
+        t['times'][0]['label']='Main Card (EST)'
+        self.assertEqual(bot.france_times(t)[0]['label'],'Carte principale')
+
     def test_duplicate_match(self):
         with self.assertRaises(bot.Stop):
             bot.validate_topic(self.topic(),[{'slug':'alpha-beta-presentation','titre':'Alpha face à Beta'}],date(2026,10,16))

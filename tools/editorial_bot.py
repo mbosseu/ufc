@@ -278,7 +278,9 @@ def france_times(topic):
     for entry in topic.get('times', []):
         dt = datetime.fromisoformat(entry['iso'])
         if dt.tzinfo is None: raise Stop('Horaire sans décalage UTC refusé.')
-        times.append({'label': entry['label'], 'france': dt.astimezone(ZoneInfo('Europe/Paris')).isoformat()})
+        source_label=normalize(entry['label'])
+        label=('Préliminaires précoces' if 'early' in source_label else 'Préliminaires') if 'prelim' in source_label else ('Carte principale' if 'main' in source_label or 'principale' in source_label else 'Début annoncé de l’événement')
+        times.append({'label': label, 'france': dt.astimezone(ZoneInfo('Europe/Paris')).isoformat()})
     return times
 
 

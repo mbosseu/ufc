@@ -4155,3 +4155,19 @@ section.block > .wrap > .tete-liste { margin-bottom: 40px; }
     grid-template-columns: 1fr;
   }
 }
+
+/* Affiche éditoriale : conserver les noms et la date dans le cadre. */
+.article > .wrap-read > .figure.lead:has(img[src$="buckley-vs-malott-affiche.png"]) {
+  margin-right: 0;
+  min-height: 0;
+  aspect-ratio: auto;
+  align-self: center;
+}
+.article .figure.lead img[src$="buckley-vs-malott-affiche.png"] {
+  width: 100%;
+  height: auto;
+  min-height: 0;
+  max-height: none;
+  aspect-ratio: auto;
+  object-fit: contain;
+}

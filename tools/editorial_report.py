@@ -8,6 +8,22 @@ TITLE='Bot éditorial UFC.fr : intervention nécessaire'
 MARKER='<!-- ufc-editorial-monitor -->'
 
 
+def seal_diagnostics(root):
+    key=os.environ.get('EDITORIAL_DIAGNOSTICS_PUBLIC_KEY')
+    if not key or os.environ.get('JOB_STATUS')!='failure':return
+    import io,zipfile
+    from nacl import public,encoding
+    runs=sorted(p for p in (root/'.research/editorial-bot').glob('*') if p.is_dir())
+    if not runs:return
+    buffer=io.BytesIO()
+    with zipfile.ZipFile(buffer,'w',zipfile.ZIP_DEFLATED) as archive:
+        for path in runs[-1].iterdir():
+            if path.is_file() and path.suffix in ('.json','.txt','.png'):
+                archive.write(path,arcname=path.name)
+    encrypted=public.SealedBox(public.PublicKey(key,encoding.Base64Encoder())).encrypt(buffer.getvalue())
+    (Path(os.environ['RUNNER_TEMP'])/'ufc-editorial-diagnostics.bin').write_bytes(encrypted)
+
+
 def report(root):
     runs=sorted(p for p in (root/'.research/editorial-bot').glob('*') if p.is_dir())
     state={}; publication={}
@@ -51,6 +67,7 @@ def notify(result,run_url):
 
 
 if __name__=='__main__':
+    seal_diagnostics(Path(__file__).resolve().parents[1])
     result=report(Path(__file__).resolve().parents[1])
     run_url='https://github.com/'+os.environ['GITHUB_REPOSITORY']+'/actions/runs/'+os.environ['GITHUB_RUN_ID']
     text='## Bot éditorial UFC.fr\n\n'+'\n'.join('- **'+k+'** : '+str(v) for k,v in result.items() if v is not None)+'\n'

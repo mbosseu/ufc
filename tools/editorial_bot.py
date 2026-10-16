@@ -378,7 +378,7 @@ def write_article(topic, docs, existing, run):
         review=ask('Vérifie les faits du texte corrigé contre les sources officielles. Ne pas rejeter une omission facultative : aucun diffuseur ne doit être inventé, mais il peut ne pas être cité. '
                    'Retourne {"ok":true/false,"problems":[]}.\nARTICLE '+json.dumps(article,ensure_ascii=False)+'\nSOURCES '+json.dumps(docs,ensure_ascii=False)+
                    '\nHORAIRES '+json.dumps(times),notes=run/'article-qa-corrected.json')
-    if review.get('ok') is not True: raise Stop('Article rejeté à la relecture factuelle après une correction.')
+    if review.get('ok') is not True: raise Stop('Article rejeté à la relecture factuelle après une correction : '+str(review.get('problems',[])))
     article.update(date=datetime.now(ZoneInfo('Europe/Paris')).date().isoformat(),categories_secondaires=['actualite',topic['organisation']],
         image=f'/media/{datetime.now():%Y/%m}/{topic["slug"]}-affiche.png', image_format='poster',
         image_alt=f'Illustration éditoriale non officielle : {topic["fighters"][0]} contre {topic["fighters"][1]}, {topic["event_date"]}',

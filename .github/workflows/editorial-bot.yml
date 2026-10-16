@@ -11,6 +11,10 @@ on:
         type: choice
         options: [check, prepare, publish]
         default: check
+      topic:
+        description: Sujet suggéré pour un test ciblé (facultatif)
+        type: string
+        default: ''
 
 permissions:
   contents: write
@@ -65,12 +69,13 @@ jobs:
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           MODE: ${{ github.event_name == 'schedule' && 'publish' || inputs.mode }}
+          TOPIC: ${{ inputs.topic }}
         shell: bash
         run: |
           if [ "$MODE" = publish ]; then
-            python tools/editorial_bot.py --publish
+            python tools/editorial_bot.py --publish --topic "$TOPIC"
           else
-            python tools/editorial_bot.py
+            python tools/editorial_bot.py --topic "$TOPIC"
           fi
       - name: Rapport et alerte en cas d’erreur
         if: always()

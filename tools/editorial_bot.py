@@ -174,11 +174,13 @@ def choose_topic(prompt,existing,today,run):
                   '\nPrivilégie un sujet UFC avec deux fiches athlètes disponibles. Ne propose pas à nouveau un sujet écarté. Si un sujet hors UFC manque de portraits, choisis un sujet UFC différent.',
                   web=True,notes=run/f'research-response-{attempt+1}.json')
         if topic.get('skip_reason'):
+            print(f'Recherche {attempt+1} : aucun sujet proposé.',flush=True)
             rejected.append({'reason':topic['skip_reason']});continue
         try:
             resolve_portraits(topic)
             validate_topic(topic,existing,today)
         except Stop as error:
+            print(f'Sujet écarté ({attempt+1}/3) : {error}',flush=True)
             rejected.append({'slug':topic.get('slug'),'reason':str(error)})
             save(run/'rejected-topics.json',rejected)
             continue

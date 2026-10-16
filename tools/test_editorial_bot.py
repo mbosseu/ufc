@@ -110,5 +110,9 @@ class EditorialTests(unittest.TestCase):
             result=bot.drafting_facts(self.topic(),{'https://ufc.com/news/test':fact['quote']},Path(d))
             self.assertEqual(len(result),3)
 
+    def test_live_title_allows_french_typography_and_entities(self):
+        self.assertTrue(bot.title_matches('<h1>UFC Edmonton\u00a0: l&#39;affiche &amp; les enjeux</h1>',"UFC Edmonton : l'affiche & les enjeux"))
+        self.assertFalse(bot.title_matches('<h1>Ancien article</h1>','Nouvel article'))
+
 
 if __name__=='__main__':unittest.main()

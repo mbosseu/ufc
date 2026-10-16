@@ -363,14 +363,15 @@ def drafting_facts(topic,docs,run):
     result=ask('Extrais 8 à 12 faits précis utiles à un article sur les deux combattants du dossier. '
                'Retourne {"facts":[{"claim":"fait en français","source_url":"URL fournie","quote":"extrait CONTIGU EXACT de la source"}]}. '
                'Aucune prédiction, aucune chance au titre supposée, aucun classement des médias, aucune opinion sur un troisième athlète. '
-               'Un rang UFC doit être explicitement identifié comme rang UFC, avec sa catégorie. Ne transforme pas une déclaration en fait acquis. '
+               'N’inclus aucun classement chiffré : les pages d’événement et les articles peuvent porter des rangs différents. Ne transforme pas une déclaration en fait acquis. '
                'Extraits courts, sans reformulation dans quote. Si moins de faits sont attestés, renvoie seulement ceux réellement justifiés. '
                '\nDOSSIER '+json.dumps({k:v for k,v in topic.items() if k!='portraits'},ensure_ascii=False)+'\nSOURCES '+json.dumps(docs,ensure_ascii=False),notes=run/'drafting-facts-response.json')
     facts=[]
     for fact in result.get('facts',[]):
         quote=re.sub(r'\s+',' ',fact.get('quote','')).strip()
         source=docs.get(fact.get('source_url'),'')
-        if len(quote)>=12 and quote.casefold() in source.casefold():facts.append(fact)
+        ranked=re.search(r'classement|\brang\b|\btop\s*\d|numéro\s*\d',fact.get('claim',''),re.I)
+        if len(quote)>=12 and quote.casefold() in source.casefold() and not ranked:facts.append(fact)
     if len(facts)<3:raise Stop('Fiche de rédaction trop pauvre en faits justifiés.')
     save(run/'drafting-facts.json',facts)
     return facts
@@ -382,6 +383,18 @@ def write_article(topic, docs, existing, run):
     save(run/'horaires-france.json',times)
     if (run/'drafting-facts.json').exists():facts=json.loads((run/'drafting-facts.json').read_text(encoding='utf-8'))
     else:facts=drafting_facts(topic,docs,run)
+    writing_topic={k:v for k,v in topic.items() if k not in ('portraits','facts','times','sources')}
+    def canonical_dates(article):
+        article['corps']=re.sub(r'<h2>Les repères pratiques</h2>[\s\S]*$','',article['corps'])
+        day=datetime.fromisoformat(topic['event_date']).strftime('%d/%m/%Y')
+        block='<h2>Les repères pratiques</h2><p><strong>Date locale de l’événement :</strong> '+day+' · '+html.escape(topic['venue'])+'.</p>'
+        if times:
+            block+='<p><strong>Horaires en France métropolitaine :</strong></p><ul>'
+            for item in times:
+                dt=datetime.fromisoformat(item['france'])
+                block+='<li>'+html.escape(item['label'])+' : '+dt.strftime('%d/%m/%Y à %H h %M')+'.</li>'
+            block+='</ul>'
+        article['corps']+=block
     article=ask('Rédige un article original français de 350 à 650 mots. JSON : slug,titre,titre_seo,chapo,meta_description,categorie,corps (HTML p h2 h3 strong em ul li a uniquement). '
         'Pas de liens sortants, pas de source publique ; deux ou trois liens internes parmi les routes fournies. Aucun attribut sauf href sur a. '
         'Faits uniquement du dossier vérifié et de la fiche de faits fournie ; horaires uniquement des conversions fournies. Si absents, ne pas inventer. '
@@ -389,21 +402,27 @@ def write_article(topic, docs, existing, run):
         'Écrire un vrai article informatif : expliquer la nouveauté, les éléments de parcours et les enjeux réellement documentés. '
         'Aucun remplissage ni commentaire sur nos limites de recherche : ne pas écrire que les informations sont insuffisantes ou qu’il serait prématuré d’analyser. '
         'Une courte analyse est facultative. Ne pas répéter trois fois date, salle et horaires. '
-        '\nDOSSIER '+json.dumps(topic,ensure_ascii=False)+'\nFICHE DE FAITS '+json.dumps(facts,ensure_ascii=False)+'\nHORAIRES '+json.dumps(times)+'\nROUTES '+json.dumps(sorted(routes)),notes=run/'writing-response.json')
+        'Ne mentionne aucun classement chiffré, aucun numéro de rang et aucun top numérique. '
+        'Ne rédige aucune date ni aucun horaire dans le titre, le chapo ou le corps : un encadré précis sera ajouté par le programme. '
+        '\nDOSSIER '+json.dumps(writing_topic,ensure_ascii=False)+'\nFICHE DE FAITS '+json.dumps(facts,ensure_ascii=False)+'\nROUTES '+json.dumps(sorted(routes)),notes=run/'writing-response.json')
+    canonical_dates(article)
     article['categorie']='resultats' if topic['angle']=='results' else 'evenements' if topic['angle']=='preview' else 'actualite'
     validate_article(article,topic,routes)
     article={k:article[k] for k in ('slug','titre','titre_seo','chapo','meta_description','categorie','corps')}
     review=ask('Contrôle factuel final du texte : chaque affirmation doit être justifiée par les faits et textes fournis ; les analyses doivent être signalées. '
-               'Vérifie en particulier les horaires, les résultats et les diffuseurs. Retourne {"ok":true/false,"problems":[]}.\nARTICLE '+json.dumps(article,ensure_ascii=False)+
+               'Vérifie en particulier les horaires, les résultats et les diffuseurs. La date locale de l’événement est explicitement celle du lieu indiqué, pas une date française ; les conversions France proviennent du programme. '
+               'Retourne {"ok":true/false,"problems":[]}.\nARTICLE '+json.dumps(article,ensure_ascii=False)+
                '\nDOSSIER '+json.dumps(topic,ensure_ascii=False)+'\nHORAIRES '+json.dumps(times)+'\nSOURCES '+json.dumps(docs,ensure_ascii=False),notes=run/'article-qa.json')
     for correction in range(3):
         if review.get('ok') is True:break
         article=ask('Corrige les erreurs factuelles signalées dans cet article. Retourne le même objet JSON complet, sans nouveaux faits ni nouveaux liens. '
                     'Supprime une précision douteuse plutôt que la remplacer par un autre fait non prouvé. Garde les formulations de la fiche de faits pour les rangs et statuts. '
+                    'Aucun classement chiffré ne doit apparaître. Ne touche pas aux dates du bloc Les repères pratiques, calculées par le programme. '
                     'Une information facultative absente, comme le diffuseur, n’est pas une erreur. '
                     '\nARTICLE '+json.dumps(article,ensure_ascii=False)+'\nERREURS '+json.dumps(review,ensure_ascii=False)+
                     '\nFICHE DE FAITS '+json.dumps(facts,ensure_ascii=False)+'\nHORAIRES '+json.dumps(times)+
                     '\nSOURCES '+json.dumps(docs,ensure_ascii=False),notes=run/f'writing-correction-{correction+1}.json')
+        canonical_dates(article)
         article['categorie']='resultats' if topic['angle']=='results' else 'evenements' if topic['angle']=='preview' else 'actualite'
         validate_article(article,topic,routes)
         article={k:article[k] for k in ('slug','titre','titre_seo','chapo','meta_description','categorie','corps')}
@@ -463,6 +482,13 @@ def publish(article, poster, site, run):
     verify_live(article,run,commit)
 
 
+def title_matches(page,title):
+    found=re.search(r'<h1\b[^>]*>(.*?)</h1>',page,re.S|re.I)
+    if not found:return False
+    def text(value):return re.sub(r'\s+',' ',html.unescape(re.sub('<[^>]+>','',value))).strip()
+    return text(found.group(1))==text(title)
+
+
 def verify_live(article,run,commit=None):
     expected=hashlib.sha256((run/'affiche.png').read_bytes()).hexdigest()
     for attempt in range(24):
@@ -473,7 +499,7 @@ def verify_live(article,run,commit=None):
             home=get_url('https://ufc.fr/',binary=True).decode()
             # Le sitemap est XML : vérifier les octets, pas son texte HTML extrait.
             sitemap_bytes=get_url('https://ufc.fr/sitemap.xml',binary=True).decode()
-            if (html.escape(article['titre']) in page and article['image'] in page and
+            if (title_matches(page,article['titre']) and article['image'] in page and
                 hashlib.sha256(image).hexdigest()==expected and article['slug'] in home and article['slug'] in sitemap_bytes):
                 env=os.environ.copy(); env['EDITORIAL_BASE_URL']='https://ufc.fr'
                 command(['node',str(ROOT/'tools/editorial_visual_check.mjs'),str(ROOT),article['slug'],str(run)],env=env)

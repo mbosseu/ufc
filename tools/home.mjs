@@ -64,11 +64,6 @@ function pic(p, cls = "", unique = true) {
 vues.add("/img/gym.webp");
 vues.add("/media/clubs/boxing-center-etats-unis.webp");
 vues.add("/media/clubs/boxing-center-ramonville.webp");
-// Le portrait de Gane occupe deja le heros. Une seconde occurrence dans le
-// fil donnait l'impression d'un accueil fige et faisait echouer le controle
-// d'images dupliquees.
-vues.add("/img/gane.webp");
-
 const paris = inCat("ufc-paris-2026");
 const clubsCat = inCat("clubs-mma-francais");
 const clubSlugs = new Set(clubsCat.map((p) => p.slug));
@@ -85,19 +80,13 @@ const EXCLUS_UNE = new Set([
   "ufc-paris-2027",
 ]);
 const SUJETS_UNE = new Set(["coach-zouhir-boumenir-boxing-center-toulouse"]);
-const une =
-  bySlug("ciryl-gane-champion-inconteste-ufc-hokit") ||
-  bySlug("ufc-334-gane-hokit-ce-quil-faut-savoir") ||
-  bySlug("ufc-paris-2026-resultats-complets") ||
-  paris[0];
 const flux = byDate.filter(
     (p) =>
       !p.slug.startsWith("portrait-") &&
       (!clubSlugs.has(p.slug) || SUJETS_UNE.has(p.slug)) &&
-      !EXCLUS_UNE.has(p.slug) &&
-      p.slug !== une?.slug
+      !EXCLUS_UNE.has(p.slug)
   );
-const vedette = flux[0] || une;
+const vedette = flux[0];
 const fil = flux.filter((p) => p.slug !== vedette?.slug).slice(0, 7);
 const imageVedette = media(vedette);
 if (imageVedette) vues.add(imageVedette.url);
@@ -132,31 +121,7 @@ const schema = [
     diversityPolicy: SITE + "/a-propos/",
     ethicsPolicy: SITE + "/a-propos/",
   },
-  {
-    "@context": "https://schema.org",
-    "@type": "SportsEvent",
-    name: "UFC 334 — Gane vs Hokit",
-    startDate: "2026-11-14T22:00:00-05:00",
-    eventStatus: "https://schema.org/EventScheduled",
-    eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
-    location: {
-      "@type": "Place",
-      name: "Madison Square Garden",
-      address: { "@type": "PostalAddress", addressLocality: "New York", addressCountry: "US" },
-    },
-    sport: "Mixed Martial Arts",
-    url: SITE + "/ufc-334-gane-hokit-ce-quil-faut-savoir/",
-  },
 ];
-
-const EVENEMENT = "2026-11-14T22:00:00-05:00";
-function compteARebours() {
-  const reste = new Date(EVENEMENT).getTime() - Date.now();
-  if (reste <= 0) return "En cours";
-  const h = Math.floor(reste / 36e5);
-  if (h >= 48) return "J\u2212" + Math.floor(h / 24);
-  return h + "h" + String(Math.floor((reste % 36e5) / 6e4)).padStart(2, "0");
-}
 
 const html = `${head({
   title: "UFC.FR — l’actualité du MMA, en français",
@@ -164,7 +129,7 @@ const html = `${head({
      « pas le site officiel » qui sautait — celle qui evite justement la
      deception au clic. Elle passe donc avant ce qui peut sauter. */
   description:
-    "Média MMA indépendant, pas le site officiel de l’UFC. Ciryl Gane champion, résultats, champions de toutes les organisations et clubs français.",
+    "Média MMA indépendant, pas le site officiel de l’UFC. Actualités, résultats, analyses et clubs français : suivez les dernières nouvelles du MMA.",
   canonical: "/",
   image: "/media/brand/ufc-fr-og.jpg",
   type: "website",
@@ -173,62 +138,11 @@ const html = `${head({
 ${header("/", "home")}
   <main id="contenu">
 
-  <!-- Palier 1 — un seul portrait, bien cadre : on n'a pas de photo de
-       Hokit, donc pas de faux duel. Gane occupe l'ecran en champion. -->
-  <section class="hero hero-cage hero-solo">
-
-    <figure class="hero-solo-fig">
-      <img src="/img/gane.webp" alt="Ciryl Gane, champion incontesté UFC des poids lourds" width="1290" height="1814" fetchpriority="high" />
-      <figcaption>
-        <span class="kicker">France · Champion incontesté UFC</span>
-        <span class="hero-name">Ciryl Gane</span>
-        <span class="hero-sub">UFC 334 · vs Josh Hokit · 14 novembre · MSG</span>
-      </figcaption>
-    </figure>
-
-    <div class="hero-foot">
-      <p class="hero-when">
-        <time datetime="2026-11-14">14 novembre · Madison Square Garden</time>
-        <b data-countdown="${EVENEMENT}">${compteARebours()}</b>
-      </p>
-      <div class="hero-actions">
-        <a class="btn btn-fill cut" href="/${une.slug}/">Gane champion incontesté</a>
-        <a class="btn btn-line cut" href="/ufc-334-gane-hokit-ce-quil-faut-savoir/">UFC 334 : le dossier</a>
-      </div>
-    </div>
-  </section>
-
-  <div class="ticker">
-    <div class="pulse"><b></b></div>
-    <div class="ticker-rail">
-      <div class="ticker-run">
-${[
-  ["Gane champion", "Premier Français incontesté à l’UFC"],
-  ["UFC 334", "Gane vs Hokit · 14 nov. · MSG"],
-  ["Hexagone Rouen", "Baybatyrov KO en 44 secondes"],
-  ["UFC Paris", "Parnasse KO Hooker · résultats"],
-  ["Champions", "Ceintures mises à jour"],
-  [`${posts.length} articles`, "Toutes organisations, en français"],
-]
-  .concat([
-    ["Gane champion", "Premier Français incontesté à l’UFC"],
-    ["UFC 334", "Gane vs Hokit · 14 nov. · MSG"],
-    ["Hexagone Rouen", "Baybatyrov KO en 44 secondes"],
-    ["UFC Paris", "Parnasse KO Hooker · résultats"],
-    ["Champions", "Ceintures mises à jour"],
-    [`${posts.length} articles`, "Toutes organisations, en français"],
-  ])
-  .map(([t, d], i) => `        <span class="tick"${i >= 6 ? ' aria-hidden="true"' : ""}><strong>${esc(t)}</strong><span>${esc(d)}</span></span>`)
-  .join("\n")}
-      </div>
-    </div>
-  </div>
-
   <section class="block ed-week">
     <div class="wrap ed-head" data-reveal>
       <span class="kicker">À la une</span>
       <h1>L’actualité du MMA, en français</h1>
-      <p class="lede">Gane est champion. Hexagone a frappé à Rouen. La suite, ici.</p>
+      <p class="lede">Les dernières actualités, les résultats et les combats à suivre.</p>
       <a class="more" href="/actualite-du-mma/">Tout le fil (${posts.length})</a>
     </div>
     <a class="ed-lead" href="/${vedette.slug}/" data-reveal data-reveal-media>
@@ -367,5 +281,5 @@ ${footer()}`;
 
 writeFileSync(join(ROOT, "index.html"), html, "utf8");
 console.log("[accueil] index.html régénéré depuis le corpus");
-console.log(`  une: ${une.slug}`);
+console.log(`  une: ${vedette.slug}`);
 console.log(`  fil: ${fil.length} · portraits: ${portraits.length} · clubs: ${clubsCat.length}`);
